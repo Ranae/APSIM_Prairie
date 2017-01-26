@@ -1,0 +1,571 @@
+     ###     ######     #####   #   #     #   
+    #   #    #     #   #        #   ##   ##   
+   #     #   #     #   #        #   ##   ##   
+   #######   ######     #####   #   # # # #   
+   #     #   #              #   #   #  #  #   
+   #     #   #         #####    #   #  #  #   
+                                              
+                                              
+ The Agricultural Production Systems Simulator
+             Copyright(c) APSRU               
+
+Version                = 7.8 r3977
+Title                  = noN
+   Component                        "clock" = %apsim%\Model\Clock.dll
+   Component                          "met" = %apsim%\Model\Input.dll
+Paddock:
+   Component                   "outputfile" = %apsim%\Model\Report.dll
+   Component                        "accum" = %apsim%\Model\Accum.dll
+   Component           "Prairie opeartions" = %apsim%\Model\Operations.dll
+   Component                   "fertiliser" = %apsim%\Model\Fertiliser.dll
+   Component              "N fertilization" = %apsim%\Model\Manager.dll
+   Component                 "N Deposition" = %apsim%\Model\Manager.dll
+   Component               "unit convertor" = %apsim%\Model\Manager.dll
+   Component                     "Micromet" = %apsim%\Model\MicroMet.dll
+   Component                         "SWIM" = %apsim%\Model\SWIM3.dll
+   Component             "SoilTemperature2" = %apsim%\Model\SoilTemp2.dll
+   Component         "SurfaceOrganicMatter" = %apsim%\Model\SurfaceOM.dll
+   Component "NicolletRanae_InitializedPrairie Nitrogen" = %apsim%\Model\SoilN.dll
+   Component     "ryegrass_clover_paspalum" = %apsim%\Model\AgPasture.dll
+   Component                      "tracker" = %apsim%\Model\Tracker.dll
+   Component              "SpecialReporter" = %apsim%\Model\Manager2.dll
+
+------- clock Initialisation --------------------------------------------------
+     Sequencer phases:
+        prepare
+        init_step
+        do_management
+        run_one_step
+        do_pasture_water
+        process
+        do_pasture_growth
+        do_stock
+        post
+        end_step
+     Simulation start date = 26/07/2008
+     Simulation end date   = 11/11/2014
+     Time step =           = 1440 (mins)
+
+------- met Initialisation ----------------------------------------------------
+     Sparse data is not allowed
+     INPUT File name: Cobs.Dec31.2016.met
+
+------- outputfile Initialisation ---------------------------------------------
+     Output frequency:
+        end_day
+     Output variables:
+        dd/mm/yyyy as Date
+        PlantPotentialGrowthWt
+        AboveGroundWt
+        BelowGroundWt
+        AboveGroundNPct
+        BelowGroundN
+        SpeciesLiveWt
+        SpeciesTotalWt
+        HarvestWt
+        AboveGroundLiveN
+        AboveGroundDeadN
+        watertable
+        dm1
+        dm2
+        dm3
+        FVPD
+        GLFn
+        GLFnConcentration
+        GLFrgr
+        GLFtemp
+        GLFwater
+        GrossGrowthWt
+        HarvestWt
+        HarvestN
+        Height
+        LAI_dead
+        LAI_green
+        LAI_total
+        LeafLiveWt
+        LeafWt
+        NitrogenSupply
+        NitrogenUptake
+        NitrogenUptakeLayers
+        PlantPotentialGrowthWt
+        SpeciesGreenLAI
+        SpeciesLiveWt
+        spPgross
+        spResp_m
+        spGFN
+        StemLiveWt
+        StemWt
+        ToRoot
+        ToRootDM
+        WaterSupply
+        WaterUptake
+        WaterUptakeLayers
+        Root_g_respi
+        Root_m_respi
+        dlayer
+        biom_respi
+        fom_respi
+        hum_respi
+        resid_respi
+        soil_co2
+        root_co2
+        soil_root_co2
+        OC_20cm
+        OC_90cm
+        OC_180cm
+        n2o_atm()
+        nitrification()
+        dnit()
+        MaySeptNDep
+        MaySeptTiles
+        MaySeptRain
+        MaySeptrunoff
+        MaySepEvap
+        MaySepTrans
+        MaySepNnetMin
+        MaySepDenit
+        MaySeptTilesNO3
+        MaySepResImmob
+        MaySepNuptake
+        drainageIH
+        leaching
+        fom_c
+        fom_n
+        biom_c
+        rlv
+        rlv()
+        biom_c()
+        surfaceom_c
+        fom_c()
+        hum_c()
+        surfaceom_wt
+        AboveGroundDeadWt
+        C_remob
+        LeafDeadWt
+        LitterDepositionWt
+        RootSenescenceWt
+        wf
+        surfaceom_n
+        surfaceom_cover
+        surface_CN_ratio
+        no3()
+        nh4()
+        tf_surface_om1
+        es
+        eos
+        Cover_green
+        dlt_n_min_tot()
+        dlt_n_min()
+        dlt_n_min_res()
+        PlantFixedN
+        NitrogenDemand
+        NitrogenSupply
+        NitrogenUptake
+        PlantRemobilisedN
+        lai
+        LAI_green
+        LAI_dead
+        dlt_fom_c_atm()
+        dlt_fom_c_biom()
+        dlt_fom_c_hum()
+        dlt_fom_c_pool1()
+        dlt_fom_c_pool2()
+        dlt_fom_c_pool3()
+        dlt_fom_n_min()
+        dlt_res_c_biom()
+        dlt_res_c_hum()
+        HarvestN
+        HerbageDigestibility
+        RootSenescenceN
+        roots_cn
+        Remaining_Wt
+        Surface_sot
+        fom_n()
+        nit_tot()
+        sot_cnr
+        sot_cnrf
+        roots_N%
+        oc_5cm
+        oc_15cm
+        oc_30cm
+        oc_60cm
+        oc_100cm
+        IntRadn
+        soil_co2
+        root_co2
+        soil_root_co2
+        sw_5
+        sw_10
+        sw_15
+        sw_35
+        sw_75
+        st_5
+        st_10
+        st_15
+        st_35
+        st_75
+        subsurface_drain
+        GLFwater
+        GLFtemp
+        GLFn
+        ToRoot
+        ToRootDM
+        sotiris
+        fom_cn
+        year
+        subsurface_drain_no3
+        N_conc_mgLN
+        drain
+
+     Output file = noN.out
+     Format = normal
+
+------- paddock.accum Initialisation ------------------------------------------
+     Initialising
+
+------- paddock.Prairie opeartions Initialisation -----------------------------
+     Operations Schedule
+     ===================
+        6/6/2008  Prepare      ryegrass_clover_paspalum sow
+      10/10/2008  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2008  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = 0.10 (), tillage_depth = 0.0 ()
+      10/10/2009  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2009  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .5606707100 (), tillage_depth = 0.0 ()
+      10/10/2010  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2010  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .5606707100 (), tillage_depth = 0.0 ()
+      10/10/2011  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2011  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .5606707100 (), tillage_depth = 0.0 ()
+      10/10/2012  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2012  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .5606707100 (), tillage_depth = 0.0 ()
+      10/10/2013  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2013  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .5606707100 (), tillage_depth = 0.0 ()
+      10/10/2014  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2014  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .5606707100 (), tillage_depth = 0.0 ()
+      10/10/2015  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2015  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .606707100 (), tillage_depth = 0.0 ()
+      10/10/2016  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2016  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2017  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2017  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2018  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2018  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2019  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2019  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2020  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2020  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2021  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2021  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2022  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2022  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2023  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2023  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2024  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2024  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2025  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2025  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2026  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2026  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2027  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2027  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2028  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2028  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2029  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2029  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2030  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2030  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2031  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2031  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2032  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2032  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2033  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2033  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2034  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2034  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2035  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2035  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2036  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2036  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2037  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2037  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2038  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2038  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2039  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2039  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2040  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2040  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2041  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2041  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2042  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2042  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2043  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2043  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2044  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2044  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2045  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2045  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2046  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2046  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2047  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2047  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2048  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2048  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2049  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2049  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2050  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2050  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2051  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2051  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2052  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2052  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2053  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2053  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2054  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2054  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2055  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2055  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2056  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2056  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2057  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2057  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2058  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2058  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2059  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2059  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2060  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2060  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2061  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2061  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2062  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2062  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2063  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2063  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+      10/10/2064  Prepare       ryegrass_clover_paspalum graze type = 'residue', amount = 250
+      12/10/2064  Prepare      surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+
+------- paddock.N fertilization Initialisation --------------------------------
+     Manager rules:
+     
+     SECTION:- start_of_day
+              if (today = date('15-apr') then
+     n_topsoil = no3(1) + nh4(1) + no3(2) + nh4(2)
+     if (n_topsoil < 1000) then
+        fertiliser apply amount = 0 (kg/ha), depth = 50 (mm), type = no3_n ()
+     endif
+              endif
+     END of rules
+     
+
+------- paddock.N Deposition Initialisation -----------------------------------
+     Manager rules:
+     
+     SECTION:- start_of_day
+     n_deposition = rain * 0.01
+     n_deposition_tot = n_deposition_tot + n_deposition
+     if (rain > 0) then
+        fertiliser apply amount = n_deposition(kg/ha), depth = 0 (mm), type = no3_n ()
+     endif
+     END of rules
+     
+
+------- paddock.unit convertor Initialisation ---------------------------------
+     Manager rules:
+     
+     SECTION:- init
+     
+     SECTION:- start_of_day
+     sotiris = belowgroundwt + fom_c()/0.4
+     fom_cn = fom_c() / fom_n()
+     if surfaceom_n > 0.1 then
+     surface_cn_ratio = surfaceom_c / surfaceom_n
+     endif
+     if belowgroundn > 0.1 then
+     roots_cn = belowgroundwt*0.4/belowgroundn
+     endif
+     if belowgroundwt > 0.1 then
+     roots_n% = 100* belowgroundn / belowgroundwt
+     endif
+     sot_cnr = fom_c() / (fom_n() + nit_tot())
+     sot_cnrf = exp(-0.677 * (sot_cnr - 25) / 25))
+     tf_surface_om1 = surfaceorganicmatter.tf
+     oc_5cm = 0.5 * (oc(1) + oc(2))
+     oc_15cm = 0.5 * (oc(3) + oc(4))
+     oc_30cm = 0.5 * (oc(5) + oc(6))
+     oc_60cm = 0.6 * oc(7) + 0.4*oc(8)
+     oc_100cm = 0.1* oc(8) + 0.9*oc(9)
+     sw_5 = (sw(1) + sw(2))*0.5
+     sw_10 = sw(3)
+     sw_15 = sw(4)
+     sw_35 = sw(6)
+     sw_75 = sw(7)
+     st_5 = (ave_soil_temp(1) + ave_soil_temp(2))*0.5
+     st_10 = ave_soil_temp(3)
+     st_15 = ave_soil_temp(4)
+     st_35 = ave_soil_temp(5)
+     st_75 = ave_soil_temp(6)
+     total_m_respi = spresp_m(1) + spresp_m(2) + spresp_m(3)
+     root_m_respi = toroot * total_m_respi
+     total_pgross = sppgross(1) + sppgross(2) + sppgross(3)
+     root_g_respi = total_pgross * (1- 0.8) * toroot
+     root_respi = root_g_respi + root_m_respi
+     soil_co2 = dlt_biom_c_atm() + dlt_fom_c_atm() + dlt_hum_c_atm() + dlt_res_c_atm
+     root_co2 = root_respi
+     biom_respi = dlt_biom_c_atm()
+     fom_respi = dlt_fom_c_atm()
+     hum_respi = dlt_hum_c_atm()
+     resid_respi = dlt_res_c_atm
+     soil_root_co2 = soil_co2 + root_co2
+     if subsurface_drain >0 then
+     n_conc_mgln = 100* subsurface_drain_no3 / subsurface_drain
+     endif
+     
+     SECTION:- end_of_day
+     END of rules
+     
+
+------- paddock.Micromet Initialisation ---------------------------------------
+     Initialising
+     
+        - Reading Constants
+     
+        - Reading Parameters
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                      APSIM Warning Error
+                      -------------------
+     Lower bound (    1.000000    ) exceeds upper bound (    0.000000    )
+             Variable is not checked
+     Component name: paddock.SWIM
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     
+     
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                      APSIM Warning Error
+                      -------------------
+     Lower bound (    1070.000    ) exceeds upper bound (    0.000000    )
+             Variable is not checked
+     Component name: paddock.SWIM
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     
+     
+
+------- paddock.SWIM Initialisation -------------------------------------------
+     
+     
+                           APSIM Soil Profile
+                           ------------------
+     
+     ---------------------------------------------------------------
+      x    dlayer   BD   SW     LL15   DUL   SAT      Ks      Psi
+     ---------------------------------------------------------------
+        0.0   37.0  1.21  0.252  0.140  0.263  0.435 500.00   -144.1
+       74.0   38.0  1.21  0.284  0.161  0.296  0.462 500.00   -147.6
+       76.0   50.0  1.39  0.246  0.110  0.256  0.443 500.00   -133.6
+      174.0   90.0  1.48  0.244  0.110  0.254  0.446 500.00   -133.3
+      256.0   85.0  1.50  0.281  0.120  0.293  0.478 500.00   -137.8
+      344.0  100.0  1.50  0.252  0.125  0.262  0.455 500.00   -134.2
+      456.0  200.0  1.50  0.252  0.132  0.262  0.410 500.00   -141.6
+      744.0  300.0  1.55  0.284  0.100  0.296  0.394 250.00   -145.1
+     1056.0  300.0  1.55  0.284  0.110  0.296  0.360  20.00   -153.2
+     1344.0  320.0  1.55  0.296  0.138  0.296  0.340   6.00   -100.0
+     1696.0  300.0  1.55  0.296  0.165  0.296  0.320   1.50   -100.0
+     1944.0  180.0  1.84  0.274  0.146  0.274  0.310   0.20   -100.0
+     2400.0  400.0  1.83  0.272  0.144  0.272  0.300   0.01   -100.0
+     ---------------------------------------------------------------
+     
+     
+                       Soil Moisture Characteristics
+                       -----------------------------
+     
+     --------------------------------------------------------------------
+                              Soil Water Potential (cm)
+         x       0      10      25    100   1000  15000   10^6   10^7
+     --------------------------------------------------------------------
+        0.0 | 0.4350 0.3668 0.3213 0.2630 0.2018 0.1400 0.0416 0.0000
+       74.0 | 0.4620 0.3971 0.3534 0.2960 0.2309 0.1610 0.0481 0.0000
+       76.0 | 0.4430 0.3696 0.3203 0.2560 0.1820 0.1100 0.0309 0.0000
+      174.0 | 0.4460 0.3703 0.3196 0.2540 0.1805 0.1100 0.0309 0.0000
+      256.0 | 0.4780 0.4070 0.3585 0.2930 0.2075 0.1200 0.0332 0.0000
+      344.0 | 0.4550 0.3784 0.3274 0.2620 0.1923 0.1250 0.0362 0.0000
+      456.0 | 0.4100 0.3527 0.3138 0.2620 0.1991 0.1320 0.0387 0.0000
+      744.0 | 0.3940 0.3624 0.3377 0.2960 0.2055 0.1000 0.0257 0.0000
+     1056.0 | 0.3600 0.3427 0.3272 0.2960 0.2130 0.1100 0.0294 0.0000
+     1344.0 | 0.3400 0.3345 0.3250 0.2960 0.2229 0.1380 0.0397 0.0000
+     1696.0 | 0.3200 0.3170 0.3118 0.2960 0.2433 0.1650 0.0496 0.0000
+     1944.0 | 0.3100 0.3055 0.2977 0.2740 0.2163 0.1460 0.0434 0.0000
+     2400.0 | 0.3000 0.2965 0.2904 0.2720 0.2177 0.1440 0.0428 0.0000
+     --------------------------------------------------------------------
+     
+     
+                        Soil Hydraulic Conductivity
+                        ---------------------------
+     
+     -----------------------------------------------------------------------
+                              Soil Water Potential (cm)
+         x       0        10       25       100     1000    15000     10^6
+     -----------------------------------------------------------------------
+        0.0 | .400E+04 160.     13.1     .297     .200E-02 .199E-05 .224E-15
+       74.0 | .172E+04 90.4     9.34     .297     .236E-02 .212E-05 .133E-15
+       76.0 | .103E+04 69.7     8.29     .297     .186E-02 .105E-05 .657E-14
+      174.0 | .136E+04 83.9     9.25     .297     .178E-02 .107E-05 .606E-14
+      256.0 | 500.     36.8     5.52     .300     .219E-02 .907E-06 .103E-13
+      344.0 | .274E+04 130.     11.8     .297     .178E-02 .143E-05 .176E-14
+      456.0 | 793.     55.9     7.14     .297     .235E-02 .169E-05 .704E-15
+      744.0 | 250.     12.4     2.04     .300     .342E-02 .509E-06 .306E-13
+     1056.0 | 20.0     3.88     1.35     .300     .395E-02 .677E-06 .202E-13
+     1344.0 | 6.00     3.55     1.67     .300     .306E-02 .134E-05 .247E-14
+     1696.0 | 1.50     1.23     .872     .300     .570E-02 .229E-05 .697E-16
+     1944.0 | 2.07     1.57     .961     .200     .227E-02 .134E-05 .147E-15
+     2400.0 | .628E-01 .504E-01 .342E-01 .100E-01 .153E-03 .659E-07 .855E-17
+     -----------------------------------------------------------------------
+     
+     
+          bottom boundary condition = specified potential
+          vapour conductivity       = on
+          Evaporation Source        = calc
+     
+      Subsurface Drain Model
+      ======================
+     
+          Drain Depth (mm) =  1070.000
+          Drain Spacing (mm) = 13500.000
+          Drain Radius (mm) =    52.000
+          Imperm Layer Depth (mm) =  3900.000
+          Lateral Conductivity (mm/d) =  2800.000
+
+------- SoilTemperature2 Initialisation ---------------------------------------
+
+------- soiltemp Initialisation -----------------------------------------------
+     Initialising :
+
+------- paddock.SurfaceOrganicMatter Initialisation ---------------------------
+     
+         - Reading constants
+     
+         - Reading parameters
+     
+     
+     
+                         Initial Surface Organic Matter Data
+         ----------------------------------------------------------------------
+            Name   Type        Dry matter   C        N        P    Cover  Standing_fr
+                                (kg/ha)  (kg/ha)  (kg/ha)  (kg/ha) (0-1)     (0-1)
+         ----------------------------------------------------------------------
+          soybean   soybean        250.0   100.0     5.0     0.0   0.049     0.0
+         ----------------------------------------------------------------------
+     
+                      Effective Cover from Surface Materials =   0.0
+     
+
+------- paddock.NicolletRanae_InitializedPrairie Nitrogen Initialisation ------
+     
+        - Reading Parameters
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                      APSIM  Fatal  Error
+                      -------------------
+     Cannot find a parameter.
+     Parameter name = fbiom_lb
+     Section name = standard
+     Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     
+     
+

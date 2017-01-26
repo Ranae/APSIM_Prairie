@@ -1,0 +1,7 @@
+ApsimVersion = 7.6
+Title = testing
+ Date	soil_co	soil_cov
+(dd/mm/yyyy)	()	()
+07/15/2008	42.76	7.615196353
+07/21/2008	63.93	26.23389342
+07/29/2008	61.78	15.52376605
