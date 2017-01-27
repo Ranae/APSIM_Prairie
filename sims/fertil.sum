@@ -110,6 +110,9 @@ Paddock:
         soil_co2
         root_co2
         soil_root_co2
+        SpeciesAboveGroundWt
+        SpeciesBelowGroundWt
+        SpeciesCanopyFactor
         OC_20cm
         OC_90cm
         OC_180cm

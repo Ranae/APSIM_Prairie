@@ -7018,6 +7018,10 @@ what needs to be done
             <variable>soil_co2</variable>
             <variable>root_co2</variable>
             <variable>soil_root_co2</variable>
+            <variable>SpeciesAboveGroundWt</variable>
+            <variable>SpeciesBelowGroundWt</variable>
+            <variable>SpeciesCanopyFactor</variable>
+            <variable>speciesInterceptedRadn</variable>
           </variables>
           <variables name="soil">
             <variable>OC_20cm</variable>
@@ -7930,7 +7934,16 @@ public class Script
           <rateRootSen type="text" description="rate root sen">.00625115072 .00951677664 .00694292939</rateRootSen>
           <waterStressFactor type="text" description="water stress">0.1 0.1 0.1</waterStressFactor>
         </AgPasture>
-        <Soil name="NicolletRanae_InitializedPrairie" shortcut="/simulations/Prairies calibration sep 2016/noN/paddock/NicolletRanae_InitializedPrairie">
+        <Soil name="NicolletRanae_InitializedPrairie">
+          <RecordNumber>0</RecordNumber>
+          <NearestTown>Ames</NearestTown>
+          <State>Iowa</State>
+          <Country>US</Country>
+          <ApsoilNumber>34</ApsoilNumber>
+          <Latitude>0</Latitude>
+          <Longitude>0</Longitude>
+          <YearOfSampling>0</YearOfSampling>
+          <DataSource>web soil survey data revised</DataSource>
           <SoilTemperature2>
             <MaxTTimeDefault>14</MaxTTimeDefault>
             <BoundaryLayerConductanceSource>calc</BoundaryLayerConductanceSource>
@@ -7942,13 +7955,335 @@ public class Script
             <DefaultInstrumentHeight>1.2</DefaultInstrumentHeight>
             <BareSoilHeight>57</BareSoilHeight>
           </SoilTemperature2>
-          <SoilOrganicMatter shortcut="/simulations/Prairies calibration sep 2016/noN/paddock/NicolletRanae_InitializedPrairie/SoilOrganicMatter" />
-          <Analysis shortcut="/simulations/Prairies calibration sep 2016/noN/paddock/NicolletRanae_InitializedPrairie/Analysis" />
-          <Sample name="Initial nitrogen" shortcut="/simulations/Prairies calibration sep 2016/noN/paddock/NicolletRanae_InitializedPrairie/Initial nitrogen" />
-          <Swim shortcut="/simulations/Prairies calibration sep 2016/noN/paddock/NicolletRanae_InitializedPrairie/Swim">
-            <SwimSoluteParameters shortcut="/simulations/Prairies calibration sep 2016/noN/paddock/NicolletRanae_InitializedPrairie/Swim/SwimSoluteParameters" />
-            <SwimWaterTable shortcut="/simulations/Prairies calibration sep 2016/noN/paddock/NicolletRanae_InitializedPrairie/Swim/SwimWaterTable" />
-            <SwimSubsurfaceDrain shortcut="/simulations/Prairies calibration sep 2016/noN/paddock/NicolletRanae_InitializedPrairie/Swim/SwimSubsurfaceDrain" />
+          <SoilOrganicMatter>
+            <RootCN>22</RootCN>
+            <RootWt>776</RootWt>
+            <SoilCN>11</SoilCN>
+            <EnrACoeff>7.4</EnrACoeff>
+            <EnrBCoeff>0.2</EnrBCoeff>
+            <Thickness>
+              <double>37</double>
+              <double>38</double>
+              <double>50</double>
+              <double>90</double>
+              <double>85</double>
+              <double>100</double>
+              <double>200</double>
+              <double>300</double>
+              <double>300</double>
+              <double>320</double>
+              <double>300</double>
+              <double>180</double>
+              <double>400</double>
+            </Thickness>
+            <OC>
+              <double>3.02</double>
+              <double>2.94</double>
+              <double>2.6</double>
+              <double>2.33</double>
+              <double>2.1</double>
+              <double>1.31</double>
+              <double>1.33</double>
+              <double>1.15</double>
+              <double>0.49</double>
+              <double>0.16</double>
+              <double>0.1</double>
+              <double>0.05</double>
+              <double>0.01</double>
+            </OC>
+            <FBiom>
+              <double>0.08</double>
+              <double>0.092</double>
+              <double>0.057</double>
+              <double>0.011</double>
+              <double>0.011</double>
+              <double>0.014</double>
+              <double>0.011</double>
+              <double>0.01</double>
+              <double>0.01</double>
+              <double>0.01</double>
+              <double>0.01</double>
+              <double>0.01</double>
+              <double>0.01</double>
+            </FBiom>
+            <FInert>
+              <double>0.319</double>
+              <double>0.328</double>
+              <double>0.386</double>
+              <double>0.452</double>
+              <double>0.493</double>
+              <double>0.533</double>
+              <double>0.75</double>
+              <double>0.82</double>
+              <double>0.9</double>
+              <double>0.95</double>
+              <double>0.95</double>
+              <double>0.99</double>
+              <double>0.99</double>
+            </FInert>
+            <OCUnits>Total</OCUnits>
+          </SoilOrganicMatter>
+          <Analysis>
+            <Thickness>
+              <double>37</double>
+              <double>38</double>
+              <double>50</double>
+              <double>90</double>
+              <double>85</double>
+              <double>100</double>
+              <double>200</double>
+              <double>300</double>
+              <double>300</double>
+              <double>320</double>
+              <double>300</double>
+              <double>180</double>
+              <double>400</double>
+            </Thickness>
+            <Texture>
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+            </Texture>
+            <MunsellColour>
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+            </MunsellColour>
+            <PH>
+              <double>6.318</double>
+              <double>6.318</double>
+              <double>5.902</double>
+              <double>5.9476</double>
+              <double>5.959</double>
+              <double>6.7</double>
+              <double>6.7</double>
+              <double>7.9</double>
+              <double>7.9</double>
+              <double>7.9</double>
+              <double>7.9</double>
+              <double>8</double>
+              <double>8</double>
+            </PH>
+            <ParticleSizeSand>
+              <double>38.29</double>
+              <double>38.29</double>
+              <double>37.95</double>
+              <double>36.57</double>
+              <double>36.23</double>
+              <double>34</double>
+              <double>34</double>
+              <double>37</double>
+              <double>37</double>
+              <double>37</double>
+              <double>37</double>
+              <double>37</double>
+              <double>37</double>
+            </ParticleSizeSand>
+            <ParticleSizeSilt>
+              <double>36.04</double>
+              <double>36.04</double>
+              <double>35.65</double>
+              <double>35.65</double>
+              <double>35.65</double>
+              <double>37</double>
+              <double>37</double>
+              <double>36</double>
+              <double>36</double>
+              <double>36</double>
+              <double>36</double>
+              <double>36</double>
+              <double>36</double>
+            </ParticleSizeSilt>
+            <ParticleSizeClay>
+              <double>25.67</double>
+              <double>25.67</double>
+              <double>26.43</double>
+              <double>28.09</double>
+              <double>28.5</double>
+              <double>29</double>
+              <double>29</double>
+              <double>27</double>
+              <double>27</double>
+              <double>27</double>
+              <double>27</double>
+              <double>27</double>
+              <double>27</double>
+            </ParticleSizeClay>
+            <PHUnits>Water</PHUnits>
+            <BoronUnits>HotWater</BoronUnits>
+          </Analysis>
+          <Sample name="Initial nitrogen">
+            <Thickness>
+              <double>37</double>
+              <double>38</double>
+              <double>50</double>
+              <double>90</double>
+              <double>85</double>
+              <double>100</double>
+              <double>200</double>
+              <double>300</double>
+              <double>300</double>
+              <double>320</double>
+              <double>300</double>
+              <double>180</double>
+              <double>400</double>
+            </Thickness>
+            <NO3>
+              <double>1</double>
+              <double>1</double>
+              <double>3</double>
+              <double>5</double>
+              <double>10</double>
+              <double>10</double>
+              <double>10</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>1</double>
+              <double>1</double>
+            </NO3>
+            <NH4>
+              <double>1</double>
+              <double>0.9</double>
+              <double>1.2</double>
+              <double>0.5</double>
+              <double>0.4</double>
+              <double>0.3</double>
+              <double>0.4</double>
+              <double>0.5</double>
+              <double>0.2</double>
+              <double>0.7</double>
+              <double>0.5</double>
+              <double>0.5</double>
+              <double>0.5</double>
+            </NH4>
+            <SW>
+              <double>0.252</double>
+              <double>0.284</double>
+              <double>0.246</double>
+              <double>0.244</double>
+              <double>0.281</double>
+              <double>0.252</double>
+              <double>0.252</double>
+              <double>0.284</double>
+              <double>0.284</double>
+              <double>0.296</double>
+              <double>0.296</double>
+              <double>0.274</double>
+              <double>0.272</double>
+            </SW>
+            <NO3Units>kgha</NO3Units>
+            <NH4Units>kgha</NH4Units>
+            <SWUnits>Volumetric</SWUnits>
+            <OCUnits>Total</OCUnits>
+            <PHUnits>Water</PHUnits>
+          </Sample>
+          <Swim>
+            <Salb>0.13</Salb>
+            <CN2Bare>65</CN2Bare>
+            <CNRed>20</CNRed>
+            <CNCov>0.8</CNCov>
+            <KDul>0.3</KDul>
+            <PSIDul>-100</PSIDul>
+            <VC>true</VC>
+            <DTmin>0</DTmin>
+            <DTmax>1440</DTmax>
+            <MaxWaterIncrement>10</MaxWaterIncrement>
+            <SpaceWeightingFactor>0</SpaceWeightingFactor>
+            <SoluteSpaceWeightingFactor>0</SoluteSpaceWeightingFactor>
+            <Diagnostics>false</Diagnostics>
+            <SwimSoluteParameters>
+              <Dis>15</Dis>
+              <Disp>1</Disp>
+              <A>1</A>
+              <DTHC>0</DTHC>
+              <DTHP>1</DTHP>
+              <WaterTableCl>0</WaterTableCl>
+              <WaterTableNO3>0</WaterTableNO3>
+              <WaterTableNH4>0</WaterTableNH4>
+              <WaterTableUrea>0</WaterTableUrea>
+              <WaterTableTracer>0</WaterTableTracer>
+              <WaterTableMineralisationInhibitor>0</WaterTableMineralisationInhibitor>
+              <WaterTableUreaseInhibitor>0</WaterTableUreaseInhibitor>
+              <WaterTableNitrificationInhibitor>0</WaterTableNitrificationInhibitor>
+              <WaterTableDenitrificationInhibitor>0</WaterTableDenitrificationInhibitor>
+              <Thickness>
+                <double>1000</double>
+                <double>1000</double>
+                <double>1000</double>
+              </Thickness>
+              <NO3Exco>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+              </NO3Exco>
+              <NO3FIP>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </NO3FIP>
+              <NH4Exco>
+                <double>100</double>
+                <double>100</double>
+                <double>100</double>
+              </NH4Exco>
+              <NH4FIP>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </NH4FIP>
+              <UreaExco>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+              </UreaExco>
+              <UreaFIP>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </UreaFIP>
+              <ClExco>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+              </ClExco>
+              <ClFIP>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </ClFIP>
+            </SwimSoluteParameters>
+            <SwimWaterTable>
+              <WaterTableDepth>1070</WaterTableDepth>
+            </SwimWaterTable>
+            <SwimSubsurfaceDrain>
+              <DrainDepth>1070</DrainDepth>
+              <DrainSpacing>13500</DrainSpacing>
+              <DrainRadius>52</DrainRadius>
+              <Klat>2800</Klat>
+              <ImpermDepth>3900</ImpermDepth>
+            </SwimSubsurfaceDrain>
           </Swim>
           <Water>
             <Thickness>
@@ -8988,592 +9323,6 @@ public class Script
             </operation>
           </operations>
         </folder>
-        <Soil name="NicolletRanae_InitializedPrairie">
-          <RecordNumber>0</RecordNumber>
-          <NearestTown>Ames</NearestTown>
-          <State>Iowa</State>
-          <Country>US</Country>
-          <ApsoilNumber>34</ApsoilNumber>
-          <Latitude>0</Latitude>
-          <Longitude>0</Longitude>
-          <YearOfSampling>0</YearOfSampling>
-          <DataSource>web soil survey data revised</DataSource>
-          <SoilTemperature2>
-            <MaxTTimeDefault>14</MaxTTimeDefault>
-            <BoundaryLayerConductanceSource>calc</BoundaryLayerConductanceSource>
-            <BoundaryLayerConductance>20</BoundaryLayerConductance>
-            <BoundaryLayerConductanceIterations>1</BoundaryLayerConductanceIterations>
-            <NetRadiationSource>calc</NetRadiationSource>
-            <DefaultWindSpeed>1.5</DefaultWindSpeed>
-            <DefaultAltitude>270</DefaultAltitude>
-            <DefaultInstrumentHeight>1.2</DefaultInstrumentHeight>
-            <BareSoilHeight>2</BareSoilHeight>
-          </SoilTemperature2>
-          <SoilOrganicMatter>
-            <RootCN>22</RootCN>
-            <RootWt>776</RootWt>
-            <SoilCN>11</SoilCN>
-            <EnrACoeff>7.4</EnrACoeff>
-            <EnrBCoeff>0.2</EnrBCoeff>
-            <Thickness>
-              <double>37</double>
-              <double>38</double>
-              <double>50</double>
-              <double>90</double>
-              <double>85</double>
-              <double>100</double>
-              <double>200</double>
-              <double>300</double>
-              <double>300</double>
-              <double>320</double>
-              <double>300</double>
-              <double>180</double>
-              <double>400</double>
-            </Thickness>
-            <OC>
-              <double>3.02</double>
-              <double>2.94</double>
-              <double>2.6</double>
-              <double>2.33</double>
-              <double>2.1</double>
-              <double>1.31</double>
-              <double>1.33</double>
-              <double>1.15</double>
-              <double>0.49</double>
-              <double>0.16</double>
-              <double>0.1</double>
-              <double>0.05</double>
-              <double>0.01</double>
-            </OC>
-            <FBiom>
-              <double>0.08</double>
-              <double>0.092</double>
-              <double>0.057</double>
-              <double>0.011</double>
-              <double>0.011</double>
-              <double>0.014</double>
-              <double>0.011</double>
-              <double>0.01</double>
-              <double>0.01</double>
-              <double>0.01</double>
-              <double>0.01</double>
-              <double>0.01</double>
-              <double>0.01</double>
-            </FBiom>
-            <FInert>
-              <double>0.319</double>
-              <double>0.328</double>
-              <double>0.386</double>
-              <double>0.452</double>
-              <double>0.493</double>
-              <double>0.533</double>
-              <double>0.75</double>
-              <double>0.82</double>
-              <double>0.9</double>
-              <double>0.95</double>
-              <double>0.95</double>
-              <double>0.99</double>
-              <double>0.99</double>
-            </FInert>
-            <OCUnits>Total</OCUnits>
-          </SoilOrganicMatter>
-          <Analysis>
-            <Thickness>
-              <double>37</double>
-              <double>38</double>
-              <double>50</double>
-              <double>90</double>
-              <double>85</double>
-              <double>100</double>
-              <double>200</double>
-              <double>300</double>
-              <double>300</double>
-              <double>320</double>
-              <double>300</double>
-              <double>180</double>
-              <double>400</double>
-            </Thickness>
-            <Texture>
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-            </Texture>
-            <MunsellColour>
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-              <string />
-            </MunsellColour>
-            <PH>
-              <double>6.318</double>
-              <double>6.318</double>
-              <double>5.902</double>
-              <double>5.9476</double>
-              <double>5.959</double>
-              <double>6.7</double>
-              <double>6.7</double>
-              <double>7.9</double>
-              <double>7.9</double>
-              <double>7.9</double>
-              <double>7.9</double>
-              <double>8</double>
-              <double>8</double>
-            </PH>
-            <ParticleSizeSand>
-              <double>38.29</double>
-              <double>38.29</double>
-              <double>37.95</double>
-              <double>36.57</double>
-              <double>36.23</double>
-              <double>34</double>
-              <double>34</double>
-              <double>37</double>
-              <double>37</double>
-              <double>37</double>
-              <double>37</double>
-              <double>37</double>
-              <double>37</double>
-            </ParticleSizeSand>
-            <ParticleSizeSilt>
-              <double>36.04</double>
-              <double>36.04</double>
-              <double>35.65</double>
-              <double>35.65</double>
-              <double>35.65</double>
-              <double>37</double>
-              <double>37</double>
-              <double>36</double>
-              <double>36</double>
-              <double>36</double>
-              <double>36</double>
-              <double>36</double>
-              <double>36</double>
-            </ParticleSizeSilt>
-            <ParticleSizeClay>
-              <double>25.67</double>
-              <double>25.67</double>
-              <double>26.43</double>
-              <double>28.09</double>
-              <double>28.5</double>
-              <double>29</double>
-              <double>29</double>
-              <double>27</double>
-              <double>27</double>
-              <double>27</double>
-              <double>27</double>
-              <double>27</double>
-              <double>27</double>
-            </ParticleSizeClay>
-            <PHUnits>Water</PHUnits>
-            <BoronUnits>HotWater</BoronUnits>
-          </Analysis>
-          <Sample name="Initial nitrogen">
-            <Thickness>
-              <double>37</double>
-              <double>38</double>
-              <double>50</double>
-              <double>90</double>
-              <double>85</double>
-              <double>100</double>
-              <double>200</double>
-              <double>300</double>
-              <double>300</double>
-              <double>320</double>
-              <double>300</double>
-              <double>180</double>
-              <double>400</double>
-            </Thickness>
-            <NO3>
-              <double>1</double>
-              <double>1</double>
-              <double>3</double>
-              <double>5</double>
-              <double>10</double>
-              <double>10</double>
-              <double>10</double>
-              <double>0</double>
-              <double>0</double>
-              <double>0</double>
-              <double>0</double>
-              <double>1</double>
-              <double>1</double>
-            </NO3>
-            <NH4>
-              <double>1</double>
-              <double>0.9</double>
-              <double>1.2</double>
-              <double>0.5</double>
-              <double>0.4</double>
-              <double>0.3</double>
-              <double>0.4</double>
-              <double>0.5</double>
-              <double>0.2</double>
-              <double>0.7</double>
-              <double>0.5</double>
-              <double>0.5</double>
-              <double>0.5</double>
-            </NH4>
-            <SW>
-              <double>0.252</double>
-              <double>0.284</double>
-              <double>0.246</double>
-              <double>0.244</double>
-              <double>0.281</double>
-              <double>0.252</double>
-              <double>0.252</double>
-              <double>0.284</double>
-              <double>0.284</double>
-              <double>0.296</double>
-              <double>0.296</double>
-              <double>0.274</double>
-              <double>0.272</double>
-            </SW>
-            <NO3Units>kgha</NO3Units>
-            <NH4Units>kgha</NH4Units>
-            <SWUnits>Volumetric</SWUnits>
-            <OCUnits>Total</OCUnits>
-            <PHUnits>Water</PHUnits>
-          </Sample>
-          <Swim>
-            <Salb>0.13</Salb>
-            <CN2Bare>65</CN2Bare>
-            <CNRed>20</CNRed>
-            <CNCov>0.8</CNCov>
-            <KDul>0.3</KDul>
-            <PSIDul>-100</PSIDul>
-            <VC>true</VC>
-            <DTmin>0</DTmin>
-            <DTmax>1440</DTmax>
-            <MaxWaterIncrement>10</MaxWaterIncrement>
-            <SpaceWeightingFactor>0</SpaceWeightingFactor>
-            <SoluteSpaceWeightingFactor>0</SoluteSpaceWeightingFactor>
-            <Diagnostics>false</Diagnostics>
-            <SwimSoluteParameters>
-              <Dis>15</Dis>
-              <Disp>1</Disp>
-              <A>1</A>
-              <DTHC>0</DTHC>
-              <DTHP>1</DTHP>
-              <WaterTableCl>0</WaterTableCl>
-              <WaterTableNO3>0</WaterTableNO3>
-              <WaterTableNH4>0</WaterTableNH4>
-              <WaterTableUrea>0</WaterTableUrea>
-              <WaterTableTracer>0</WaterTableTracer>
-              <WaterTableMineralisationInhibitor>0</WaterTableMineralisationInhibitor>
-              <WaterTableUreaseInhibitor>0</WaterTableUreaseInhibitor>
-              <WaterTableNitrificationInhibitor>0</WaterTableNitrificationInhibitor>
-              <WaterTableDenitrificationInhibitor>0</WaterTableDenitrificationInhibitor>
-              <Thickness>
-                <double>1000</double>
-                <double>1000</double>
-                <double>1000</double>
-              </Thickness>
-              <NO3Exco>
-                <double>0</double>
-                <double>0</double>
-                <double>0</double>
-              </NO3Exco>
-              <NO3FIP>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-              </NO3FIP>
-              <NH4Exco>
-                <double>100</double>
-                <double>100</double>
-                <double>100</double>
-              </NH4Exco>
-              <NH4FIP>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-              </NH4FIP>
-              <UreaExco>
-                <double>0</double>
-                <double>0</double>
-                <double>0</double>
-              </UreaExco>
-              <UreaFIP>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-              </UreaFIP>
-              <ClExco>
-                <double>0</double>
-                <double>0</double>
-                <double>0</double>
-              </ClExco>
-              <ClFIP>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-              </ClFIP>
-            </SwimSoluteParameters>
-            <SwimWaterTable>
-              <WaterTableDepth>1070</WaterTableDepth>
-            </SwimWaterTable>
-            <SwimSubsurfaceDrain>
-              <DrainDepth>1070</DrainDepth>
-              <DrainSpacing>13500</DrainSpacing>
-              <DrainRadius>52</DrainRadius>
-              <Klat>2800</Klat>
-              <ImpermDepth>3900</ImpermDepth>
-            </SwimSubsurfaceDrain>
-          </Swim>
-          <Water>
-            <Thickness>
-              <double>37</double>
-              <double>38</double>
-              <double>50</double>
-              <double>90</double>
-              <double>85</double>
-              <double>100</double>
-              <double>200</double>
-              <double>300</double>
-              <double>300</double>
-              <double>320</double>
-              <double>300</double>
-              <double>180</double>
-              <double>400</double>
-            </Thickness>
-            <BD>
-              <double>1.21</double>
-              <double>1.21</double>
-              <double>1.39</double>
-              <double>1.478</double>
-              <double>1.5</double>
-              <double>1.5</double>
-              <double>1.5</double>
-              <double>1.551</double>
-              <double>1.551</double>
-              <double>1.551</double>
-              <double>1.551</double>
-              <double>1.84</double>
-              <double>1.83</double>
-            </BD>
-            <AirDry>
-              <double>0.12</double>
-              <double>0.14</double>
-              <double>0.11</double>
-              <double>0.11</double>
-              <double>0.12</double>
-              <double>0.125</double>
-              <double>0.132</double>
-              <double>0.1</double>
-              <double>0.11</double>
-              <double>0.138</double>
-              <double>0.165</double>
-              <double>0.146</double>
-              <double>0.144</double>
-            </AirDry>
-            <LL15>
-              <double>0.14</double>
-              <double>0.161</double>
-              <double>0.11</double>
-              <double>0.11</double>
-              <double>0.12</double>
-              <double>0.125</double>
-              <double>0.132</double>
-              <double>0.1</double>
-              <double>0.11</double>
-              <double>0.138</double>
-              <double>0.165</double>
-              <double>0.146</double>
-              <double>0.144</double>
-            </LL15>
-            <DUL>
-              <double>0.263</double>
-              <double>0.296</double>
-              <double>0.256</double>
-              <double>0.254</double>
-              <double>0.293</double>
-              <double>0.262</double>
-              <double>0.262</double>
-              <double>0.296</double>
-              <double>0.296</double>
-              <double>0.296</double>
-              <double>0.296</double>
-              <double>0.274</double>
-              <double>0.272</double>
-            </DUL>
-            <SAT>
-              <double>0.435</double>
-              <double>0.462</double>
-              <double>0.443</double>
-              <double>0.446</double>
-              <double>0.478</double>
-              <double>0.455</double>
-              <double>0.41</double>
-              <double>0.394</double>
-              <double>0.36</double>
-              <double>0.34</double>
-              <double>0.32</double>
-              <double>0.31</double>
-              <double>0.3</double>
-            </SAT>
-            <KS>
-              <double>500</double>
-              <double>500</double>
-              <double>500</double>
-              <double>500</double>
-              <double>500</double>
-              <double>500</double>
-              <double>500</double>
-              <double>250</double>
-              <double>20</double>
-              <double>6</double>
-              <double>1.5</double>
-              <double>0.2</double>
-              <double>0.01</double>
-            </KS>
-            <SoilCrop name="ryegrass_clover_paspalum">
-              <Thickness>
-                <double>37</double>
-                <double>38</double>
-                <double>50</double>
-                <double>90</double>
-                <double>85</double>
-                <double>100</double>
-                <double>200</double>
-                <double>300</double>
-                <double>300</double>
-                <double>320</double>
-                <double>300</double>
-                <double>180</double>
-                <double>400</double>
-              </Thickness>
-              <LL>
-                <double>0.14</double>
-                <double>0.161</double>
-                <double>0.11</double>
-                <double>0.11</double>
-                <double>0.12</double>
-                <double>0.125</double>
-                <double>0.132</double>
-                <double>0.1</double>
-                <double>0.11</double>
-                <double>0.138</double>
-                <double>0.165</double>
-                <double>0.146</double>
-                <double>0.144</double>
-              </LL>
-              <KL>
-                <double>0.1</double>
-                <double>0.1</double>
-                <double>0.1</double>
-                <double>0.09</double>
-                <double>0.09</double>
-                <double>0.08</double>
-                <double>0.07</double>
-                <double>0.07</double>
-                <double>0.07</double>
-                <double>0.06</double>
-                <double>0.01</double>
-                <double>0</double>
-                <double>0</double>
-              </KL>
-              <XF>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>0.2</double>
-                <double>0</double>
-              </XF>
-            </SoilCrop>
-            <SoilCrop name="maize">
-              <Thickness>
-                <double>37</double>
-                <double>38</double>
-                <double>50</double>
-                <double>90</double>
-                <double>85</double>
-                <double>100</double>
-                <double>200</double>
-                <double>300</double>
-                <double>300</double>
-                <double>320</double>
-                <double>300</double>
-                <double>180</double>
-                <double>400</double>
-              </Thickness>
-              <LL>
-                <double>0.14</double>
-                <double>0.161</double>
-                <double>0.11</double>
-                <double>0.11</double>
-                <double>0.12</double>
-                <double>0.125</double>
-                <double>0.132</double>
-                <double>0.1</double>
-                <double>0.11</double>
-                <double>0.138</double>
-                <double>0.165</double>
-                <double>0.146</double>
-                <double>0.144</double>
-              </LL>
-              <KL>
-                <double>0.1</double>
-                <double>0.1</double>
-                <double>0.1</double>
-                <double>0.02</double>
-                <double>0.02</double>
-                <double>0.01</double>
-                <double>0.01</double>
-                <double>0.01</double>
-                <double>0.01</double>
-                <double>0</double>
-                <double>0</double>
-                <double>0</double>
-                <double>0</double>
-              </KL>
-              <XF>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>0</double>
-                <double>0</double>
-              </XF>
-            </SoilCrop>
-          </Water>
-          <ini>
-            <filename input="yes">Soil-prairies.xml</filename>
-          </ini>
-        </Soil>
         <micromet name="Micromet" shortcut="/simulations/Prairies calibration sep 2016/fertil/paddock/Micromet" />
         <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/Prairies calibration sep 2016/fertil/paddock/SurfaceOrganicMatter" />
         <outputfile shortcut="/simulations/Prairies calibration sep 2016/fertil/paddock/outputfile">
@@ -10218,6 +9967,589 @@ public class Script
         <manager name="unit convertor" shortcut="/simulations/Prairies calibration sep 2016/fertil/paddock/unit convertor" />
         <manager2 name="SpecialReporter" shortcut="/simulations/Prairies calibration sep 2016/fertil/paddock/SpecialReporter" />
         <tracker shortcut="/simulations/Prairies calibration sep 2016/fertil/paddock/tracker" />
+        <Soil name="NicolletRanae_InitializedPrairie">
+          <RecordNumber>0</RecordNumber>
+          <NearestTown>Ames</NearestTown>
+          <State>Iowa</State>
+          <Country>US</Country>
+          <ApsoilNumber>34</ApsoilNumber>
+          <Latitude>0</Latitude>
+          <Longitude>0</Longitude>
+          <YearOfSampling>0</YearOfSampling>
+          <DataSource>web soil survey data revised</DataSource>
+          <SoilTemperature2>
+            <MaxTTimeDefault>14</MaxTTimeDefault>
+            <BoundaryLayerConductanceSource>calc</BoundaryLayerConductanceSource>
+            <BoundaryLayerConductance>20</BoundaryLayerConductance>
+            <BoundaryLayerConductanceIterations>1</BoundaryLayerConductanceIterations>
+            <NetRadiationSource>calc</NetRadiationSource>
+            <DefaultWindSpeed>3</DefaultWindSpeed>
+            <DefaultAltitude>18</DefaultAltitude>
+            <DefaultInstrumentHeight>1.2</DefaultInstrumentHeight>
+            <BareSoilHeight>57</BareSoilHeight>
+          </SoilTemperature2>
+          <SoilOrganicMatter>
+            <RootCN>22</RootCN>
+            <RootWt>776</RootWt>
+            <SoilCN>11</SoilCN>
+            <EnrACoeff>7.4</EnrACoeff>
+            <EnrBCoeff>0.2</EnrBCoeff>
+            <Thickness>
+              <double>37</double>
+              <double>38</double>
+              <double>50</double>
+              <double>90</double>
+              <double>85</double>
+              <double>100</double>
+              <double>200</double>
+              <double>300</double>
+              <double>300</double>
+              <double>320</double>
+              <double>300</double>
+              <double>180</double>
+              <double>400</double>
+            </Thickness>
+            <OC>
+              <double>3.02</double>
+              <double>2.94</double>
+              <double>2.6</double>
+              <double>2.33</double>
+              <double>2.1</double>
+              <double>1.31</double>
+              <double>1.33</double>
+              <double>1.15</double>
+              <double>0.49</double>
+              <double>0.16</double>
+              <double>0.1</double>
+              <double>0.05</double>
+              <double>0.01</double>
+            </OC>
+            <FBiom>
+              <double>0.08</double>
+              <double>0.092</double>
+              <double>0.057</double>
+              <double>0.011</double>
+              <double>0.011</double>
+              <double>0.014</double>
+              <double>0.011</double>
+              <double>0.01</double>
+              <double>0.01</double>
+              <double>0.01</double>
+              <double>0.01</double>
+              <double>0.01</double>
+              <double>0.01</double>
+            </FBiom>
+            <FInert>
+              <double>0.319</double>
+              <double>0.328</double>
+              <double>0.386</double>
+              <double>0.452</double>
+              <double>0.493</double>
+              <double>0.533</double>
+              <double>0.75</double>
+              <double>0.82</double>
+              <double>0.9</double>
+              <double>0.95</double>
+              <double>0.95</double>
+              <double>0.99</double>
+              <double>0.99</double>
+            </FInert>
+            <OCUnits>Total</OCUnits>
+          </SoilOrganicMatter>
+          <Analysis>
+            <Thickness>
+              <double>37</double>
+              <double>38</double>
+              <double>50</double>
+              <double>90</double>
+              <double>85</double>
+              <double>100</double>
+              <double>200</double>
+              <double>300</double>
+              <double>300</double>
+              <double>320</double>
+              <double>300</double>
+              <double>180</double>
+              <double>400</double>
+            </Thickness>
+            <Texture>
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+            </Texture>
+            <MunsellColour>
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+            </MunsellColour>
+            <PH>
+              <double>6.318</double>
+              <double>6.318</double>
+              <double>5.902</double>
+              <double>5.9476</double>
+              <double>5.959</double>
+              <double>6.7</double>
+              <double>6.7</double>
+              <double>7.9</double>
+              <double>7.9</double>
+              <double>7.9</double>
+              <double>7.9</double>
+              <double>8</double>
+              <double>8</double>
+            </PH>
+            <ParticleSizeSand>
+              <double>38.29</double>
+              <double>38.29</double>
+              <double>37.95</double>
+              <double>36.57</double>
+              <double>36.23</double>
+              <double>34</double>
+              <double>34</double>
+              <double>37</double>
+              <double>37</double>
+              <double>37</double>
+              <double>37</double>
+              <double>37</double>
+              <double>37</double>
+            </ParticleSizeSand>
+            <ParticleSizeSilt>
+              <double>36.04</double>
+              <double>36.04</double>
+              <double>35.65</double>
+              <double>35.65</double>
+              <double>35.65</double>
+              <double>37</double>
+              <double>37</double>
+              <double>36</double>
+              <double>36</double>
+              <double>36</double>
+              <double>36</double>
+              <double>36</double>
+              <double>36</double>
+            </ParticleSizeSilt>
+            <ParticleSizeClay>
+              <double>25.67</double>
+              <double>25.67</double>
+              <double>26.43</double>
+              <double>28.09</double>
+              <double>28.5</double>
+              <double>29</double>
+              <double>29</double>
+              <double>27</double>
+              <double>27</double>
+              <double>27</double>
+              <double>27</double>
+              <double>27</double>
+              <double>27</double>
+            </ParticleSizeClay>
+            <PHUnits>Water</PHUnits>
+            <BoronUnits>HotWater</BoronUnits>
+          </Analysis>
+          <Sample name="Initial nitrogen">
+            <Thickness>
+              <double>37</double>
+              <double>38</double>
+              <double>50</double>
+              <double>90</double>
+              <double>85</double>
+              <double>100</double>
+              <double>200</double>
+              <double>300</double>
+              <double>300</double>
+              <double>320</double>
+              <double>300</double>
+              <double>180</double>
+              <double>400</double>
+            </Thickness>
+            <NO3>
+              <double>1</double>
+              <double>1</double>
+              <double>3</double>
+              <double>5</double>
+              <double>10</double>
+              <double>10</double>
+              <double>10</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>1</double>
+              <double>1</double>
+            </NO3>
+            <NH4>
+              <double>1</double>
+              <double>0.9</double>
+              <double>1.2</double>
+              <double>0.5</double>
+              <double>0.4</double>
+              <double>0.3</double>
+              <double>0.4</double>
+              <double>0.5</double>
+              <double>0.2</double>
+              <double>0.7</double>
+              <double>0.5</double>
+              <double>0.5</double>
+              <double>0.5</double>
+            </NH4>
+            <SW>
+              <double>0.252</double>
+              <double>0.284</double>
+              <double>0.246</double>
+              <double>0.244</double>
+              <double>0.281</double>
+              <double>0.252</double>
+              <double>0.252</double>
+              <double>0.284</double>
+              <double>0.284</double>
+              <double>0.296</double>
+              <double>0.296</double>
+              <double>0.274</double>
+              <double>0.272</double>
+            </SW>
+            <NO3Units>kgha</NO3Units>
+            <NH4Units>kgha</NH4Units>
+            <SWUnits>Volumetric</SWUnits>
+            <OCUnits>Total</OCUnits>
+            <PHUnits>Water</PHUnits>
+          </Sample>
+          <Swim>
+            <Salb>0.13</Salb>
+            <CN2Bare>65</CN2Bare>
+            <CNRed>20</CNRed>
+            <CNCov>0.8</CNCov>
+            <KDul>0.3</KDul>
+            <PSIDul>-100</PSIDul>
+            <VC>true</VC>
+            <DTmin>0</DTmin>
+            <DTmax>1440</DTmax>
+            <MaxWaterIncrement>10</MaxWaterIncrement>
+            <SpaceWeightingFactor>0</SpaceWeightingFactor>
+            <SoluteSpaceWeightingFactor>0</SoluteSpaceWeightingFactor>
+            <Diagnostics>false</Diagnostics>
+            <SwimSoluteParameters>
+              <Dis>15</Dis>
+              <Disp>1</Disp>
+              <A>1</A>
+              <DTHC>0</DTHC>
+              <DTHP>1</DTHP>
+              <WaterTableCl>0</WaterTableCl>
+              <WaterTableNO3>0</WaterTableNO3>
+              <WaterTableNH4>0</WaterTableNH4>
+              <WaterTableUrea>0</WaterTableUrea>
+              <WaterTableTracer>0</WaterTableTracer>
+              <WaterTableMineralisationInhibitor>0</WaterTableMineralisationInhibitor>
+              <WaterTableUreaseInhibitor>0</WaterTableUreaseInhibitor>
+              <WaterTableNitrificationInhibitor>0</WaterTableNitrificationInhibitor>
+              <WaterTableDenitrificationInhibitor>0</WaterTableDenitrificationInhibitor>
+              <Thickness>
+                <double>1000</double>
+                <double>1000</double>
+                <double>1000</double>
+              </Thickness>
+              <NO3Exco>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+              </NO3Exco>
+              <NO3FIP>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </NO3FIP>
+              <NH4Exco>
+                <double>100</double>
+                <double>100</double>
+                <double>100</double>
+              </NH4Exco>
+              <NH4FIP>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </NH4FIP>
+              <UreaExco>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+              </UreaExco>
+              <UreaFIP>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </UreaFIP>
+              <ClExco>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+              </ClExco>
+              <ClFIP>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+              </ClFIP>
+            </SwimSoluteParameters>
+            <SwimWaterTable>
+              <WaterTableDepth>1070</WaterTableDepth>
+            </SwimWaterTable>
+            <SwimSubsurfaceDrain>
+              <DrainDepth>1070</DrainDepth>
+              <DrainSpacing>13500</DrainSpacing>
+              <DrainRadius>52</DrainRadius>
+              <Klat>2800</Klat>
+              <ImpermDepth>3900</ImpermDepth>
+            </SwimSubsurfaceDrain>
+          </Swim>
+          <Water>
+            <Thickness>
+              <double>37</double>
+              <double>38</double>
+              <double>50</double>
+              <double>90</double>
+              <double>85</double>
+              <double>100</double>
+              <double>200</double>
+              <double>300</double>
+              <double>300</double>
+              <double>320</double>
+              <double>300</double>
+              <double>180</double>
+              <double>400</double>
+            </Thickness>
+            <BD>
+              <double>1.21</double>
+              <double>1.21</double>
+              <double>1.39</double>
+              <double>1.478</double>
+              <double>1.5</double>
+              <double>1.5</double>
+              <double>1.5</double>
+              <double>1.551</double>
+              <double>1.551</double>
+              <double>1.551</double>
+              <double>1.551</double>
+              <double>1.84</double>
+              <double>1.83</double>
+            </BD>
+            <AirDry>
+              <double>0.12</double>
+              <double>0.14</double>
+              <double>0.11</double>
+              <double>0.11</double>
+              <double>0.12</double>
+              <double>0.125</double>
+              <double>0.132</double>
+              <double>0.1</double>
+              <double>0.11</double>
+              <double>0.138</double>
+              <double>0.165</double>
+              <double>0.146</double>
+              <double>0.144</double>
+            </AirDry>
+            <LL15>
+              <double>0.14</double>
+              <double>0.161</double>
+              <double>0.11</double>
+              <double>0.11</double>
+              <double>0.12</double>
+              <double>0.125</double>
+              <double>0.132</double>
+              <double>0.1</double>
+              <double>0.11</double>
+              <double>0.138</double>
+              <double>0.165</double>
+              <double>0.146</double>
+              <double>0.144</double>
+            </LL15>
+            <DUL>
+              <double>0.263</double>
+              <double>0.296</double>
+              <double>0.256</double>
+              <double>0.254</double>
+              <double>0.293</double>
+              <double>0.262</double>
+              <double>0.262</double>
+              <double>0.296</double>
+              <double>0.296</double>
+              <double>0.296</double>
+              <double>0.296</double>
+              <double>0.274</double>
+              <double>0.272</double>
+            </DUL>
+            <SAT>
+              <double>0.435</double>
+              <double>0.462</double>
+              <double>0.443</double>
+              <double>0.446</double>
+              <double>0.478</double>
+              <double>0.455</double>
+              <double>0.41</double>
+              <double>0.394</double>
+              <double>0.36</double>
+              <double>0.34</double>
+              <double>0.32</double>
+              <double>0.31</double>
+              <double>0.3</double>
+            </SAT>
+            <KS>
+              <double>500</double>
+              <double>500</double>
+              <double>500</double>
+              <double>500</double>
+              <double>500</double>
+              <double>500</double>
+              <double>500</double>
+              <double>250</double>
+              <double>20</double>
+              <double>6</double>
+              <double>1.5</double>
+              <double>0.2</double>
+              <double>0.01</double>
+            </KS>
+            <SoilCrop name="ryegrass_clover_paspalum">
+              <Thickness>
+                <double>37</double>
+                <double>38</double>
+                <double>50</double>
+                <double>90</double>
+                <double>85</double>
+                <double>100</double>
+                <double>200</double>
+                <double>300</double>
+                <double>300</double>
+                <double>320</double>
+                <double>300</double>
+                <double>180</double>
+                <double>400</double>
+              </Thickness>
+              <LL>
+                <double>0.14</double>
+                <double>0.161</double>
+                <double>0.11</double>
+                <double>0.11</double>
+                <double>0.12</double>
+                <double>0.125</double>
+                <double>0.132</double>
+                <double>0.1</double>
+                <double>0.11</double>
+                <double>0.138</double>
+                <double>0.165</double>
+                <double>0.146</double>
+                <double>0.144</double>
+              </LL>
+              <KL>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+              </KL>
+              <XF>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>0.2</double>
+                <double>0</double>
+              </XF>
+            </SoilCrop>
+            <SoilCrop name="maize">
+              <Thickness>
+                <double>37</double>
+                <double>38</double>
+                <double>50</double>
+                <double>90</double>
+                <double>85</double>
+                <double>100</double>
+                <double>200</double>
+                <double>300</double>
+                <double>300</double>
+                <double>320</double>
+                <double>300</double>
+                <double>180</double>
+                <double>400</double>
+              </Thickness>
+              <LL>
+                <double>0.14</double>
+                <double>0.161</double>
+                <double>0.11</double>
+                <double>0.11</double>
+                <double>0.12</double>
+                <double>0.125</double>
+                <double>0.132</double>
+                <double>0.1</double>
+                <double>0.11</double>
+                <double>0.138</double>
+                <double>0.165</double>
+                <double>0.146</double>
+                <double>0.144</double>
+              </LL>
+              <KL>
+                <double>0.1</double>
+                <double>0.1</double>
+                <double>0.1</double>
+                <double>0.02</double>
+                <double>0.02</double>
+                <double>0.01</double>
+                <double>0.01</double>
+                <double>0.01</double>
+                <double>0.01</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
+              </KL>
+              <XF>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>1</double>
+                <double>0</double>
+                <double>0</double>
+              </XF>
+            </SoilCrop>
+          </Water>
+        </Soil>
       </area>
     </simulation>
     <GraphReport name="fom biom hum plots">
@@ -10679,6 +11011,8 @@ public class Script
     </Graph>
     <Graph name="Species DM live">
       <Legend>
+        <CheckedTitles> SpeciesAboveGroundWt(1)</CheckedTitles>
+        <CheckedTitles> SpeciesAboveGroundWt(2)</CheckedTitles>
       </Legend>
       <Plot name="Predicted">
         <SeriesType>Solid line</SeriesType>
@@ -10686,9 +11020,8 @@ public class Script
         <colour>
         </colour>
         <X>Date</X>
-        <Y>SpeciesLiveWt(1)</Y>
-        <Y>SpeciesLiveWt(2)</Y>
-        <Y>SpeciesLiveWt(3)</Y>
+        <Y>SpeciesAboveGroundWt(1)</Y>
+        <Y>SpeciesAboveGroundWt(2)</Y>
         <GDApsimFileReader name="ApsimFileReader" />
       </Plot>
     </Graph>
@@ -11183,6 +11516,8 @@ what needs to be done
       <Graph name="sw_5">
         <Format>AAEAAAD/////AQAAAAAAAAAMAgAAAFhUZWVDaGFydC5DbGllbnQsIFZlcnNpb249NC4xLjIwMTEuNzI4MywgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABXU3lzdGVtLldpbmRvd3MuRm9ybXMsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAQAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0nAAAAA4uWm9vbS5BbmltYXRlZBMuWm9vbS5BbmltYXRlZFN0ZXBzFC5QYW5uaW5nLk1vdXNlQnV0dG9uEC5DdXN0b21DaGFydFJlY3QXLlBhbmVsLkltYWdlQmV2ZWwuV2lkdGgbLlBhbmVsLkJldmVsLlN0cmluZ0NvbG9yT25lGy5QYW5lbC5CZXZlbC5TdHJpbmdDb2xvclR3bxIuUGFuZWwuQmV2ZWwuT3V0ZXISLlBhbmVsLkJydXNoLkNvbG9yEi5MZWdlbmQuQ2hlY2tCb3hlcxEuTGVnZW5kLkFsaWdubWVudCIuTGVnZW5kLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lIi5MZWdlbmQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28cLkxlZ2VuZC5CZXZlbC5TdHJpbmdDb2xvck9uZRwuTGVnZW5kLkJldmVsLlN0cmluZ0NvbG9yVHdvFi5MZWdlbmQuU2hhZG93LlZpc2libGUTLkxlZ2VuZC5UcmFuc3BhcmVudA0uSGVhZGVyLkxpbmVzES5IZWFkZXIuRm9udC5OYW1lES5IZWFkZXIuRm9udC5TaXplFi5IZWFkZXIuRm9udC5TaXplRmxvYXQcLkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvck9uZRwuSGVhZGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvHy5TdWJIZWFkZXIuQmV2ZWwuU3RyaW5nQ29sb3JPbmUfLlN1YkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvclR3bxwuRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yT25lHC5Gb290ZXIuQmV2ZWwuU3RyaW5nQ29sb3JUd28fLlN1YkZvb3Rlci5CZXZlbC5TdHJpbmdDb2xvck9uZR8uU3ViRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvFS5Bc3BlY3QuU21vb3RoaW5nTW9kZRkuQXNwZWN0LlRleHRSZW5kZXJpbmdIaW50GS5Bc3BlY3QuQ29sb3JQYWxldHRlSW5kZXgOLkFzcGVjdC5WaWV3M0QIU2VyaWVzLjAVLlNlcmllcy4wLkJydXNoLkNvbG9yFy5TZXJpZXMuMC5Qb2ludGVyLlN0eWxlFy5TZXJpZXMuMC5MaW5lUGVuLldpZHRoEy5TZXJpZXMuMC5Db2xvckVhY2gPLlNlcmllcy4wLkNvbG9yDy5TZXJpZXMuMC5UaXRsZQhTZXJpZXMuMRUuU2VyaWVzLjEuQnJ1c2guQ29sb3IZLlNlcmllcy4xLlBvaW50ZXIuVmlzaWJsZRcuU2VyaWVzLjEuUG9pbnRlci5TdHlsZRsuU2VyaWVzLjEuUG9pbnRlci5QZW4uQ29sb3IZLlNlcmllcy4xLkxpbmVQZW4uVmlzaWJsZRcuU2VyaWVzLjEuTGluZVBlbi5XaWR0aBMuU2VyaWVzLjEuQ29sb3JFYWNoDy5TZXJpZXMuMS5Db2xvcg8uU2VyaWVzLjEuVGl0bGUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JPbmUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JUd28hLldhbGxzLlJpZ2h0LkJldmVsLlN0cmluZ0NvbG9yT25lIS5XYWxscy5SaWdodC5CZXZlbC5TdHJpbmdDb2xvclR3byAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvck9uZSAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvclR3byIuV2FsbHMuQm90dG9tLkJldmVsLlN0cmluZ0NvbG9yT25lIi5XYWxscy5Cb3R0b20uQmV2ZWwuU3RyaW5nQ29sb3JUd28OLldhbGxzLlZpc2libGUcLkF4ZXMuTGVmdC5MYWJlbHMuU2VwYXJhdGlvbh0uQXhlcy5MZWZ0LkxhYmVscy5WYWx1ZUZvcm1hdBsuQXhlcy5MZWZ0LkxhYmVscy5Gb250Lk5hbWUbLkF4ZXMuTGVmdC5MYWJlbHMuRm9udC5TaXplIC5BeGVzLkxlZnQuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0Ji5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvFC5BeGVzLkxlZnQuQXV0b21hdGljGy5BeGVzLkxlZnQuQXV0b21hdGljTWF4aW11bRsuQXhlcy5MZWZ0LkF1dG9tYXRpY01pbmltdW0YLkF4ZXMuTGVmdC5BeGlzUGVuLldpZHRoGS5BeGVzLkxlZnQuQXhpc1Blbi5FbmRDYXAXLkF4ZXMuTGVmdC5HcmlkLlZpc2libGUYLkF4ZXMuTGVmdC5NYXhpbXVtT2Zmc2V0Ei5BeGVzLkxlZnQuTWF4aW11bRIuQXhlcy5MZWZ0Lk1pbmltdW0dLkF4ZXMuTGVmdC5NaW5vclRpY2tzLlZpc2libGUWLkF4ZXMuTGVmdC5UaWNrcy5Db2xvchouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuTmFtZRouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZR8uQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkxlZnQuVGl0bGUuRm9udC5TaGFkb3cuQnJ1c2guQ29sb3IhLkF4ZXMuTGVmdC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJS5BeGVzLkxlZnQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuTGVmdC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3bxsuQXhlcy5Ub3AuTGFiZWxzLlNlcGFyYXRpb24cLkF4ZXMuVG9wLkxhYmVscy5WYWx1ZUZvcm1hdBouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuTmFtZRouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZR8uQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0JS5BeGVzLlRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuVG9wLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxcuQXhlcy5Ub3AuQXhpc1Blbi5XaWR0aBguQXhlcy5Ub3AuQXhpc1Blbi5FbmRDYXAWLkF4ZXMuVG9wLkdyaWQuVmlzaWJsZRwuQXhlcy5Ub3AuTWlub3JUaWNrcy5WaXNpYmxlFS5BeGVzLlRvcC5UaWNrcy5Db2xvchkuQXhlcy5Ub3AuVGl0bGUuRm9udC5OYW1lGS5BeGVzLlRvcC5UaXRsZS5Gb250LlNpemUeLkF4ZXMuVG9wLlRpdGxlLkZvbnQuU2l6ZUZsb2F0IC5BeGVzLlRvcC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJC5BeGVzLlRvcC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvck9uZSQuQXhlcy5Ub3AuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28RLkF4ZXMuVG9wLlZpc2libGUdLkF4ZXMuUmlnaHQuTGFiZWxzLlNlcGFyYXRpb24eLkF4ZXMuUmlnaHQuTGFiZWxzLlZhbHVlRm9ybWF0HC5BeGVzLlJpZ2h0LkxhYmVscy5Gb250Lk5hbWUcLkF4ZXMuUmlnaHQuTGFiZWxzLkZvbnQuU2l6ZSEuQXhlcy5SaWdodC5MYWJlbHMuRm9udC5TaXplRmxvYXQnLkF4ZXMuUmlnaHQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLlJpZ2h0LkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxkuQXhlcy5SaWdodC5BeGlzUGVuLldpZHRoGi5BeGVzLlJpZ2h0LkF4aXNQZW4uRW5kQ2FwGC5BeGVzLlJpZ2h0LkdyaWQuVmlzaWJsZR4uQXhlcy5SaWdodC5NaW5vclRpY2tzLlZpc2libGUXLkF4ZXMuUmlnaHQuVGlja3MuQ29sb3IbLkF4ZXMuUmlnaHQuVGl0bGUuRm9udC5OYW1lGy5BeGVzLlJpZ2h0LlRpdGxlLkZvbnQuU2l6ZSAuQXhlcy5SaWdodC5UaXRsZS5Gb250LlNpemVGbG9hdCIuQXhlcy5SaWdodC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvEy5BeGVzLlJpZ2h0LlZpc2libGUeLkF4ZXMuQm90dG9tLkxhYmVscy5TZXBhcmF0aW9uIi5BeGVzLkJvdHRvbS5MYWJlbHMuRGF0ZVRpbWVGb3JtYXQfLkF4ZXMuQm90dG9tLkxhYmVscy5WYWx1ZUZvcm1hdB0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuTmFtZR0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZSIuQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkJvdHRvbS5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUoLkF4ZXMuQm90dG9tLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxYuQXhlcy5Cb3R0b20uQXV0b21hdGljHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNYXhpbXVtHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNaW5pbXVtGi5BeGVzLkJvdHRvbS5BeGlzUGVuLldpZHRoGy5BeGVzLkJvdHRvbS5BeGlzUGVuLkVuZENhcBkuQXhlcy5Cb3R0b20uR3JpZC5WaXNpYmxlGi5BeGVzLkJvdHRvbS5NYXhpbXVtT2Zmc2V0FC5BeGVzLkJvdHRvbS5NYXhpbXVtFC5BeGVzLkJvdHRvbS5NaW5pbXVtGi5BeGVzLkJvdHRvbS5NaW5pbXVtT2Zmc2V0Hy5BeGVzLkJvdHRvbS5NaW5vclRpY2tzLlZpc2libGUYLkF4ZXMuQm90dG9tLlRpY2tzLkNvbG9yHC5BeGVzLkJvdHRvbS5UaXRsZS5Gb250Lk5hbWUcLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuU2l6ZSEuQXhlcy5Cb3R0b20uVGl0bGUuRm9udC5TaXplRmxvYXQjLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuQnJ1c2guQ29sb3InLkF4ZXMuQm90dG9tLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLkJvdHRvbS5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3byouQXhlcy5EZXB0aFRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUqLkF4ZXMuRGVwdGhUb3AuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvJy5BeGVzLkRlcHRoLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvck9uZScuQXhlcy5EZXB0aC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JUd28mLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUmLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28AAAQAAAEBBAQABAEBAQEAAAYBAAABAQEBAQEBAQQEAAABBAQAAAQBAQQABAQAAAAEAQEBAQEBAQEBAAABAQAAAQEAAAAABAAAAAAABAEAAAQEAQEAAQEAAAEBAAQAAAQBAAAEAQEAAAEBAAABAQAEAAAEAQAABAEBAAABAQEAAAEBAAAAAAQAAAAAAAAEAQAABAEBAQEBAQEBAQEBCCFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMDAAAAAQgjU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMCAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEgU3RlZW1hLlRlZUNoYXJ0LkxlZ2VuZEFsaWdubWVudHMCAAAAAQEICyZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQQAAAAlU3lzdGVtLkRyYXdpbmcuVGV4dC5UZXh0UmVuZGVyaW5nSGludAQAAAAIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAkU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5Qb2ludGVyU3R5bGVzAgAAAAgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAABJFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwIAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAAAQgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICxRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAACAAAAAQQAAAAF+////yFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMBAAAAB3ZhbHVlX18ACAMAAAAAAEAAAAEAAAAGBgAAAAhGRkZGRkZGRgYHAAAACEZGODA4MDgwBfj///8jU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMBAAAAB3ZhbHVlX18ACAIAAAAAAAAABff///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcEAAAACsDAwP8AAAAAAAACAAEF9v///yBTdGVlbWEuVGVlQ2hhcnQuTGVnZW5kQWxpZ25tZW50cwEAAAAHdmFsdWVfXwAIAgAAAAMAAAAGCwAAAAhGRkZGRkZGRgYMAAAACEZGODA4MDgwBg0AAAAIRkZGRkZGRkYGDgAAAAhGRjgwODA4MAABCQ8AAAAGEAAAAAZUYWhvbWEMAAAAAABAQQYRAAAACEZGRkZGRkZGBhIAAAAIRkY4MDgwODAGEwAAAAhGRkZGRkZGRgYUAAAACEZGODA4MDgwBhUAAAAIRkZGRkZGRkYGFgAAAAhGRjgwODA4MAYXAAAACEZGRkZGRkZGBhgAAAAIRkY4MDgwODAF5////yZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQEAAAAHdmFsdWVfXwAIBAAAAAEAAAAF5v///yVTeXN0ZW0uRHJhd2luZy5UZXh0LlRleHRSZW5kZXJpbmdIaW50AQAAAAd2YWx1ZV9fAAgEAAAAAAAAAAMAAAAABhsAAAAbU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5MaW5lAeT////3////CgAAAAAAAAAAJQABAAXj////JFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwEAAAAHdmFsdWVfXwAIAgAAAAkAAAACAAAAAAHi////9////woAAAAAAAAAACUAAQAGHwAAABVQcmVkaWN0ZWQsIHByYWlyaWVzLXMJGwAAAAHf////9////woAAAAAAAAAAI0AAQABAd7////j////AQAAAAHd////9////woAAAAAAAAAAKQAAQAAAgAAAAAB3P////f///8KAAAAAAAAAACNAAEABiUAAAALTWVhc3VyZWQsIFAGJgAAAAhGRkZGRkZGRgYnAAAACEZGODA4MDgwBigAAAAIRkZGRkZGRkYGKQAAAAhGRjgwODA4MAYqAAAACEZGRkZGRkZGBisAAAAIRkY4MDgwODAGLAAAAAhGRkZGRkZGRgYtAAAACEZGODA4MDgwAFAAAAAGLgAAAAgjIyMwLiMjIwkQAAAACQAAAAAAEEEGMAAAAAhGRkZGRkZGRgYxAAAACEZGODA4MDgwAAAAAQAAAAXO////IFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwAQAAAAd2YWx1ZV9fAAgEAAAAAgAAAAAKAAAAzczMzMzM3D8AAAAAAAAAAAABzf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQHL////9////wrAAAD/AAAAAAAAAgAByv////f///8K/wAA/wAAAAAAAAIABjcAAAAIRkZGRkZGRkYGOAAAAAhGRjgwODA4MFAAAAAJLgAAAAkQAAAACQAAAAAAEEEGOwAAAAhGRkZGRkZGRgY8AAAACEZGODA4MDgwAQAAAAHD////zv///wIAAAAAAAHC////9////woAAAD/AAAAAAAAAgAJEAAAAAsAAAAAADBBAcD////3////Cv8AAP8AAAAAAAACAAZBAAAACEZGRkZGRkZGBkIAAAAIRkY4MDgwODAAUAAAAAkuAAAACRAAAAAJAAAAAAAQQQZFAAAACEZGRkZGRkZGBkYAAAAIRkY4MDgwODABAAAAAbn////O////AgAAAAAAAbj////3////CgAAAP8AAAAAAAACAAkQAAAACwAAAAAAMEEBtv////f///8K/wAA/wAAAAAAAAIABksAAAAIRkZGRkZGRkYGTAAAAAhGRjgwODA4MABQAAAABk0AAAAJZC9NTS95eXl5CS4AAAAJEAAAAAkAAAAAABBBBlAAAAAIRkZGRkZGRkYGUQAAAAhGRjgwODA4MAAAAAEAAAABrv///87///8CAAAAAAoAAAAAAAAAoPnjQAAAAAAAQ+NACgAAAAABrf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQGr////9////wr/AAD/AAAAAAAAAgAGVgAAAAhGRkZGRkZGRgZXAAAACEZGODA4MDgwBlgAAAAIRkZGRkZGRkYGWQAAAAhGRjgwODA4MAZaAAAACEZGRkZGRkZGBlsAAAAIRkY4MDgwODAGXAAAAAhGRkZGRkZGRgZdAAAACEZGODA4MDgwBl4AAAAIRkZGRkZGRkYGXwAAAAhGRjgwODA4MBEPAAAAAQAAAAZgAAAAAAs=</Format>
         <Legend>
+          <CheckedTitles>Predicted, noN</CheckedTitles>
+          <CheckedTitles>Measured1, P</CheckedTitles>
         </Legend>
         <Plot name="Predicted">
           <colour>
@@ -11219,6 +11554,8 @@ what needs to be done
       <Graph name="sw_10">
         <Format>AAEAAAD/////AQAAAAAAAAAMAgAAAFhUZWVDaGFydC5DbGllbnQsIFZlcnNpb249NC4xLjIwMTEuNzI4MywgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABXU3lzdGVtLldpbmRvd3MuRm9ybXMsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAQAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0nAAAAA4uWm9vbS5BbmltYXRlZBMuWm9vbS5BbmltYXRlZFN0ZXBzFC5QYW5uaW5nLk1vdXNlQnV0dG9uEC5DdXN0b21DaGFydFJlY3QXLlBhbmVsLkltYWdlQmV2ZWwuV2lkdGgbLlBhbmVsLkJldmVsLlN0cmluZ0NvbG9yT25lGy5QYW5lbC5CZXZlbC5TdHJpbmdDb2xvclR3bxIuUGFuZWwuQmV2ZWwuT3V0ZXISLlBhbmVsLkJydXNoLkNvbG9yEi5MZWdlbmQuQ2hlY2tCb3hlcxEuTGVnZW5kLkFsaWdubWVudCIuTGVnZW5kLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lIi5MZWdlbmQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28cLkxlZ2VuZC5CZXZlbC5TdHJpbmdDb2xvck9uZRwuTGVnZW5kLkJldmVsLlN0cmluZ0NvbG9yVHdvFi5MZWdlbmQuU2hhZG93LlZpc2libGUTLkxlZ2VuZC5UcmFuc3BhcmVudA0uSGVhZGVyLkxpbmVzES5IZWFkZXIuRm9udC5OYW1lES5IZWFkZXIuRm9udC5TaXplFi5IZWFkZXIuRm9udC5TaXplRmxvYXQcLkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvck9uZRwuSGVhZGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvHy5TdWJIZWFkZXIuQmV2ZWwuU3RyaW5nQ29sb3JPbmUfLlN1YkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvclR3bxwuRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yT25lHC5Gb290ZXIuQmV2ZWwuU3RyaW5nQ29sb3JUd28fLlN1YkZvb3Rlci5CZXZlbC5TdHJpbmdDb2xvck9uZR8uU3ViRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvFS5Bc3BlY3QuU21vb3RoaW5nTW9kZRkuQXNwZWN0LlRleHRSZW5kZXJpbmdIaW50GS5Bc3BlY3QuQ29sb3JQYWxldHRlSW5kZXgOLkFzcGVjdC5WaWV3M0QIU2VyaWVzLjAVLlNlcmllcy4wLkJydXNoLkNvbG9yFy5TZXJpZXMuMC5Qb2ludGVyLlN0eWxlFy5TZXJpZXMuMC5MaW5lUGVuLldpZHRoEy5TZXJpZXMuMC5Db2xvckVhY2gPLlNlcmllcy4wLkNvbG9yDy5TZXJpZXMuMC5UaXRsZQhTZXJpZXMuMRUuU2VyaWVzLjEuQnJ1c2guQ29sb3IZLlNlcmllcy4xLlBvaW50ZXIuVmlzaWJsZRcuU2VyaWVzLjEuUG9pbnRlci5TdHlsZRsuU2VyaWVzLjEuUG9pbnRlci5QZW4uQ29sb3IZLlNlcmllcy4xLkxpbmVQZW4uVmlzaWJsZRcuU2VyaWVzLjEuTGluZVBlbi5XaWR0aBMuU2VyaWVzLjEuQ29sb3JFYWNoDy5TZXJpZXMuMS5Db2xvcg8uU2VyaWVzLjEuVGl0bGUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JPbmUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JUd28hLldhbGxzLlJpZ2h0LkJldmVsLlN0cmluZ0NvbG9yT25lIS5XYWxscy5SaWdodC5CZXZlbC5TdHJpbmdDb2xvclR3byAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvck9uZSAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvclR3byIuV2FsbHMuQm90dG9tLkJldmVsLlN0cmluZ0NvbG9yT25lIi5XYWxscy5Cb3R0b20uQmV2ZWwuU3RyaW5nQ29sb3JUd28OLldhbGxzLlZpc2libGUcLkF4ZXMuTGVmdC5MYWJlbHMuU2VwYXJhdGlvbh0uQXhlcy5MZWZ0LkxhYmVscy5WYWx1ZUZvcm1hdBsuQXhlcy5MZWZ0LkxhYmVscy5Gb250Lk5hbWUbLkF4ZXMuTGVmdC5MYWJlbHMuRm9udC5TaXplIC5BeGVzLkxlZnQuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0Ji5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvFC5BeGVzLkxlZnQuQXV0b21hdGljGy5BeGVzLkxlZnQuQXV0b21hdGljTWF4aW11bRsuQXhlcy5MZWZ0LkF1dG9tYXRpY01pbmltdW0YLkF4ZXMuTGVmdC5BeGlzUGVuLldpZHRoGS5BeGVzLkxlZnQuQXhpc1Blbi5FbmRDYXAXLkF4ZXMuTGVmdC5HcmlkLlZpc2libGUYLkF4ZXMuTGVmdC5NYXhpbXVtT2Zmc2V0Ei5BeGVzLkxlZnQuTWF4aW11bRIuQXhlcy5MZWZ0Lk1pbmltdW0dLkF4ZXMuTGVmdC5NaW5vclRpY2tzLlZpc2libGUWLkF4ZXMuTGVmdC5UaWNrcy5Db2xvchouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuTmFtZRouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZR8uQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkxlZnQuVGl0bGUuRm9udC5TaGFkb3cuQnJ1c2guQ29sb3IhLkF4ZXMuTGVmdC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJS5BeGVzLkxlZnQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuTGVmdC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3bxsuQXhlcy5Ub3AuTGFiZWxzLlNlcGFyYXRpb24cLkF4ZXMuVG9wLkxhYmVscy5WYWx1ZUZvcm1hdBouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuTmFtZRouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZR8uQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0JS5BeGVzLlRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuVG9wLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxcuQXhlcy5Ub3AuQXhpc1Blbi5XaWR0aBguQXhlcy5Ub3AuQXhpc1Blbi5FbmRDYXAWLkF4ZXMuVG9wLkdyaWQuVmlzaWJsZRwuQXhlcy5Ub3AuTWlub3JUaWNrcy5WaXNpYmxlFS5BeGVzLlRvcC5UaWNrcy5Db2xvchkuQXhlcy5Ub3AuVGl0bGUuRm9udC5OYW1lGS5BeGVzLlRvcC5UaXRsZS5Gb250LlNpemUeLkF4ZXMuVG9wLlRpdGxlLkZvbnQuU2l6ZUZsb2F0IC5BeGVzLlRvcC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJC5BeGVzLlRvcC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvck9uZSQuQXhlcy5Ub3AuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28RLkF4ZXMuVG9wLlZpc2libGUdLkF4ZXMuUmlnaHQuTGFiZWxzLlNlcGFyYXRpb24eLkF4ZXMuUmlnaHQuTGFiZWxzLlZhbHVlRm9ybWF0HC5BeGVzLlJpZ2h0LkxhYmVscy5Gb250Lk5hbWUcLkF4ZXMuUmlnaHQuTGFiZWxzLkZvbnQuU2l6ZSEuQXhlcy5SaWdodC5MYWJlbHMuRm9udC5TaXplRmxvYXQnLkF4ZXMuUmlnaHQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLlJpZ2h0LkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxkuQXhlcy5SaWdodC5BeGlzUGVuLldpZHRoGi5BeGVzLlJpZ2h0LkF4aXNQZW4uRW5kQ2FwGC5BeGVzLlJpZ2h0LkdyaWQuVmlzaWJsZR4uQXhlcy5SaWdodC5NaW5vclRpY2tzLlZpc2libGUXLkF4ZXMuUmlnaHQuVGlja3MuQ29sb3IbLkF4ZXMuUmlnaHQuVGl0bGUuRm9udC5OYW1lGy5BeGVzLlJpZ2h0LlRpdGxlLkZvbnQuU2l6ZSAuQXhlcy5SaWdodC5UaXRsZS5Gb250LlNpemVGbG9hdCIuQXhlcy5SaWdodC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvEy5BeGVzLlJpZ2h0LlZpc2libGUeLkF4ZXMuQm90dG9tLkxhYmVscy5TZXBhcmF0aW9uIi5BeGVzLkJvdHRvbS5MYWJlbHMuRGF0ZVRpbWVGb3JtYXQfLkF4ZXMuQm90dG9tLkxhYmVscy5WYWx1ZUZvcm1hdB0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuTmFtZR0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZSIuQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkJvdHRvbS5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUoLkF4ZXMuQm90dG9tLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxYuQXhlcy5Cb3R0b20uQXV0b21hdGljHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNYXhpbXVtHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNaW5pbXVtGi5BeGVzLkJvdHRvbS5BeGlzUGVuLldpZHRoGy5BeGVzLkJvdHRvbS5BeGlzUGVuLkVuZENhcBkuQXhlcy5Cb3R0b20uR3JpZC5WaXNpYmxlGi5BeGVzLkJvdHRvbS5NYXhpbXVtT2Zmc2V0FC5BeGVzLkJvdHRvbS5NYXhpbXVtFC5BeGVzLkJvdHRvbS5NaW5pbXVtGi5BeGVzLkJvdHRvbS5NaW5pbXVtT2Zmc2V0Hy5BeGVzLkJvdHRvbS5NaW5vclRpY2tzLlZpc2libGUYLkF4ZXMuQm90dG9tLlRpY2tzLkNvbG9yHC5BeGVzLkJvdHRvbS5UaXRsZS5Gb250Lk5hbWUcLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuU2l6ZSEuQXhlcy5Cb3R0b20uVGl0bGUuRm9udC5TaXplRmxvYXQjLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuQnJ1c2guQ29sb3InLkF4ZXMuQm90dG9tLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLkJvdHRvbS5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3byouQXhlcy5EZXB0aFRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUqLkF4ZXMuRGVwdGhUb3AuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvJy5BeGVzLkRlcHRoLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvck9uZScuQXhlcy5EZXB0aC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JUd28mLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUmLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28AAAQAAAEBBAQABAEBAQEAAAYBAAABAQEBAQEBAQQEAAABBAQAAAQBAQQABAQAAAAEAQEBAQEBAQEBAAABAQAAAQEAAAAABAAAAAAABAEAAAQEAQEAAQEAAAEBAAQAAAQBAAAEAQEAAAEBAAABAQAEAAAEAQAABAEBAAABAQEAAAEBAAAAAAQAAAAAAAAEAQAABAEBAQEBAQEBAQEBCCFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMDAAAAAQgjU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMCAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEgU3RlZW1hLlRlZUNoYXJ0LkxlZ2VuZEFsaWdubWVudHMCAAAAAQEICyZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQQAAAAlU3lzdGVtLkRyYXdpbmcuVGV4dC5UZXh0UmVuZGVyaW5nSGludAQAAAAIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAkU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5Qb2ludGVyU3R5bGVzAgAAAAgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAABJFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwIAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAAAQgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICxRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAACAAAAAQQAAAAF+////yFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMBAAAAB3ZhbHVlX18ACAMAAAAAAEAAAAEAAAAGBgAAAAhGRkZGRkZGRgYHAAAACEZGODA4MDgwBfj///8jU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMBAAAAB3ZhbHVlX18ACAIAAAAAAAAABff///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcEAAAACsDAwP8AAAAAAAACAAEF9v///yBTdGVlbWEuVGVlQ2hhcnQuTGVnZW5kQWxpZ25tZW50cwEAAAAHdmFsdWVfXwAIAgAAAAMAAAAGCwAAAAhGRkZGRkZGRgYMAAAACEZGODA4MDgwBg0AAAAIRkZGRkZGRkYGDgAAAAhGRjgwODA4MAABCQ8AAAAGEAAAAAZUYWhvbWEMAAAAAABAQQYRAAAACEZGRkZGRkZGBhIAAAAIRkY4MDgwODAGEwAAAAhGRkZGRkZGRgYUAAAACEZGODA4MDgwBhUAAAAIRkZGRkZGRkYGFgAAAAhGRjgwODA4MAYXAAAACEZGRkZGRkZGBhgAAAAIRkY4MDgwODAF5////yZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQEAAAAHdmFsdWVfXwAIBAAAAAEAAAAF5v///yVTeXN0ZW0uRHJhd2luZy5UZXh0LlRleHRSZW5kZXJpbmdIaW50AQAAAAd2YWx1ZV9fAAgEAAAAAAAAAAMAAAAABhsAAAAbU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5MaW5lAeT////3////CgAAAAAAAAAAJQABAAXj////JFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwEAAAAHdmFsdWVfXwAIAgAAAAkAAAACAAAAAAHi////9////woAAAAAAAAAACUAAQAGHwAAABVQcmVkaWN0ZWQsIHByYWlyaWVzLXMJGwAAAAHf////9////woAAAAAAAAAAI0AAQABAd7////j////AQAAAAHd////9////woAAAAAAAAAAKQAAQAAAgAAAAAB3P////f///8KAAAAAAAAAACNAAEABiUAAAALTWVhc3VyZWQsIFAGJgAAAAhGRkZGRkZGRgYnAAAACEZGODA4MDgwBigAAAAIRkZGRkZGRkYGKQAAAAhGRjgwODA4MAYqAAAACEZGRkZGRkZGBisAAAAIRkY4MDgwODAGLAAAAAhGRkZGRkZGRgYtAAAACEZGODA4MDgwAFAAAAAGLgAAAAgjIyMwLiMjIwkQAAAACQAAAAAAEEEGMAAAAAhGRkZGRkZGRgYxAAAACEZGODA4MDgwAAAAAQAAAAXO////IFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwAQAAAAd2YWx1ZV9fAAgEAAAAAgAAAAAKAAAAzczMzMzM3D8AAAAAAAAAAAABzf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQHL////9////wrAAAD/AAAAAAAAAgAByv////f///8K/wAA/wAAAAAAAAIABjcAAAAIRkZGRkZGRkYGOAAAAAhGRjgwODA4MFAAAAAJLgAAAAkQAAAACQAAAAAAEEEGOwAAAAhGRkZGRkZGRgY8AAAACEZGODA4MDgwAQAAAAHD////zv///wIAAAAAAAHC////9////woAAAD/AAAAAAAAAgAJEAAAAAsAAAAAADBBAcD////3////Cv8AAP8AAAAAAAACAAZBAAAACEZGRkZGRkZGBkIAAAAIRkY4MDgwODAAUAAAAAkuAAAACRAAAAAJAAAAAAAQQQZFAAAACEZGRkZGRkZGBkYAAAAIRkY4MDgwODABAAAAAbn////O////AgAAAAAAAbj////3////CgAAAP8AAAAAAAACAAkQAAAACwAAAAAAMEEBtv////f///8K/wAA/wAAAAAAAAIABksAAAAIRkZGRkZGRkYGTAAAAAhGRjgwODA4MABQAAAABk0AAAAJZC9NTS95eXl5CS4AAAAJEAAAAAkAAAAAABBBBlAAAAAIRkZGRkZGRkYGUQAAAAhGRjgwODA4MAAAAAEAAAABrv///87///8CAAAAAAoAAAAAAAAAoPnjQAAAAAAAQ+NACgAAAAABrf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQGr////9////wr/AAD/AAAAAAAAAgAGVgAAAAhGRkZGRkZGRgZXAAAACEZGODA4MDgwBlgAAAAIRkZGRkZGRkYGWQAAAAhGRjgwODA4MAZaAAAACEZGRkZGRkZGBlsAAAAIRkY4MDgwODAGXAAAAAhGRkZGRkZGRgZdAAAACEZGODA4MDgwBl4AAAAIRkZGRkZGRkYGXwAAAAhGRjgwODA4MBEPAAAAAQAAAAZgAAAAAAs=</Format>
         <Legend>
+          <CheckedTitles>Predicted, noN</CheckedTitles>
+          <CheckedTitles>Measured, P</CheckedTitles>
         </Legend>
         <Plot name="Predicted">
           <colour>
@@ -11255,6 +11592,9 @@ what needs to be done
       <Graph name="sw_15">
         <Format>AAEAAAD/////AQAAAAAAAAAMAgAAAFhUZWVDaGFydC5DbGllbnQsIFZlcnNpb249NC4xLjIwMTEuNzI4MywgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABXU3lzdGVtLldpbmRvd3MuRm9ybXMsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAQAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0nAAAAA4uWm9vbS5BbmltYXRlZBMuWm9vbS5BbmltYXRlZFN0ZXBzFC5QYW5uaW5nLk1vdXNlQnV0dG9uEC5DdXN0b21DaGFydFJlY3QXLlBhbmVsLkltYWdlQmV2ZWwuV2lkdGgbLlBhbmVsLkJldmVsLlN0cmluZ0NvbG9yT25lGy5QYW5lbC5CZXZlbC5TdHJpbmdDb2xvclR3bxIuUGFuZWwuQmV2ZWwuT3V0ZXISLlBhbmVsLkJydXNoLkNvbG9yEi5MZWdlbmQuQ2hlY2tCb3hlcxEuTGVnZW5kLkFsaWdubWVudCIuTGVnZW5kLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lIi5MZWdlbmQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28cLkxlZ2VuZC5CZXZlbC5TdHJpbmdDb2xvck9uZRwuTGVnZW5kLkJldmVsLlN0cmluZ0NvbG9yVHdvFi5MZWdlbmQuU2hhZG93LlZpc2libGUTLkxlZ2VuZC5UcmFuc3BhcmVudA0uSGVhZGVyLkxpbmVzES5IZWFkZXIuRm9udC5OYW1lES5IZWFkZXIuRm9udC5TaXplFi5IZWFkZXIuRm9udC5TaXplRmxvYXQcLkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvck9uZRwuSGVhZGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvHy5TdWJIZWFkZXIuQmV2ZWwuU3RyaW5nQ29sb3JPbmUfLlN1YkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvclR3bxwuRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yT25lHC5Gb290ZXIuQmV2ZWwuU3RyaW5nQ29sb3JUd28fLlN1YkZvb3Rlci5CZXZlbC5TdHJpbmdDb2xvck9uZR8uU3ViRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvFS5Bc3BlY3QuU21vb3RoaW5nTW9kZRkuQXNwZWN0LlRleHRSZW5kZXJpbmdIaW50GS5Bc3BlY3QuQ29sb3JQYWxldHRlSW5kZXgOLkFzcGVjdC5WaWV3M0QIU2VyaWVzLjAVLlNlcmllcy4wLkJydXNoLkNvbG9yFy5TZXJpZXMuMC5Qb2ludGVyLlN0eWxlFy5TZXJpZXMuMC5MaW5lUGVuLldpZHRoEy5TZXJpZXMuMC5Db2xvckVhY2gPLlNlcmllcy4wLkNvbG9yDy5TZXJpZXMuMC5UaXRsZQhTZXJpZXMuMRUuU2VyaWVzLjEuQnJ1c2guQ29sb3IZLlNlcmllcy4xLlBvaW50ZXIuVmlzaWJsZRcuU2VyaWVzLjEuUG9pbnRlci5TdHlsZRsuU2VyaWVzLjEuUG9pbnRlci5QZW4uQ29sb3IZLlNlcmllcy4xLkxpbmVQZW4uVmlzaWJsZRcuU2VyaWVzLjEuTGluZVBlbi5XaWR0aBMuU2VyaWVzLjEuQ29sb3JFYWNoDy5TZXJpZXMuMS5Db2xvcg8uU2VyaWVzLjEuVGl0bGUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JPbmUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JUd28hLldhbGxzLlJpZ2h0LkJldmVsLlN0cmluZ0NvbG9yT25lIS5XYWxscy5SaWdodC5CZXZlbC5TdHJpbmdDb2xvclR3byAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvck9uZSAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvclR3byIuV2FsbHMuQm90dG9tLkJldmVsLlN0cmluZ0NvbG9yT25lIi5XYWxscy5Cb3R0b20uQmV2ZWwuU3RyaW5nQ29sb3JUd28OLldhbGxzLlZpc2libGUcLkF4ZXMuTGVmdC5MYWJlbHMuU2VwYXJhdGlvbh0uQXhlcy5MZWZ0LkxhYmVscy5WYWx1ZUZvcm1hdBsuQXhlcy5MZWZ0LkxhYmVscy5Gb250Lk5hbWUbLkF4ZXMuTGVmdC5MYWJlbHMuRm9udC5TaXplIC5BeGVzLkxlZnQuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0Ji5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvFC5BeGVzLkxlZnQuQXV0b21hdGljGy5BeGVzLkxlZnQuQXV0b21hdGljTWF4aW11bRsuQXhlcy5MZWZ0LkF1dG9tYXRpY01pbmltdW0YLkF4ZXMuTGVmdC5BeGlzUGVuLldpZHRoGS5BeGVzLkxlZnQuQXhpc1Blbi5FbmRDYXAXLkF4ZXMuTGVmdC5HcmlkLlZpc2libGUYLkF4ZXMuTGVmdC5NYXhpbXVtT2Zmc2V0Ei5BeGVzLkxlZnQuTWF4aW11bRIuQXhlcy5MZWZ0Lk1pbmltdW0dLkF4ZXMuTGVmdC5NaW5vclRpY2tzLlZpc2libGUWLkF4ZXMuTGVmdC5UaWNrcy5Db2xvchouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuTmFtZRouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZR8uQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkxlZnQuVGl0bGUuRm9udC5TaGFkb3cuQnJ1c2guQ29sb3IhLkF4ZXMuTGVmdC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJS5BeGVzLkxlZnQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuTGVmdC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3bxsuQXhlcy5Ub3AuTGFiZWxzLlNlcGFyYXRpb24cLkF4ZXMuVG9wLkxhYmVscy5WYWx1ZUZvcm1hdBouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuTmFtZRouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZR8uQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0JS5BeGVzLlRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuVG9wLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxcuQXhlcy5Ub3AuQXhpc1Blbi5XaWR0aBguQXhlcy5Ub3AuQXhpc1Blbi5FbmRDYXAWLkF4ZXMuVG9wLkdyaWQuVmlzaWJsZRwuQXhlcy5Ub3AuTWlub3JUaWNrcy5WaXNpYmxlFS5BeGVzLlRvcC5UaWNrcy5Db2xvchkuQXhlcy5Ub3AuVGl0bGUuRm9udC5OYW1lGS5BeGVzLlRvcC5UaXRsZS5Gb250LlNpemUeLkF4ZXMuVG9wLlRpdGxlLkZvbnQuU2l6ZUZsb2F0IC5BeGVzLlRvcC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJC5BeGVzLlRvcC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvck9uZSQuQXhlcy5Ub3AuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28RLkF4ZXMuVG9wLlZpc2libGUdLkF4ZXMuUmlnaHQuTGFiZWxzLlNlcGFyYXRpb24eLkF4ZXMuUmlnaHQuTGFiZWxzLlZhbHVlRm9ybWF0HC5BeGVzLlJpZ2h0LkxhYmVscy5Gb250Lk5hbWUcLkF4ZXMuUmlnaHQuTGFiZWxzLkZvbnQuU2l6ZSEuQXhlcy5SaWdodC5MYWJlbHMuRm9udC5TaXplRmxvYXQnLkF4ZXMuUmlnaHQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLlJpZ2h0LkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxkuQXhlcy5SaWdodC5BeGlzUGVuLldpZHRoGi5BeGVzLlJpZ2h0LkF4aXNQZW4uRW5kQ2FwGC5BeGVzLlJpZ2h0LkdyaWQuVmlzaWJsZR4uQXhlcy5SaWdodC5NaW5vclRpY2tzLlZpc2libGUXLkF4ZXMuUmlnaHQuVGlja3MuQ29sb3IbLkF4ZXMuUmlnaHQuVGl0bGUuRm9udC5OYW1lGy5BeGVzLlJpZ2h0LlRpdGxlLkZvbnQuU2l6ZSAuQXhlcy5SaWdodC5UaXRsZS5Gb250LlNpemVGbG9hdCIuQXhlcy5SaWdodC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvEy5BeGVzLlJpZ2h0LlZpc2libGUeLkF4ZXMuQm90dG9tLkxhYmVscy5TZXBhcmF0aW9uIi5BeGVzLkJvdHRvbS5MYWJlbHMuRGF0ZVRpbWVGb3JtYXQfLkF4ZXMuQm90dG9tLkxhYmVscy5WYWx1ZUZvcm1hdB0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuTmFtZR0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZSIuQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkJvdHRvbS5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUoLkF4ZXMuQm90dG9tLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxYuQXhlcy5Cb3R0b20uQXV0b21hdGljHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNYXhpbXVtHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNaW5pbXVtGi5BeGVzLkJvdHRvbS5BeGlzUGVuLldpZHRoGy5BeGVzLkJvdHRvbS5BeGlzUGVuLkVuZENhcBkuQXhlcy5Cb3R0b20uR3JpZC5WaXNpYmxlGi5BeGVzLkJvdHRvbS5NYXhpbXVtT2Zmc2V0FC5BeGVzLkJvdHRvbS5NYXhpbXVtFC5BeGVzLkJvdHRvbS5NaW5pbXVtGi5BeGVzLkJvdHRvbS5NaW5pbXVtT2Zmc2V0Hy5BeGVzLkJvdHRvbS5NaW5vclRpY2tzLlZpc2libGUYLkF4ZXMuQm90dG9tLlRpY2tzLkNvbG9yHC5BeGVzLkJvdHRvbS5UaXRsZS5Gb250Lk5hbWUcLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuU2l6ZSEuQXhlcy5Cb3R0b20uVGl0bGUuRm9udC5TaXplRmxvYXQjLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuQnJ1c2guQ29sb3InLkF4ZXMuQm90dG9tLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLkJvdHRvbS5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3byouQXhlcy5EZXB0aFRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUqLkF4ZXMuRGVwdGhUb3AuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvJy5BeGVzLkRlcHRoLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvck9uZScuQXhlcy5EZXB0aC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JUd28mLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUmLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28AAAQAAAEBBAQABAEBAQEAAAYBAAABAQEBAQEBAQQEAAABBAQAAAQBAQQABAQAAAAEAQEBAQEBAQEBAAABAQAAAQEAAAAABAAAAAAABAEAAAQEAQEAAQEAAAEBAAQAAAQBAAAEAQEAAAEBAAABAQAEAAAEAQAABAEBAAABAQEAAAEBAAAAAAQAAAAAAAAEAQAABAEBAQEBAQEBAQEBCCFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMDAAAAAQgjU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMCAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEgU3RlZW1hLlRlZUNoYXJ0LkxlZ2VuZEFsaWdubWVudHMCAAAAAQEICyZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQQAAAAlU3lzdGVtLkRyYXdpbmcuVGV4dC5UZXh0UmVuZGVyaW5nSGludAQAAAAIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAkU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5Qb2ludGVyU3R5bGVzAgAAAAgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAABJFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwIAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAAAQgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICxRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAACAAAAAQQAAAAF+////yFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMBAAAAB3ZhbHVlX18ACAMAAAAAAEAAAAEAAAAGBgAAAAhGRkZGRkZGRgYHAAAACEZGODA4MDgwBfj///8jU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMBAAAAB3ZhbHVlX18ACAIAAAAAAAAABff///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcEAAAACsDAwP8AAAAAAAACAAEF9v///yBTdGVlbWEuVGVlQ2hhcnQuTGVnZW5kQWxpZ25tZW50cwEAAAAHdmFsdWVfXwAIAgAAAAMAAAAGCwAAAAhGRkZGRkZGRgYMAAAACEZGODA4MDgwBg0AAAAIRkZGRkZGRkYGDgAAAAhGRjgwODA4MAABCQ8AAAAGEAAAAAZUYWhvbWEMAAAAAABAQQYRAAAACEZGRkZGRkZGBhIAAAAIRkY4MDgwODAGEwAAAAhGRkZGRkZGRgYUAAAACEZGODA4MDgwBhUAAAAIRkZGRkZGRkYGFgAAAAhGRjgwODA4MAYXAAAACEZGRkZGRkZGBhgAAAAIRkY4MDgwODAF5////yZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQEAAAAHdmFsdWVfXwAIBAAAAAEAAAAF5v///yVTeXN0ZW0uRHJhd2luZy5UZXh0LlRleHRSZW5kZXJpbmdIaW50AQAAAAd2YWx1ZV9fAAgEAAAAAAAAAAMAAAAABhsAAAAbU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5MaW5lAeT////3////CgAAAAAAAAAAJQABAAXj////JFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwEAAAAHdmFsdWVfXwAIAgAAAAkAAAACAAAAAAHi////9////woAAAAAAAAAACUAAQAGHwAAABVQcmVkaWN0ZWQsIHByYWlyaWVzLXMJGwAAAAHf////9////woAAAAAAAAAAI0AAQABAd7////j////AQAAAAHd////9////woAAAAAAAAAAKQAAQAAAgAAAAAB3P////f///8KAAAAAAAAAACNAAEABiUAAAALTWVhc3VyZWQsIFAGJgAAAAhGRkZGRkZGRgYnAAAACEZGODA4MDgwBigAAAAIRkZGRkZGRkYGKQAAAAhGRjgwODA4MAYqAAAACEZGRkZGRkZGBisAAAAIRkY4MDgwODAGLAAAAAhGRkZGRkZGRgYtAAAACEZGODA4MDgwAFAAAAAGLgAAAAgjIyMwLiMjIwkQAAAACQAAAAAAEEEGMAAAAAhGRkZGRkZGRgYxAAAACEZGODA4MDgwAAAAAQAAAAXO////IFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwAQAAAAd2YWx1ZV9fAAgEAAAAAgAAAAAKAAAAzczMzMzM3D8AAAAAAAAAAAABzf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQHL////9////wrAAAD/AAAAAAAAAgAByv////f///8K/wAA/wAAAAAAAAIABjcAAAAIRkZGRkZGRkYGOAAAAAhGRjgwODA4MFAAAAAJLgAAAAkQAAAACQAAAAAAEEEGOwAAAAhGRkZGRkZGRgY8AAAACEZGODA4MDgwAQAAAAHD////zv///wIAAAAAAAHC////9////woAAAD/AAAAAAAAAgAJEAAAAAsAAAAAADBBAcD////3////Cv8AAP8AAAAAAAACAAZBAAAACEZGRkZGRkZGBkIAAAAIRkY4MDgwODAAUAAAAAkuAAAACRAAAAAJAAAAAAAQQQZFAAAACEZGRkZGRkZGBkYAAAAIRkY4MDgwODABAAAAAbn////O////AgAAAAAAAbj////3////CgAAAP8AAAAAAAACAAkQAAAACwAAAAAAMEEBtv////f///8K/wAA/wAAAAAAAAIABksAAAAIRkZGRkZGRkYGTAAAAAhGRjgwODA4MABQAAAABk0AAAAJZC9NTS95eXl5CS4AAAAJEAAAAAkAAAAAABBBBlAAAAAIRkZGRkZGRkYGUQAAAAhGRjgwODA4MAAAAAEAAAABrv///87///8CAAAAAAoAAAAAAAAAoPnjQAAAAAAAQ+NACgAAAAABrf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQGr////9////wr/AAD/AAAAAAAAAgAGVgAAAAhGRkZGRkZGRgZXAAAACEZGODA4MDgwBlgAAAAIRkZGRkZGRkYGWQAAAAhGRjgwODA4MAZaAAAACEZGRkZGRkZGBlsAAAAIRkY4MDgwODAGXAAAAAhGRkZGRkZGRgZdAAAACEZGODA4MDgwBl4AAAAIRkZGRkZGRkYGXwAAAAhGRjgwODA4MBEPAAAAAQAAAAZgAAAAAAs=</Format>
         <Legend>
+          <CheckedTitles>Predicted, noN</CheckedTitles>
+          <CheckedTitles>Measured, P</CheckedTitles>
+          <CheckedTitles>Measured2, PF</CheckedTitles>
         </Legend>
         <Plot name="Predicted">
           <colour>
@@ -11302,6 +11642,8 @@ what needs to be done
       <Graph name="sw_35">
         <Format>AAEAAAD/////AQAAAAAAAAAMAgAAAFhUZWVDaGFydC5DbGllbnQsIFZlcnNpb249NC4xLjIwMTEuNzI4MywgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABXU3lzdGVtLldpbmRvd3MuRm9ybXMsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAQAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0nAAAAA4uWm9vbS5BbmltYXRlZBMuWm9vbS5BbmltYXRlZFN0ZXBzFC5QYW5uaW5nLk1vdXNlQnV0dG9uEC5DdXN0b21DaGFydFJlY3QXLlBhbmVsLkltYWdlQmV2ZWwuV2lkdGgbLlBhbmVsLkJldmVsLlN0cmluZ0NvbG9yT25lGy5QYW5lbC5CZXZlbC5TdHJpbmdDb2xvclR3bxIuUGFuZWwuQmV2ZWwuT3V0ZXISLlBhbmVsLkJydXNoLkNvbG9yEi5MZWdlbmQuQ2hlY2tCb3hlcxEuTGVnZW5kLkFsaWdubWVudCIuTGVnZW5kLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lIi5MZWdlbmQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28cLkxlZ2VuZC5CZXZlbC5TdHJpbmdDb2xvck9uZRwuTGVnZW5kLkJldmVsLlN0cmluZ0NvbG9yVHdvFi5MZWdlbmQuU2hhZG93LlZpc2libGUTLkxlZ2VuZC5UcmFuc3BhcmVudA0uSGVhZGVyLkxpbmVzES5IZWFkZXIuRm9udC5OYW1lES5IZWFkZXIuRm9udC5TaXplFi5IZWFkZXIuRm9udC5TaXplRmxvYXQcLkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvck9uZRwuSGVhZGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvHy5TdWJIZWFkZXIuQmV2ZWwuU3RyaW5nQ29sb3JPbmUfLlN1YkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvclR3bxwuRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yT25lHC5Gb290ZXIuQmV2ZWwuU3RyaW5nQ29sb3JUd28fLlN1YkZvb3Rlci5CZXZlbC5TdHJpbmdDb2xvck9uZR8uU3ViRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvFS5Bc3BlY3QuU21vb3RoaW5nTW9kZRkuQXNwZWN0LlRleHRSZW5kZXJpbmdIaW50GS5Bc3BlY3QuQ29sb3JQYWxldHRlSW5kZXgOLkFzcGVjdC5WaWV3M0QIU2VyaWVzLjAVLlNlcmllcy4wLkJydXNoLkNvbG9yFy5TZXJpZXMuMC5Qb2ludGVyLlN0eWxlFy5TZXJpZXMuMC5MaW5lUGVuLldpZHRoEy5TZXJpZXMuMC5Db2xvckVhY2gPLlNlcmllcy4wLkNvbG9yDy5TZXJpZXMuMC5UaXRsZQhTZXJpZXMuMRUuU2VyaWVzLjEuQnJ1c2guQ29sb3IZLlNlcmllcy4xLlBvaW50ZXIuVmlzaWJsZRcuU2VyaWVzLjEuUG9pbnRlci5TdHlsZRsuU2VyaWVzLjEuUG9pbnRlci5QZW4uQ29sb3IZLlNlcmllcy4xLkxpbmVQZW4uVmlzaWJsZRcuU2VyaWVzLjEuTGluZVBlbi5XaWR0aBMuU2VyaWVzLjEuQ29sb3JFYWNoDy5TZXJpZXMuMS5Db2xvcg8uU2VyaWVzLjEuVGl0bGUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JPbmUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JUd28hLldhbGxzLlJpZ2h0LkJldmVsLlN0cmluZ0NvbG9yT25lIS5XYWxscy5SaWdodC5CZXZlbC5TdHJpbmdDb2xvclR3byAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvck9uZSAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvclR3byIuV2FsbHMuQm90dG9tLkJldmVsLlN0cmluZ0NvbG9yT25lIi5XYWxscy5Cb3R0b20uQmV2ZWwuU3RyaW5nQ29sb3JUd28OLldhbGxzLlZpc2libGUcLkF4ZXMuTGVmdC5MYWJlbHMuU2VwYXJhdGlvbh0uQXhlcy5MZWZ0LkxhYmVscy5WYWx1ZUZvcm1hdBsuQXhlcy5MZWZ0LkxhYmVscy5Gb250Lk5hbWUbLkF4ZXMuTGVmdC5MYWJlbHMuRm9udC5TaXplIC5BeGVzLkxlZnQuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0Ji5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvFC5BeGVzLkxlZnQuQXV0b21hdGljGy5BeGVzLkxlZnQuQXV0b21hdGljTWF4aW11bRsuQXhlcy5MZWZ0LkF1dG9tYXRpY01pbmltdW0YLkF4ZXMuTGVmdC5BeGlzUGVuLldpZHRoGS5BeGVzLkxlZnQuQXhpc1Blbi5FbmRDYXAXLkF4ZXMuTGVmdC5HcmlkLlZpc2libGUYLkF4ZXMuTGVmdC5NYXhpbXVtT2Zmc2V0Ei5BeGVzLkxlZnQuTWF4aW11bRIuQXhlcy5MZWZ0Lk1pbmltdW0dLkF4ZXMuTGVmdC5NaW5vclRpY2tzLlZpc2libGUWLkF4ZXMuTGVmdC5UaWNrcy5Db2xvchouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuTmFtZRouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZR8uQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkxlZnQuVGl0bGUuRm9udC5TaGFkb3cuQnJ1c2guQ29sb3IhLkF4ZXMuTGVmdC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJS5BeGVzLkxlZnQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuTGVmdC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3bxsuQXhlcy5Ub3AuTGFiZWxzLlNlcGFyYXRpb24cLkF4ZXMuVG9wLkxhYmVscy5WYWx1ZUZvcm1hdBouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuTmFtZRouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZR8uQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0JS5BeGVzLlRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuVG9wLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxcuQXhlcy5Ub3AuQXhpc1Blbi5XaWR0aBguQXhlcy5Ub3AuQXhpc1Blbi5FbmRDYXAWLkF4ZXMuVG9wLkdyaWQuVmlzaWJsZRwuQXhlcy5Ub3AuTWlub3JUaWNrcy5WaXNpYmxlFS5BeGVzLlRvcC5UaWNrcy5Db2xvchkuQXhlcy5Ub3AuVGl0bGUuRm9udC5OYW1lGS5BeGVzLlRvcC5UaXRsZS5Gb250LlNpemUeLkF4ZXMuVG9wLlRpdGxlLkZvbnQuU2l6ZUZsb2F0IC5BeGVzLlRvcC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJC5BeGVzLlRvcC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvck9uZSQuQXhlcy5Ub3AuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28RLkF4ZXMuVG9wLlZpc2libGUdLkF4ZXMuUmlnaHQuTGFiZWxzLlNlcGFyYXRpb24eLkF4ZXMuUmlnaHQuTGFiZWxzLlZhbHVlRm9ybWF0HC5BeGVzLlJpZ2h0LkxhYmVscy5Gb250Lk5hbWUcLkF4ZXMuUmlnaHQuTGFiZWxzLkZvbnQuU2l6ZSEuQXhlcy5SaWdodC5MYWJlbHMuRm9udC5TaXplRmxvYXQnLkF4ZXMuUmlnaHQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLlJpZ2h0LkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxkuQXhlcy5SaWdodC5BeGlzUGVuLldpZHRoGi5BeGVzLlJpZ2h0LkF4aXNQZW4uRW5kQ2FwGC5BeGVzLlJpZ2h0LkdyaWQuVmlzaWJsZR4uQXhlcy5SaWdodC5NaW5vclRpY2tzLlZpc2libGUXLkF4ZXMuUmlnaHQuVGlja3MuQ29sb3IbLkF4ZXMuUmlnaHQuVGl0bGUuRm9udC5OYW1lGy5BeGVzLlJpZ2h0LlRpdGxlLkZvbnQuU2l6ZSAuQXhlcy5SaWdodC5UaXRsZS5Gb250LlNpemVGbG9hdCIuQXhlcy5SaWdodC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvEy5BeGVzLlJpZ2h0LlZpc2libGUeLkF4ZXMuQm90dG9tLkxhYmVscy5TZXBhcmF0aW9uIi5BeGVzLkJvdHRvbS5MYWJlbHMuRGF0ZVRpbWVGb3JtYXQfLkF4ZXMuQm90dG9tLkxhYmVscy5WYWx1ZUZvcm1hdB0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuTmFtZR0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZSIuQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkJvdHRvbS5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUoLkF4ZXMuQm90dG9tLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxYuQXhlcy5Cb3R0b20uQXV0b21hdGljHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNYXhpbXVtHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNaW5pbXVtGi5BeGVzLkJvdHRvbS5BeGlzUGVuLldpZHRoGy5BeGVzLkJvdHRvbS5BeGlzUGVuLkVuZENhcBkuQXhlcy5Cb3R0b20uR3JpZC5WaXNpYmxlGi5BeGVzLkJvdHRvbS5NYXhpbXVtT2Zmc2V0FC5BeGVzLkJvdHRvbS5NYXhpbXVtFC5BeGVzLkJvdHRvbS5NaW5pbXVtGi5BeGVzLkJvdHRvbS5NaW5pbXVtT2Zmc2V0Hy5BeGVzLkJvdHRvbS5NaW5vclRpY2tzLlZpc2libGUYLkF4ZXMuQm90dG9tLlRpY2tzLkNvbG9yHC5BeGVzLkJvdHRvbS5UaXRsZS5Gb250Lk5hbWUcLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuU2l6ZSEuQXhlcy5Cb3R0b20uVGl0bGUuRm9udC5TaXplRmxvYXQjLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuQnJ1c2guQ29sb3InLkF4ZXMuQm90dG9tLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLkJvdHRvbS5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3byouQXhlcy5EZXB0aFRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUqLkF4ZXMuRGVwdGhUb3AuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvJy5BeGVzLkRlcHRoLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvck9uZScuQXhlcy5EZXB0aC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JUd28mLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUmLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28AAAQAAAEBBAQABAEBAQEAAAYBAAABAQEBAQEBAQQEAAABBAQAAAQBAQQABAQAAAAEAQEBAQEBAQEBAAABAQAAAQEAAAAABAAAAAAABAEAAAQEAQEAAQEAAAEBAAQAAAQBAAAEAQEAAAEBAAABAQAEAAAEAQAABAEBAAABAQEAAAEBAAAAAAQAAAAAAAAEAQAABAEBAQEBAQEBAQEBCCFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMDAAAAAQgjU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMCAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEgU3RlZW1hLlRlZUNoYXJ0LkxlZ2VuZEFsaWdubWVudHMCAAAAAQEICyZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQQAAAAlU3lzdGVtLkRyYXdpbmcuVGV4dC5UZXh0UmVuZGVyaW5nSGludAQAAAAIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAkU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5Qb2ludGVyU3R5bGVzAgAAAAgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAABJFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwIAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAAAQgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICxRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAACAAAAAQQAAAAF+////yFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMBAAAAB3ZhbHVlX18ACAMAAAAAAEAAAAEAAAAGBgAAAAhGRkZGRkZGRgYHAAAACEZGODA4MDgwBfj///8jU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMBAAAAB3ZhbHVlX18ACAIAAAAAAAAABff///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcEAAAACsDAwP8AAAAAAAACAAEF9v///yBTdGVlbWEuVGVlQ2hhcnQuTGVnZW5kQWxpZ25tZW50cwEAAAAHdmFsdWVfXwAIAgAAAAMAAAAGCwAAAAhGRkZGRkZGRgYMAAAACEZGODA4MDgwBg0AAAAIRkZGRkZGRkYGDgAAAAhGRjgwODA4MAABCQ8AAAAGEAAAAAZUYWhvbWEMAAAAAABAQQYRAAAACEZGRkZGRkZGBhIAAAAIRkY4MDgwODAGEwAAAAhGRkZGRkZGRgYUAAAACEZGODA4MDgwBhUAAAAIRkZGRkZGRkYGFgAAAAhGRjgwODA4MAYXAAAACEZGRkZGRkZGBhgAAAAIRkY4MDgwODAF5////yZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQEAAAAHdmFsdWVfXwAIBAAAAAEAAAAF5v///yVTeXN0ZW0uRHJhd2luZy5UZXh0LlRleHRSZW5kZXJpbmdIaW50AQAAAAd2YWx1ZV9fAAgEAAAAAAAAAAMAAAAABhsAAAAbU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5MaW5lAeT////3////CgAAAAAAAAAAJQABAAXj////JFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwEAAAAHdmFsdWVfXwAIAgAAAAkAAAACAAAAAAHi////9////woAAAAAAAAAACUAAQAGHwAAABVQcmVkaWN0ZWQsIHByYWlyaWVzLXMJGwAAAAHf////9////woAAAAAAAAAAI0AAQABAd7////j////AQAAAAHd////9////woAAAAAAAAAAKQAAQAAAgAAAAAB3P////f///8KAAAAAAAAAACNAAEABiUAAAALTWVhc3VyZWQsIFAGJgAAAAhGRkZGRkZGRgYnAAAACEZGODA4MDgwBigAAAAIRkZGRkZGRkYGKQAAAAhGRjgwODA4MAYqAAAACEZGRkZGRkZGBisAAAAIRkY4MDgwODAGLAAAAAhGRkZGRkZGRgYtAAAACEZGODA4MDgwAFAAAAAGLgAAAAgjIyMwLiMjIwkQAAAACQAAAAAAEEEGMAAAAAhGRkZGRkZGRgYxAAAACEZGODA4MDgwAAAAAQAAAAXO////IFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwAQAAAAd2YWx1ZV9fAAgEAAAAAgAAAAAKAAAAzczMzMzM3D8AAAAAAAAAAAABzf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQHL////9////wrAAAD/AAAAAAAAAgAByv////f///8K/wAA/wAAAAAAAAIABjcAAAAIRkZGRkZGRkYGOAAAAAhGRjgwODA4MFAAAAAJLgAAAAkQAAAACQAAAAAAEEEGOwAAAAhGRkZGRkZGRgY8AAAACEZGODA4MDgwAQAAAAHD////zv///wIAAAAAAAHC////9////woAAAD/AAAAAAAAAgAJEAAAAAsAAAAAADBBAcD////3////Cv8AAP8AAAAAAAACAAZBAAAACEZGRkZGRkZGBkIAAAAIRkY4MDgwODAAUAAAAAkuAAAACRAAAAAJAAAAAAAQQQZFAAAACEZGRkZGRkZGBkYAAAAIRkY4MDgwODABAAAAAbn////O////AgAAAAAAAbj////3////CgAAAP8AAAAAAAACAAkQAAAACwAAAAAAMEEBtv////f///8K/wAA/wAAAAAAAAIABksAAAAIRkZGRkZGRkYGTAAAAAhGRjgwODA4MABQAAAABk0AAAAJZC9NTS95eXl5CS4AAAAJEAAAAAkAAAAAABBBBlAAAAAIRkZGRkZGRkYGUQAAAAhGRjgwODA4MAAAAAEAAAABrv///87///8CAAAAAAoAAAAAAAAAoPnjQAAAAAAAQ+NACgAAAAABrf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQGr////9////wr/AAD/AAAAAAAAAgAGVgAAAAhGRkZGRkZGRgZXAAAACEZGODA4MDgwBlgAAAAIRkZGRkZGRkYGWQAAAAhGRjgwODA4MAZaAAAACEZGRkZGRkZGBlsAAAAIRkY4MDgwODAGXAAAAAhGRkZGRkZGRgZdAAAACEZGODA4MDgwBl4AAAAIRkZGRkZGRkYGXwAAAAhGRjgwODA4MBEPAAAAAQAAAAZgAAAAAAs=</Format>
         <Legend>
+          <CheckedTitles>Predicted, noN</CheckedTitles>
+          <CheckedTitles>Measured, P</CheckedTitles>
         </Legend>
         <Plot name="Predicted">
           <colour>
@@ -11327,6 +11669,8 @@ what needs to be done
       <Graph name="sw_75">
         <Format>AAEAAAD/////AQAAAAAAAAAMAgAAAFhUZWVDaGFydC5DbGllbnQsIFZlcnNpb249NC4xLjIwMTEuNzI4MywgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABXU3lzdGVtLldpbmRvd3MuRm9ybXMsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAQAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0nAAAAA4uWm9vbS5BbmltYXRlZBMuWm9vbS5BbmltYXRlZFN0ZXBzFC5QYW5uaW5nLk1vdXNlQnV0dG9uEC5DdXN0b21DaGFydFJlY3QXLlBhbmVsLkltYWdlQmV2ZWwuV2lkdGgbLlBhbmVsLkJldmVsLlN0cmluZ0NvbG9yT25lGy5QYW5lbC5CZXZlbC5TdHJpbmdDb2xvclR3bxIuUGFuZWwuQmV2ZWwuT3V0ZXISLlBhbmVsLkJydXNoLkNvbG9yEi5MZWdlbmQuQ2hlY2tCb3hlcxEuTGVnZW5kLkFsaWdubWVudCIuTGVnZW5kLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lIi5MZWdlbmQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28cLkxlZ2VuZC5CZXZlbC5TdHJpbmdDb2xvck9uZRwuTGVnZW5kLkJldmVsLlN0cmluZ0NvbG9yVHdvFi5MZWdlbmQuU2hhZG93LlZpc2libGUTLkxlZ2VuZC5UcmFuc3BhcmVudA0uSGVhZGVyLkxpbmVzES5IZWFkZXIuRm9udC5OYW1lES5IZWFkZXIuRm9udC5TaXplFi5IZWFkZXIuRm9udC5TaXplRmxvYXQcLkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvck9uZRwuSGVhZGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvHy5TdWJIZWFkZXIuQmV2ZWwuU3RyaW5nQ29sb3JPbmUfLlN1YkhlYWRlci5CZXZlbC5TdHJpbmdDb2xvclR3bxwuRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yT25lHC5Gb290ZXIuQmV2ZWwuU3RyaW5nQ29sb3JUd28fLlN1YkZvb3Rlci5CZXZlbC5TdHJpbmdDb2xvck9uZR8uU3ViRm9vdGVyLkJldmVsLlN0cmluZ0NvbG9yVHdvFS5Bc3BlY3QuU21vb3RoaW5nTW9kZRkuQXNwZWN0LlRleHRSZW5kZXJpbmdIaW50GS5Bc3BlY3QuQ29sb3JQYWxldHRlSW5kZXgOLkFzcGVjdC5WaWV3M0QIU2VyaWVzLjAVLlNlcmllcy4wLkJydXNoLkNvbG9yFy5TZXJpZXMuMC5Qb2ludGVyLlN0eWxlFy5TZXJpZXMuMC5MaW5lUGVuLldpZHRoEy5TZXJpZXMuMC5Db2xvckVhY2gPLlNlcmllcy4wLkNvbG9yDy5TZXJpZXMuMC5UaXRsZQhTZXJpZXMuMRUuU2VyaWVzLjEuQnJ1c2guQ29sb3IZLlNlcmllcy4xLlBvaW50ZXIuVmlzaWJsZRcuU2VyaWVzLjEuUG9pbnRlci5TdHlsZRsuU2VyaWVzLjEuUG9pbnRlci5QZW4uQ29sb3IZLlNlcmllcy4xLkxpbmVQZW4uVmlzaWJsZRcuU2VyaWVzLjEuTGluZVBlbi5XaWR0aBMuU2VyaWVzLjEuQ29sb3JFYWNoDy5TZXJpZXMuMS5Db2xvcg8uU2VyaWVzLjEuVGl0bGUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JPbmUgLldhbGxzLkxlZnQuQmV2ZWwuU3RyaW5nQ29sb3JUd28hLldhbGxzLlJpZ2h0LkJldmVsLlN0cmluZ0NvbG9yT25lIS5XYWxscy5SaWdodC5CZXZlbC5TdHJpbmdDb2xvclR3byAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvck9uZSAuV2FsbHMuQmFjay5CZXZlbC5TdHJpbmdDb2xvclR3byIuV2FsbHMuQm90dG9tLkJldmVsLlN0cmluZ0NvbG9yT25lIi5XYWxscy5Cb3R0b20uQmV2ZWwuU3RyaW5nQ29sb3JUd28OLldhbGxzLlZpc2libGUcLkF4ZXMuTGVmdC5MYWJlbHMuU2VwYXJhdGlvbh0uQXhlcy5MZWZ0LkxhYmVscy5WYWx1ZUZvcm1hdBsuQXhlcy5MZWZ0LkxhYmVscy5Gb250Lk5hbWUbLkF4ZXMuTGVmdC5MYWJlbHMuRm9udC5TaXplIC5BeGVzLkxlZnQuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0Ji5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLkxlZnQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvFC5BeGVzLkxlZnQuQXV0b21hdGljGy5BeGVzLkxlZnQuQXV0b21hdGljTWF4aW11bRsuQXhlcy5MZWZ0LkF1dG9tYXRpY01pbmltdW0YLkF4ZXMuTGVmdC5BeGlzUGVuLldpZHRoGS5BeGVzLkxlZnQuQXhpc1Blbi5FbmRDYXAXLkF4ZXMuTGVmdC5HcmlkLlZpc2libGUYLkF4ZXMuTGVmdC5NYXhpbXVtT2Zmc2V0Ei5BeGVzLkxlZnQuTWF4aW11bRIuQXhlcy5MZWZ0Lk1pbmltdW0dLkF4ZXMuTGVmdC5NaW5vclRpY2tzLlZpc2libGUWLkF4ZXMuTGVmdC5UaWNrcy5Db2xvchouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuTmFtZRouQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZR8uQXhlcy5MZWZ0LlRpdGxlLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkxlZnQuVGl0bGUuRm9udC5TaGFkb3cuQnJ1c2guQ29sb3IhLkF4ZXMuTGVmdC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJS5BeGVzLkxlZnQuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuTGVmdC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3bxsuQXhlcy5Ub3AuTGFiZWxzLlNlcGFyYXRpb24cLkF4ZXMuVG9wLkxhYmVscy5WYWx1ZUZvcm1hdBouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuTmFtZRouQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZR8uQXhlcy5Ub3AuTGFiZWxzLkZvbnQuU2l6ZUZsb2F0JS5BeGVzLlRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUlLkF4ZXMuVG9wLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxcuQXhlcy5Ub3AuQXhpc1Blbi5XaWR0aBguQXhlcy5Ub3AuQXhpc1Blbi5FbmRDYXAWLkF4ZXMuVG9wLkdyaWQuVmlzaWJsZRwuQXhlcy5Ub3AuTWlub3JUaWNrcy5WaXNpYmxlFS5BeGVzLlRvcC5UaWNrcy5Db2xvchkuQXhlcy5Ub3AuVGl0bGUuRm9udC5OYW1lGS5BeGVzLlRvcC5UaXRsZS5Gb250LlNpemUeLkF4ZXMuVG9wLlRpdGxlLkZvbnQuU2l6ZUZsb2F0IC5BeGVzLlRvcC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJC5BeGVzLlRvcC5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvck9uZSQuQXhlcy5Ub3AuVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28RLkF4ZXMuVG9wLlZpc2libGUdLkF4ZXMuUmlnaHQuTGFiZWxzLlNlcGFyYXRpb24eLkF4ZXMuUmlnaHQuTGFiZWxzLlZhbHVlRm9ybWF0HC5BeGVzLlJpZ2h0LkxhYmVscy5Gb250Lk5hbWUcLkF4ZXMuUmlnaHQuTGFiZWxzLkZvbnQuU2l6ZSEuQXhlcy5SaWdodC5MYWJlbHMuRm9udC5TaXplRmxvYXQnLkF4ZXMuUmlnaHQuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLlJpZ2h0LkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxkuQXhlcy5SaWdodC5BeGlzUGVuLldpZHRoGi5BeGVzLlJpZ2h0LkF4aXNQZW4uRW5kQ2FwGC5BeGVzLlJpZ2h0LkdyaWQuVmlzaWJsZR4uQXhlcy5SaWdodC5NaW5vclRpY2tzLlZpc2libGUXLkF4ZXMuUmlnaHQuVGlja3MuQ29sb3IbLkF4ZXMuUmlnaHQuVGl0bGUuRm9udC5OYW1lGy5BeGVzLlJpZ2h0LlRpdGxlLkZvbnQuU2l6ZSAuQXhlcy5SaWdodC5UaXRsZS5Gb250LlNpemVGbG9hdCIuQXhlcy5SaWdodC5UaXRsZS5Gb250LkJydXNoLkNvbG9yJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJi5BeGVzLlJpZ2h0LlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvEy5BeGVzLlJpZ2h0LlZpc2libGUeLkF4ZXMuQm90dG9tLkxhYmVscy5TZXBhcmF0aW9uIi5BeGVzLkJvdHRvbS5MYWJlbHMuRGF0ZVRpbWVGb3JtYXQfLkF4ZXMuQm90dG9tLkxhYmVscy5WYWx1ZUZvcm1hdB0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuTmFtZR0uQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZSIuQXhlcy5Cb3R0b20uTGFiZWxzLkZvbnQuU2l6ZUZsb2F0KC5BeGVzLkJvdHRvbS5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUoLkF4ZXMuQm90dG9tLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvclR3bxYuQXhlcy5Cb3R0b20uQXV0b21hdGljHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNYXhpbXVtHS5BeGVzLkJvdHRvbS5BdXRvbWF0aWNNaW5pbXVtGi5BeGVzLkJvdHRvbS5BeGlzUGVuLldpZHRoGy5BeGVzLkJvdHRvbS5BeGlzUGVuLkVuZENhcBkuQXhlcy5Cb3R0b20uR3JpZC5WaXNpYmxlGi5BeGVzLkJvdHRvbS5NYXhpbXVtT2Zmc2V0FC5BeGVzLkJvdHRvbS5NYXhpbXVtFC5BeGVzLkJvdHRvbS5NaW5pbXVtGi5BeGVzLkJvdHRvbS5NaW5pbXVtT2Zmc2V0Hy5BeGVzLkJvdHRvbS5NaW5vclRpY2tzLlZpc2libGUYLkF4ZXMuQm90dG9tLlRpY2tzLkNvbG9yHC5BeGVzLkJvdHRvbS5UaXRsZS5Gb250Lk5hbWUcLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuU2l6ZSEuQXhlcy5Cb3R0b20uVGl0bGUuRm9udC5TaXplRmxvYXQjLkF4ZXMuQm90dG9tLlRpdGxlLkZvbnQuQnJ1c2guQ29sb3InLkF4ZXMuQm90dG9tLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lJy5BeGVzLkJvdHRvbS5UaXRsZS5CZXZlbC5TdHJpbmdDb2xvclR3byouQXhlcy5EZXB0aFRvcC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JPbmUqLkF4ZXMuRGVwdGhUb3AuTGFiZWxzLkJldmVsLlN0cmluZ0NvbG9yVHdvKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yT25lKS5BeGVzLkRlcHRoVG9wLlRpdGxlLkJldmVsLlN0cmluZ0NvbG9yVHdvJy5BeGVzLkRlcHRoLkxhYmVscy5CZXZlbC5TdHJpbmdDb2xvck9uZScuQXhlcy5EZXB0aC5MYWJlbHMuQmV2ZWwuU3RyaW5nQ29sb3JUd28mLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JPbmUmLkF4ZXMuRGVwdGguVGl0bGUuQmV2ZWwuU3RyaW5nQ29sb3JUd28AAAQAAAEBBAQABAEBAQEAAAYBAAABAQEBAQEBAQQEAAABBAQAAAQBAQQABAQAAAAEAQEBAQEBAQEBAAABAQAAAQEAAAAABAAAAAAABAEAAAQEAQEAAQEAAAEBAAQAAAQBAAAEAQEAAAEBAAABAQAEAAAEAQAABAEBAAABAQEAAAEBAAAAAAQAAAAAAAAEAQAABAEBAQEBAQEBAQEBCCFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMDAAAAAQgjU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMCAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEgU3RlZW1hLlRlZUNoYXJ0LkxlZ2VuZEFsaWdubWVudHMCAAAAAQEICyZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQQAAAAlU3lzdGVtLkRyYXdpbmcuVGV4dC5UZXh0UmVuZGVyaW5nSGludAQAAAAIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAkU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5Qb2ludGVyU3R5bGVzAgAAAAgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAABJFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwIAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAAAQgBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAgLFFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAAEICAsBAQEIIFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwBAAAAAEIBgYIARRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAICxRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAACAAAAAQQAAAAF+////yFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Nb3VzZUJ1dHRvbnMBAAAAB3ZhbHVlX18ACAMAAAAAAEAAAAEAAAAGBgAAAAhGRkZGRkZGRgYHAAAACEZGODA4MDgwBfj///8jU3RlZW1hLlRlZUNoYXJ0LkRyYXdpbmcuQmV2ZWxTdHlsZXMBAAAAB3ZhbHVlX18ACAIAAAAAAAAABff///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcEAAAACsDAwP8AAAAAAAACAAEF9v///yBTdGVlbWEuVGVlQ2hhcnQuTGVnZW5kQWxpZ25tZW50cwEAAAAHdmFsdWVfXwAIAgAAAAMAAAAGCwAAAAhGRkZGRkZGRgYMAAAACEZGODA4MDgwBg0AAAAIRkZGRkZGRkYGDgAAAAhGRjgwODA4MAABCQ8AAAAGEAAAAAZUYWhvbWEMAAAAAABAQQYRAAAACEZGRkZGRkZGBhIAAAAIRkY4MDgwODAGEwAAAAhGRkZGRkZGRgYUAAAACEZGODA4MDgwBhUAAAAIRkZGRkZGRkYGFgAAAAhGRjgwODA4MAYXAAAACEZGRkZGRkZGBhgAAAAIRkY4MDgwODAF5////yZTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuU21vb3RoaW5nTW9kZQEAAAAHdmFsdWVfXwAIBAAAAAEAAAAF5v///yVTeXN0ZW0uRHJhd2luZy5UZXh0LlRleHRSZW5kZXJpbmdIaW50AQAAAAd2YWx1ZV9fAAgEAAAAAAAAAAMAAAAABhsAAAAbU3RlZW1hLlRlZUNoYXJ0LlN0eWxlcy5MaW5lAeT////3////CgAAAAAAAAAAJQABAAXj////JFN0ZWVtYS5UZWVDaGFydC5TdHlsZXMuUG9pbnRlclN0eWxlcwEAAAAHdmFsdWVfXwAIAgAAAAkAAAACAAAAAAHi////9////woAAAAAAAAAACUAAQAGHwAAABVQcmVkaWN0ZWQsIHByYWlyaWVzLXMJGwAAAAHf////9////woAAAAAAAAAAI0AAQABAd7////j////AQAAAAHd////9////woAAAAAAAAAAKQAAQAAAgAAAAAB3P////f///8KAAAAAAAAAACNAAEABiUAAAALTWVhc3VyZWQsIFAGJgAAAAhGRkZGRkZGRgYnAAAACEZGODA4MDgwBigAAAAIRkZGRkZGRkYGKQAAAAhGRjgwODA4MAYqAAAACEZGRkZGRkZGBisAAAAIRkY4MDgwODAGLAAAAAhGRkZGRkZGRgYtAAAACEZGODA4MDgwAFAAAAAGLgAAAAgjIyMwLiMjIwkQAAAACQAAAAAAEEEGMAAAAAhGRkZGRkZGRgYxAAAACEZGODA4MDgwAAAAAQAAAAXO////IFN5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5MaW5lQ2FwAQAAAAd2YWx1ZV9fAAgEAAAAAgAAAAAKAAAAzczMzMzM3D8AAAAAAAAAAAABzf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQHL////9////wrAAAD/AAAAAAAAAgAByv////f///8K/wAA/wAAAAAAAAIABjcAAAAIRkZGRkZGRkYGOAAAAAhGRjgwODA4MFAAAAAJLgAAAAkQAAAACQAAAAAAEEEGOwAAAAhGRkZGRkZGRgY8AAAACEZGODA4MDgwAQAAAAHD////zv///wIAAAAAAAHC////9////woAAAD/AAAAAAAAAgAJEAAAAAsAAAAAADBBAcD////3////Cv8AAP8AAAAAAAACAAZBAAAACEZGRkZGRkZGBkIAAAAIRkY4MDgwODAAUAAAAAkuAAAACRAAAAAJAAAAAAAQQQZFAAAACEZGRkZGRkZGBkYAAAAIRkY4MDgwODABAAAAAbn////O////AgAAAAAAAbj////3////CgAAAP8AAAAAAAACAAkQAAAACwAAAAAAMEEBtv////f///8K/wAA/wAAAAAAAAIABksAAAAIRkZGRkZGRkYGTAAAAAhGRjgwODA4MABQAAAABk0AAAAJZC9NTS95eXl5CS4AAAAJEAAAAAkAAAAAABBBBlAAAAAIRkZGRkZGRkYGUQAAAAhGRjgwODA4MAAAAAEAAAABrv///87///8CAAAAAAoAAAAAAAAAoPnjQAAAAAAAQ+NACgAAAAABrf////f///8KAAAA/wAAAAAAAAIACRAAAAALAAAAAAAwQQGr////9////wr/AAD/AAAAAAAAAgAGVgAAAAhGRkZGRkZGRgZXAAAACEZGODA4MDgwBlgAAAAIRkZGRkZGRkYGWQAAAAhGRjgwODA4MAZaAAAACEZGRkZGRkZGBlsAAAAIRkY4MDgwODAGXAAAAAhGRkZGRkZGRgZdAAAACEZGODA4MDgwBl4AAAAIRkZGRkZGRkYGXwAAAAhGRjgwODA4MBEPAAAAAQAAAAZgAAAAAAs=</Format>
         <Legend>
+          <CheckedTitles>Predicted, noN</CheckedTitles>
+          <CheckedTitles>Measured, P</CheckedTitles>
         </Legend>
         <Plot name="Predicted">
           <colour>
