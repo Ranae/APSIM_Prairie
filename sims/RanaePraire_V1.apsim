@@ -11011,8 +11011,8 @@ public class Script
     </Graph>
     <Graph name="Species DM live">
       <Legend>
-        <CheckedTitles> SpeciesAboveGroundWt(1)</CheckedTitles>
-        <CheckedTitles> SpeciesAboveGroundWt(2)</CheckedTitles>
+        <CheckedTitles> speciesInterceptedRadn(1)</CheckedTitles>
+        <CheckedTitles> speciesInterceptedRadn(2)</CheckedTitles>
       </Legend>
       <Plot name="Predicted">
         <SeriesType>Solid line</SeriesType>
@@ -11020,8 +11020,8 @@ public class Script
         <colour>
         </colour>
         <X>Date</X>
-        <Y>SpeciesAboveGroundWt(1)</Y>
-        <Y>SpeciesAboveGroundWt(2)</Y>
+        <Y>speciesInterceptedRadn(1)</Y>
+        <Y>speciesInterceptedRadn(2)</Y>
         <GDApsimFileReader name="ApsimFileReader" />
       </Plot>
     </Graph>
