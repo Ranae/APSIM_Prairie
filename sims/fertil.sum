@@ -9,7 +9,7 @@
  The Agricultural Production Systems Simulator
              Copyright(c) APSRU               
 
-Version                = 7.8 r3977
+Version                = 7.8
 Title                  = fertil
    Component                        "clock" = %apsim%\Model\Clock.dll
    Component                          "met" = %apsim%\Model\Input.dll
@@ -113,6 +113,7 @@ Paddock:
         SpeciesAboveGroundWt
         SpeciesBelowGroundWt
         SpeciesCanopyFactor
+        speciesInterceptedRadn
         OC_20cm
         OC_90cm
         OC_180cm
@@ -1150,8 +1151,8 @@ Paddock:
    - Reading Fertiliser Type Parameters
          0.21 of N as nitrate (no3_n)
                                          added at depth    0.00 (layer   1)
-24 December 2008(Day of year=359), paddock.unit convertor: 
-     Manager creating a new local real variable : n_conc_mgln = 0.00029
+23 December 2008(Day of year=358), paddock.unit convertor: 
+     Manager creating a new local real variable : n_conc_mgln = 0.00027
 9 January 2009(Day of year=9), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.13400 (kg/ha), depth = 0 (mm), type = no3_n
 9 January 2009(Day of year=9), fertiliser: 
@@ -1172,7 +1173,7 @@ Paddock:
                       -------------------
      Value of variable is out of bounds.
      Variable: ave_soil_temp
-     Value:      -22.8686428
+     Value:      -22.8671341
      Bounds:      -20.0000000 to       80.0000000
      Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -1183,7 +1184,7 @@ Paddock:
                       -------------------
      Value of variable is out of bounds.
      Variable: ave_soil_temp
-     Value:      -20.1581306
+     Value:      -20.1557808
      Bounds:      -20.0000000 to       80.0000000
      Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -1959,7 +1960,7 @@ Paddock:
                       -------------------
      Value of variable is out of bounds.
      Variable: ave_soil_temp
-     Value:      -20.6121368
+     Value:      -20.6135921
      Bounds:      -20.0000000 to       80.0000000
      Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -4048,7 +4049,7 @@ Paddock:
                                          added at depth    0.00 (layer   1)
 12 July 2012(Day of year=194), paddock.SWIM: 
      Maximum iterations reached - swim will reduce timestep
-     ApsimSwim|apswim_swim - Changing dt value from:           6.966 to:           3.483
+     ApsimSwim|apswim_swim - Changing dt value from:           6.952 to:           3.476
 15 July 2012(Day of year=197), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.06300 (kg/ha), depth = 0 (mm), type = no3_n
 15 July 2012(Day of year=197), fertiliser: 
@@ -4091,6 +4092,11 @@ Paddock:
    - Reading Fertiliser Type Parameters
          0.07 of N as nitrate (no3_n)
                                          added at depth    0.00 (layer   1)
+31 July 2012(Day of year=213), paddock.SWIM: 
+     Maximum iterations reached - swim will reduce timestep
+     ApsimSwim|apswim_swim - Changing dt value from:          10.259 to:           5.129
+     Maximum iterations reached - swim will reduce timestep
+     ApsimSwim|apswim_swim - Changing dt value from:           9.435 to:           4.718
 6 August 2012(Day of year=219), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.15000 (kg/ha), depth = 0 (mm), type = no3_n
 6 August 2012(Day of year=219), fertiliser: 
@@ -4100,7 +4106,7 @@ Paddock:
                                          added at depth    0.00 (layer   1)
 7 August 2012(Day of year=220), paddock.SWIM: 
      Maximum iterations reached - swim will reduce timestep
-     ApsimSwim|apswim_swim - Changing dt value from:           8.051 to:           4.026
+     ApsimSwim|apswim_swim - Changing dt value from:           8.049 to:           4.025
 9 August 2012(Day of year=222), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.00500 (kg/ha), depth = 0 (mm), type = no3_n
 9 August 2012(Day of year=222), fertiliser: 
@@ -4117,7 +4123,7 @@ Paddock:
                                          added at depth    0.00 (layer   1)
 11 August 2012(Day of year=224), paddock.SWIM: 
      Maximum iterations reached - swim will reduce timestep
-     ApsimSwim|apswim_swim - Changing dt value from:           7.942 to:           3.971
+     ApsimSwim|apswim_swim - Changing dt value from:           7.931 to:           3.965
 12 August 2012(Day of year=225), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.00200 (kg/ha), depth = 0 (mm), type = no3_n
 12 August 2012(Day of year=225), fertiliser: 
@@ -4847,6 +4853,9 @@ Paddock:
    - Reading Fertiliser Type Parameters
          0.17 of N as nitrate (no3_n)
                                          added at depth    0.00 (layer   1)
+25 July 2013(Day of year=206), paddock.SWIM: 
+     Maximum iterations reached - swim will reduce timestep
+     ApsimSwim|apswim_swim - Changing dt value from:           7.415 to:           3.707
 1 August 2013(Day of year=213), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.04300 (kg/ha), depth = 0 (mm), type = no3_n
 1 August 2013(Day of year=213), fertiliser: 
@@ -5092,7 +5101,7 @@ Paddock:
                       -------------------
      Value of variable is out of bounds.
      Variable: ave_soil_temp
-     Value:      -20.5933685
+     Value:      -20.6405048
      Bounds:      -20.0000000 to       80.0000000
      Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

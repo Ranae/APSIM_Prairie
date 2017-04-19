@@ -9,7 +9,7 @@
  The Agricultural Production Systems Simulator
              Copyright(c) APSRU               
 
-Version                = 7.8 r3977
+Version                = 7.8
 Title                  = noN
    Component                        "clock" = %apsim%\Model\Clock.dll
    Component                          "met" = %apsim%\Model\Input.dll
@@ -1144,7 +1144,7 @@ Method to set amount to remove was not recognized, command will be ignored
    - Reading Fertiliser Type Parameters
          0.21 of N as nitrate (no3_n)
                                          added at depth    0.00 (layer   1)
-28 December 2008(Day of year=363), paddock.unit convertor: 
+30 December 2008(Day of year=365), paddock.unit convertor: 
      Manager creating a new local real variable : n_conc_mgln = 0.00000
 9 January 2009(Day of year=9), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.13400 (kg/ha), depth = 0 (mm), type = no3_n
@@ -1166,7 +1166,7 @@ Method to set amount to remove was not recognized, command will be ignored
                       -------------------
      Value of variable is out of bounds.
      Variable: ave_soil_temp
-     Value:      -22.8643665
+     Value:      -22.8641510
      Bounds:      -20.0000000 to       80.0000000
      Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -1177,7 +1177,7 @@ Method to set amount to remove was not recognized, command will be ignored
                       -------------------
      Value of variable is out of bounds.
      Variable: ave_soil_temp
-     Value:      -20.1515541
+     Value:      -20.1513577
      Bounds:      -20.0000000 to       80.0000000
      Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -1950,7 +1950,7 @@ Method to set amount to remove was not recognized, command will be ignored
                       -------------------
      Value of variable is out of bounds.
      Variable: ave_soil_temp
-     Value:      -20.6163101
+     Value:      -20.6196232
      Bounds:      -20.0000000 to       80.0000000
      Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -3511,6 +3511,9 @@ Method to set amount to remove was not recognized, command will be ignored
    - Reading Fertiliser Type Parameters
          0.11 of N as nitrate (no3_n)
                                          added at depth    0.00 (layer   1)
+14 October 2011(Day of year=287), paddock.SWIM: 
+     Maximum iterations reached - swim will reduce timestep
+     ApsimSwim|apswim_swim - Changing dt value from:          10.714 to:           5.357
 24 October 2011(Day of year=297), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.00200 (kg/ha), depth = 0 (mm), type = no3_n
 24 October 2011(Day of year=297), fertiliser: 
@@ -4024,6 +4027,9 @@ Method to set amount to remove was not recognized, command will be ignored
    - Reading Fertiliser Type Parameters
          0.18 of N as nitrate (no3_n)
                                          added at depth    0.00 (layer   1)
+12 July 2012(Day of year=194), paddock.SWIM: 
+     Maximum iterations reached - swim will reduce timestep
+     ApsimSwim|apswim_swim - Changing dt value from:           6.790 to:           3.395
 15 July 2012(Day of year=197), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.06300 (kg/ha), depth = 0 (mm), type = no3_n
 15 July 2012(Day of year=197), fertiliser: 
@@ -4078,7 +4084,7 @@ Method to set amount to remove was not recognized, command will be ignored
                                          added at depth    0.00 (layer   1)
 7 August 2012(Day of year=220), paddock.SWIM: 
      Maximum iterations reached - swim will reduce timestep
-     ApsimSwim|apswim_swim - Changing dt value from:           8.011 to:           4.006
+     ApsimSwim|apswim_swim - Changing dt value from:           8.020 to:           4.010
 9 August 2012(Day of year=222), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.00500 (kg/ha), depth = 0 (mm), type = no3_n
 9 August 2012(Day of year=222), fertiliser: 
@@ -4093,9 +4099,9 @@ Method to set amount to remove was not recognized, command will be ignored
    - Reading Fertiliser Type Parameters
          0.16 of N as nitrate (no3_n)
                                          added at depth    0.00 (layer   1)
-10 August 2012(Day of year=223), paddock.SWIM: 
+11 August 2012(Day of year=224), paddock.SWIM: 
      Maximum iterations reached - swim will reduce timestep
-     ApsimSwim|apswim_swim - Changing dt value from:           7.500 to:           3.750
+     ApsimSwim|apswim_swim - Changing dt value from:           7.819 to:           3.909
 12 August 2012(Day of year=225), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.00200 (kg/ha), depth = 0 (mm), type = no3_n
 12 August 2012(Day of year=225), fertiliser: 
@@ -4182,7 +4188,7 @@ Method to set amount to remove was not recognized, command will be ignored
                                          added at depth    0.00 (layer   1)
 16 September 2012(Day of year=260), paddock.SWIM: 
      Maximum iterations reached - swim will reduce timestep
-     ApsimSwim|apswim_swim - Changing dt value from:          10.142 to:           5.071
+     ApsimSwim|apswim_swim - Changing dt value from:          10.192 to:           5.096
 19 September 2012(Day of year=263), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.02500 (kg/ha), depth = 0 (mm), type = no3_n
 19 September 2012(Day of year=263), fertiliser: 
@@ -4896,7 +4902,7 @@ Method to set amount to remove was not recognized, command will be ignored
                                          added at depth    0.00 (layer   1)
 19 September 2013(Day of year=262), paddock.SWIM: 
      Maximum iterations reached - swim will reduce timestep
-     ApsimSwim|apswim_swim - Changing dt value from:          10.735 to:           5.368
+     ApsimSwim|apswim_swim - Changing dt value from:          10.758 to:           5.379
 20 September 2013(Day of year=263), paddock.N Deposition: 
      Manager sending message :- fertiliser apply  amount = 0.15200 (kg/ha), depth = 0 (mm), type = no3_n
 20 September 2013(Day of year=263), fertiliser: 
@@ -5073,7 +5079,7 @@ Method to set amount to remove was not recognized, command will be ignored
                       -------------------
      Value of variable is out of bounds.
      Variable: ave_soil_temp
-     Value:      -20.6212749
+     Value:      -20.6314163
      Bounds:      -20.0000000 to       80.0000000
      Component name: paddock.NicolletRanae_InitializedPrairie Nitrogen
      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

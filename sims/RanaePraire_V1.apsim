@@ -1,4 +1,4 @@
-<folder version="36" creator="Apsim 7.8-r3977" name="simulations">
+<folder version="36" creator="Apsim 7.8-r3867" name="simulations">
   <folder name="Prairies calibration dec 2015">
     <simulation name="PFnew">
       <metfile name="met">
