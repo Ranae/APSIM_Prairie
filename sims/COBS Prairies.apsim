@@ -1136,7 +1136,7 @@
             <MaxWaterIncrement>10</MaxWaterIncrement>
             <SpaceWeightingFactor>0</SpaceWeightingFactor>
             <SoluteSpaceWeightingFactor>0</SoluteSpaceWeightingFactor>
-            <Diagnostics>false</Diagnostics>
+            <Diagnostics>true</Diagnostics>
             <SwimSoluteParameters>
               <Dis>15</Dis>
               <Disp>1</Disp>
@@ -1199,7 +1199,7 @@
               </ClFIP>
             </SwimSoluteParameters>
             <SwimWaterTable>
-              <WaterTableDepth>1650</WaterTableDepth>
+              <WaterTableDepth>1076</WaterTableDepth>
             </SwimWaterTable>
             <SwimSubsurfaceDrain>
               <DrainDepth>1070</DrainDepth>
@@ -1323,23 +1323,23 @@
                 <double>0.12</double>
                 <double>0.125</double>
                 <double>0.132</double>
-                <double>0.132</double>
-                <double>0.13</double>
+                <double>0.1</double>
+                <double>0.11</double>
                 <double>0.138</double>
                 <double>0.165</double>
               </LL>
               <KL>
-                <double>0.1</double>
-                <double>0.1</double>
-                <double>0.1</double>
-                <double>0.09</double>
-                <double>0.09</double>
                 <double>0.08</double>
-                <double>0.07</double>
-                <double>0.07</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.08</double>
                 <double>0.07</double>
                 <double>0.06</double>
                 <double>0.02</double>
+                <double>0.1</double>
               </KL>
               <XF>
                 <double>1</double>
@@ -1351,8 +1351,8 @@
                 <double>1</double>
                 <double>1</double>
                 <double>1</double>
-                <double>1</double>
-                <double>1</double>
+                <double>0.5</double>
+                <double>0</double>
               </XF>
             </SoilCrop>
             <SoilCrop name="maize">
@@ -1377,21 +1377,21 @@
                 <double>0.12</double>
                 <double>0.125</double>
                 <double>0.132</double>
-                <double>0.132</double>
-                <double>0.13</double>
+                <double>0.1</double>
+                <double>0.11</double>
                 <double>0.138</double>
                 <double>0.165</double>
               </LL>
               <KL>
-                <double>0.1</double>
-                <double>0.1</double>
-                <double>0.1</double>
-                <double>0.02</double>
-                <double>0.02</double>
-                <double>0.01</double>
-                <double>0.01</double>
-                <double>0.01</double>
-                <double>0.01</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.08</double>
+                <double>0.05</double>
+                <double>0.03</double>
+                <double>0</double>
                 <double>0</double>
                 <double>0</double>
               </KL>
@@ -1404,9 +1404,9 @@
                 <double>1</double>
                 <double>1</double>
                 <double>1</double>
-                <double>1</double>
-                <double>1</double>
-                <double>1</double>
+                <double>0</double>
+                <double>0</double>
+                <double>0</double>
               </XF>
             </SoilCrop>
           </Water>

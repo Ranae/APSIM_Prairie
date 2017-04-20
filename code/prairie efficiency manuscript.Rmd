@@ -1,0 +1,8 @@
+---
+title: "Water and Nitrogen Budgets of Fertilized vs Unfertilized Prairie"
+author: "Ranae Dietzel"
+date: "April 20, 2017"
+output: pdf_document
+---
+
+Prairies are potential biofuel crops. Fertilizing prairie results in more aboveground biomass, less belowground biomass, and greater species diversity, but the effects of these treatment differences on ecosystem processes like water use and nitrogen cycling are unknown. We modified and used a mechanistic cropping systems model to determine how nitrogen fertilization affects system water use efficiency and system nitrogen use efficiency in fertilized and unfertilized prairie.  
