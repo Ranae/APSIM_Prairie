@@ -47,6 +47,12 @@ dodge <- position_dodge(width=0.5)
   names(apsim.pf) <- header.pf
   apsim.pf$Date<-as.Date(apsim.pf$Date, "%d/%m/%Y")
   apsim.pf$year<-year(apsim.pf$Date)
+  
+    header.met <- scan("../sims/Rafa-cobs-met-until-Nov2015.met", skip = 4, nlines = 1, what = character(), sep="")
+  met<-read.csv("../sims/Rafa-cobs-met-until-Nov2015.met", skip = 6, header=FALSE, sep="", na.strings = "?")
+  names(met) <- header.met
+  
+
 ```
   
   
