@@ -1,0 +1,1790 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simulation name="Pnew" executable="%apsim%/Model/ProtocolManager.dll">
+  <executable name="%apsim%/Model/ProtocolManager.dll" version="1.0" />
+  <title>Pnew</title>
+  <component name="clock" executable="%apsim%\Model\Clock.dll" class="Clock">
+    <executable name="%apsim%\Model\Clock.dll" version="1.0" />
+    <initdata>
+      <timestep_events>prepare init_step do_management run_one_step do_pasture_water process do_pasture_growth do_stock post end_step</timestep_events>
+      <start_date type="date" description="Enter the start date of the simulation">05/05/2008</start_date>
+      <end_date type="date" description="Enter the end date of the simulation">11/11/2013</end_date>
+    </initdata>
+  </component>
+  <component name="met" executable="%apsim%\Model\Input.dll" class="Input.Metfile">
+    <executable name="%apsim%\Model\Input.dll" version="1.0" />
+    <initdata>
+      <filename>Rafa-cobs-met-until-Nov2015.met</filename>
+    </initdata>
+  </component>
+  <system name="paddock" executable="%apsim%/Model/ProtocolManager.dll" class="ProtocolManager">
+    <executable name="%apsim%/Model/ProtocolManager.dll" version="1.0" />
+    <component name="outputfile" executable="%apsim%\Model\Report.dll" class="Report.Outputfile">
+      <executable name="%apsim%\Model\Report.dll" version="1.0" />
+      <initdata>
+        <outputfile>Pnew.out</outputfile>
+        <title>Pnew</title>
+        <variable>dd/mm/yyyy as Date</variable>
+        <variable>AboveGroundWt</variable>
+        <variable>BelowGroundWt</variable>
+        <variable>AboveGroundNPct</variable>
+        <variable>BelowGroundN</variable>
+        <variable>SpeciesLiveWt</variable>
+        <variable>SpeciesTotalWt</variable>
+        <variable>HarvestWt</variable>
+        <variable>AboveGroundLiveN</variable>
+        <variable>AboveGroundDeadN</variable>
+        <variable>watertable</variable>
+        <variable>OC_20cm</variable>
+        <variable>OC_90cm</variable>
+        <variable>OC_180cm</variable>
+        <variable>n2o_atm()</variable>
+        <variable>nitrification()</variable>
+        <variable>dnit()</variable>
+        <variable>MaySeptNDep</variable>
+        <variable>MaySeptTiles</variable>
+        <variable>MaySeptRain</variable>
+        <variable>MaySeptrunoff</variable>
+        <variable>MaySepEvap</variable>
+        <variable>MaySepTrans</variable>
+        <variable>MaySepNnetMin</variable>
+        <variable>MaySepDenit</variable>
+        <variable>MaySeptTilesNO3</variable>
+        <variable>MaySepResImmob</variable>
+        <variable>MaySepNuptake</variable>
+        <variable>biom_c()</variable>
+        <variable>surfaceom_c</variable>
+        <variable>fom_c()</variable>
+        <variable>hum_c()</variable>
+        <variable>surfaceom_wt</variable>
+        <variable>AboveGroundDeadWt</variable>
+        <variable>Cover_dead</variable>
+        <variable>C_remob</variable>
+        <variable>LeafDeadWt</variable>
+        <variable>LitterDepositionWt</variable>
+        <variable>RootSenescenceWt</variable>
+        <variable>wf</variable>
+        <variable>surfaceom_n</variable>
+        <variable>surfaceom_cover</variable>
+        <variable>surface_CN_ratio</variable>
+        <variable>no3()</variable>
+        <variable>nh4()</variable>
+        <variable>tf_surface_om1</variable>
+        <variable>es</variable>
+        <variable>WaterUptake</variable>
+        <variable>eos</variable>
+        <variable>Cover_green</variable>
+        <variable>dlt_n_min_tot()</variable>
+        <variable>dlt_n_min()</variable>
+        <variable>dlt_n_min_res()</variable>
+        <variable>PlantFixedN</variable>
+        <variable>NitrogenDemand</variable>
+        <variable>NitrogenSupply</variable>
+        <variable>NitrogenUptake</variable>
+        <variable>PlantRemobilisedN</variable>
+        <variable>lai</variable>
+        <variable>LAI_green</variable>
+        <variable>LAI_dead</variable>
+        <variable>dlt_fom_c_atm()</variable>
+        <variable>dlt_fom_c_biom()</variable>
+        <variable>dlt_fom_c_hum()</variable>
+        <variable>dlt_fom_c_pool1()</variable>
+        <variable>dlt_fom_c_pool2()</variable>
+        <variable>dlt_fom_c_pool3()</variable>
+        <variable>dlt_fom_n_min()</variable>
+        <variable>dlt_res_c_biom()</variable>
+        <variable>dlt_res_c_hum()</variable>
+        <variable>DefoliatedDigestibility</variable>
+        <variable>HarvestN</variable>
+        <variable>HerbageDigestibility</variable>
+        <variable>RootSenescenceN</variable>
+        <variable>roots_cn</variable>
+        <variable>Remaining_Wt</variable>
+        <variable>Surface_sot</variable>
+        <variable>fom_n()</variable>
+        <variable>nit_tot()</variable>
+        <variable>sot_cnr</variable>
+        <variable>sot_cnrf</variable>
+        <variable>roots_N%</variable>
+        <variable>oc_5cm</variable>
+        <variable>oc_15cm</variable>
+        <variable>oc_30cm</variable>
+        <variable>oc_60cm</variable>
+        <variable>oc_100cm</variable>
+        <variable>IntRadn</variable>
+        <variable>soil_co2</variable>
+        <variable>root_co2</variable>
+        <variable>soil_root_co2</variable>
+        <variable>sw_5</variable>
+        <variable>sw_10</variable>
+        <variable>sw_15</variable>
+        <variable>sw_35</variable>
+        <variable>sw_75</variable>
+        <variable>st_5</variable>
+        <variable>st_10</variable>
+        <variable>st_15</variable>
+        <variable>st_35</variable>
+        <variable>st_75</variable>
+        <variable>subsurface_drain</variable>
+        <variable>GLFwater</variable>
+        <variable>GLFtemp</variable>
+        <variable>GLFn</variable>
+        <variable>ToRoot</variable>
+        <variable>ToRootDM</variable>
+        <variable>sotiris</variable>
+        <variable>fom_cn</variable>
+        <variable>year</variable>
+        <variable>subsurface_drain_no3</variable>
+        <variable>N_conc_mgLN</variable>
+        <outputfrequency>end_day</outputfrequency>
+      </initdata>
+    </component>
+    <component name="agwt" executable="%apsim%\Model\Report.dll" class="Report.Outputfile">
+      <executable name="%apsim%\Model\Report.dll" version="1.0" />
+      <initdata>
+        <outputfile>Pnew agwt.out</outputfile>
+        <title>Pnew agwt</title>
+        <variable>dd/mm/yyyy as Date</variable>
+        <variable>AboveGroundWt</variable>
+        <variable>BelowGroundWt</variable>
+        <variable>surfaceom_wt</variable>
+        <outputfrequency>end_day</outputfrequency>
+      </initdata>
+    </component>
+    <component name="soilco2" executable="%apsim%\Model\Report.dll" class="Report.Outputfile">
+      <executable name="%apsim%\Model\Report.dll" version="1.0" />
+      <initdata>
+        <outputfile>Pnew soilco2.out</outputfile>
+        <title>Pnew soilco2</title>
+        <variable>dd/mm/yyyy as Date</variable>
+        <outputfrequency>end_day</outputfrequency>
+        <variable>soil_root_co2</variable>
+      </initdata>
+    </component>
+    <component name="drain" executable="%apsim%\Model\Report.dll" class="Report.Outputfile">
+      <executable name="%apsim%\Model\Report.dll" version="1.0" />
+      <initdata>
+        <outputfile>Pnew drain.out</outputfile>
+        <title>Pnew drain</title>
+        <variable>dd/mm/yyyy as Date</variable>
+        <variable>drainageIH</variable>
+        <variable>leaching</variable>
+        <outputfrequency>end_day</outputfrequency>
+      </initdata>
+    </component>
+    <component name="accum" executable="%apsim%/Model/Accum.dll" class="Accum">
+      <executable name="%apsim%/Model/Accum.dll" version="1.0" />
+      <initdata>
+        <accum_variables>rain[15]</accum_variables>
+      </initdata>
+    </component>
+    <component name="Prairie opeartions" executable="%apsim%\Model\Operations.dll" class="Operations">
+      <executable name="%apsim%\Model\Operations.dll" version="1.0" />
+      <initdata>
+        <script name="start_of_day">
+          <text><![CDATA[
+                     6/6/2008 ryegrass_clover_paspalum sow
+                     1/10/2008  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     2/10/2008 surfaceorganicmatter tillage type = user_defined, f_incorp = 0.10 (), tillage_depth = 0.0 ()
+                     10/10/2009  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2009 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2010  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2010 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2011  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2011 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2012  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2012 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2013  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2013 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2014  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2014 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2015  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2015 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2016  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2016 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2017  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2017 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2018  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2018 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2019  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2019 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2020  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2020 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2021  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2021 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2022  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2022 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2023  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2023 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2024  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2024 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2025  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2025 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2026  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2026 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2027  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2027 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2028  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2028 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2029  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2029 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2030  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2030 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2031  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2031 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2032  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2032 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2033  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2033 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2034  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2034 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2035  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2035 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2036  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2036 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2037  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2037 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2038  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2038 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2039  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2039 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2040  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2040 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2041  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2041 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2042  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2042 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2043  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2043 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2044  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2044 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2045  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2045 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2046  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2046 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2047  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2047 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2048  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2048 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2049  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2049 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2050  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2050 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2051  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2051 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2052  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2052 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2053  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2053 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2054  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2054 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2055  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2055 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2056  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2056 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2057  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2057 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2058  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2058 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2059  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2059 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2060  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2060 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2061  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2061 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2062  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2062 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2063  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2063 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                     10/10/2064  ryegrass_clover_paspalum graze type = 'residue', amount = 250
+                     12/10/2064 surfaceorganicmatter tillage type = user_defined, f_incorp = .66707100 (), tillage_depth = 0.0 ()
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                     ]]></text>
+          <event>start_of_day</event>
+        </script>
+        <script name="end_of_day">
+          <text><![CDATA[
+                     ]]></text>
+          <event>end_of_day</event>
+        </script>
+      </initdata>
+    </component>
+    <component name="fertiliser" executable="%apsim%\Model\Fertiliser.dll" class="Fertiliser">
+      <executable name="%apsim%\Model\Fertiliser.dll" version="1.0" />
+      <initdata>
+        <calcite_ca>
+          <full_name>Ca as finely ground Agricultural Lime</full_name>
+          <components>CaCO3</components>
+          <fraction description="The weight of the Ca component of the lime.">1.0   </fraction>
+        </calcite_ca>
+        <calcite_fine>
+          <full_name>finely ground Agricultural Lime</full_name>
+          <components>CaCO3</components>
+          <fraction description="The weight of the Ca component of the calcite.">0.4   </fraction>
+        </calcite_fine>
+        <dolomite>
+          <full_name>finely ground dolomite</full_name>
+          <components>CaCO3</components>
+          <fraction description="The weight of the Ca component of the dolomite">0.22   </fraction>
+        </dolomite>
+        <NO3_N>
+          <full_name>N as nitrate</full_name>
+          <components>no3</components>
+          <fraction>1.0</fraction>
+        </NO3_N>
+        <NH4_N>
+          <full_name>N as ammonium</full_name>
+          <components>nh4</components>
+          <fraction>1.0</fraction>
+        </NH4_N>
+        <NH4NO3>
+          <full_name>ammonium nitrate</full_name>
+          <components>nh4  no3</components>
+          <fraction>0.5  0.5</fraction>
+        </NH4NO3>
+        <DAP>
+          <full_name>di-ammonium phosphate</full_name>
+          <components>nh4 </components>
+          <fraction>0.18</fraction>
+        </DAP>
+        <MAP>
+          <full_name>mono-ammonium phosphate</full_name>
+          <components>nh4 </components>
+          <fraction>0.11</fraction>
+        </MAP>
+        <urea_N>
+          <full_name>N as urea</full_name>
+          <components>urea</components>
+          <fraction>1.0</fraction>
+        </urea_N>
+        <urea_no3>
+          <full_name>N as urea</full_name>
+          <components>urea no3</components>
+          <fraction>0.50 0.50</fraction>
+        </urea_no3>
+        <urea>
+          <full_name>Urea ferilizer</full_name>
+          <components>urea</components>
+          <fraction>0.46</fraction>
+        </urea>
+        <nh4so4_n>
+          <full_name>ammonium sulphate</full_name>
+          <components>nh4</components>
+          <fraction>1.0</fraction>
+        </nh4so4_n>
+        <rock_p>
+          <full_name>Rock Phosphorus</full_name>
+          <components>rock_p labile_p</components>
+          <fraction>0.8     0.2</fraction>
+        </rock_p>
+        <banded_p>
+          <full_name>Banded Phosphorus</full_name>
+          <components>banded_p</components>
+          <fraction>1.0</fraction>
+        </banded_p>
+        <broadcast_p>
+          <full_name>Broadcast Phosporus</full_name>
+          <components>labile_p</components>
+          <fraction>1.0</fraction>
+        </broadcast_p>
+      </initdata>
+    </component>
+    <component name="N fertilization" executable="%apsim%\Model\Manager.dll" class="Manager">
+      <executable name="%apsim%\Model\Manager.dll" version="1.0" />
+      <initdata>
+        <ui>
+          <category type="category" description="When should fertiliser be applied" />
+          <fert_date type="ddmmmdate" description="Enter fertiliser date (dd-mmm) : ">15-apr</fert_date>
+          <fert_criteria type="text" description="Don't add fertiliser if N in top 2 layers exceeds (kg/ha) : ">1000</fert_criteria>
+          <category type="category" description="Fertiliser application details" />
+          <fertmodule type="modulename" description="Module used to apply the fertiliser : ">fertiliser</fertmodule>
+          <fert_amount type="text" description="Amount of fertiliser to apply (kg/ha) : ">84</fert_amount>
+          <fert_type type="list" listvalues="NO3_N, NH4_N, NH4NO3, urea_N, urea_no3, urea, nh4so4_n, rock_p, banded_p, broadcast_p" description="Fertiliser type : ">NO3_N</fert_type>
+        </ui>
+        <script>
+          <text>
+         if (today = date('[fert_date]') then
+            N_topsoil = no3(1) + nh4(1) + no3(2) + nh4(2)
+            if (N_topsoil &lt; [fert_criteria]) then
+               [fertmodule] apply amount = [fert_amount] (kg/ha), depth = 50 (mm), type = [fert_type] ()
+            endif
+         endif </text>
+          <event>start_of_day</event>
+        </script>
+      </initdata>
+    </component>
+    <component name="N Deposition" executable="%apsim%\Model\Manager.dll" class="Manager">
+      <executable name="%apsim%\Model\Manager.dll" version="1.0" />
+      <initdata>
+        <ui>
+          <category type="category" />
+          <ppm type="text" description="What to multiply rain by?">0.01</ppm>
+          <category2 type="category" description="Model side stuff" />
+          <varname type="text" description="Name of the NO3_N deposition variable as seen by the model">N_deposition</varname>
+          <fertmodule type="modulename" description="Name of module that applies nitrogen">fertiliser</fertmodule>
+        </ui>
+        <script>
+          <text>
+ 
+            [varname] = rain * [ppm]
+            N_deposition_tot = N_deposition_tot + [varname]
+            if (rain &gt; 0) then
+               [fertmodule] apply amount = [varname](kg/ha), depth = 0 (mm), type = NO3_N ()
+            endif
+      </text>
+          <event>start_of_day</event>
+        </script>
+      </initdata>
+    </component>
+    <component name="unit convertor" executable="%apsim%\Model\Manager.dll" class="Manager">
+      <executable name="%apsim%\Model\Manager.dll" version="1.0" />
+      <initdata>
+        <script>
+          <text>! sotiris
+ 
+ 
+!surfaceom_cover = 0.1
+ 
+</text>
+          <event>init</event>
+        </script>
+        <script>
+          <text>sotiris = BelowGroundWt + fom_c()/0.44
+fom_cn = fom_c() / fom_n()
+sotiris1 = BelowGroundWt - toRootDM
+Total_m_respi = spResp_m(1) + spResp_m(2) + spResp_m(3)
+Root_m_respi = ToRoot * Total_m_respi
+ 
+ 
+! CN ratio calculations
+if surfaceom_n &gt; 0.1 then
+surface_CN_ratio = surfaceom_c / surfaceom_n
+endif
+ 
+if BelowGroundN &gt; 0.1 then
+roots_cn = BelowGroundWt*0.4/BelowGroundN
+endif
+ 
+if BelowGroundWt &gt; 0.1 then
+roots_N% = 100* BelowGroundN / BelowGroundWt
+endif
+ 
+! Check calculations for FOM cnrf
+! FOM dec = amount * rate * tf * mf * cnrf
+ 
+sot_cnr = fom_c() / (fom_n() + nit_tot())
+sot_cnrf = exp(-0.677 * (sot_cnr - 25) / 25))
+tf_surface_om1 = SurfaceOrganicMatter.tf
+ 
+ 
+! SOC calculations
+oc_5cm = 0.5 * (oc(1) + oc(2))
+oc_15cm = 0.5 * (oc(3) + oc(4))
+oc_30cm = 0.5 * (oc(5) + oc(6))
+oc_60cm = 0.6 * oc(7) + 0.4*oc(8)
+oc_100cm = 0.1* oc(8) + 0.9*oc(9)
+ 
+ 
+! Soil and temperature calculations
+sw_5 = (sw(1) + sw(2))*0.5
+sw_10 = sw(3)
+sw_15 = sw(4)
+sw_35 = sw(6)
+sw_75 = sw(7) ! this is 50 cm
+!st_5 = (st(1) + st(2))*0.5
+!st_10 = st(3)
+!st_15 = st(4)
+!st_35 = st(6)
+!st_75 = st(7) ! this is 50 cm
+st_5 = (ave_soil_temp(1) + ave_soil_temp(2))*0.5
+st_10 = ave_soil_temp(3)
+st_15 = ave_soil_temp(4)
+st_35 = ave_soil_temp(5)
+st_75 = ave_soil_temp(6)
+ 
+ 
+! soil respitation
+soil_co2 = dlt_biom_c_atm() + dlt_fom_c_atm() + dlt_hum_c_atm() + dlt_res_c_atm
+! root respiration
+! The growth component of the respiration is assumed to be accounted in the RUE value
+! So only the maintenance component of the root respiration is modeled here following Teixeira et al., 2009 Crop &amp; Pasture Science 60: 778-784
+!root_co2 = toRootDM * 0.44 * 0.015 * 2.0^((st(1)-20)/10)         ! the 0.44 is to convert dry mater to C, Q10=1.8, Tref = 20.
+!root_co2 = SumNewRoot * 0.44 * 0.015 * 2.0^((st(1)-20)/10))         ! the 0.44 is to convert dry mater to C, Q10=1.8, Tref = 20.
+root_co2 = Root_m_respi
+ 
+! total soil + root respiration
+soil_root_co2 = soil_co2 + root_co2
+bbc_gradient = -1
+ 
+ 
+!bbc_gradient = -1.0025
+ 
+if subsurface_drain &gt;0 then
+N_conc_mgLN = 100* subsurface_drain_no3 / subsurface_drain
+endif
+ 
+ 
+</text>
+          <event>start_of_day</event>
+        </script>
+        <script>
+          <text>
+          </text>
+          <event>end_of_day</event>
+        </script>
+      </initdata>
+    </component>
+    <component name="Micromet" executable="%apsim%\Model\MicroMet.dll" class="MicroMet">
+      <executable name="%apsim%\Model\MicroMet.dll" version="1.0" />
+      <initdata>
+        <air_pressure>1010.</air_pressure>
+        <soil_emissivity>0.96</soil_emissivity>
+        <sun_angle>15.0</sun_angle>
+        <soil_heat_flux_fraction>0.40</soil_heat_flux_fraction>
+        <night_interception_fraction>0.5</night_interception_fraction>
+        <windspeed_default>3.0</windspeed_default>
+        <refheight>2.0</refheight>
+        <!--  ______________________
+      Not read in - yet!
+      -->
+        <svp_frac>0.65</svp_frac>
+        <cloud_factor>0.1</cloud_factor>
+        <!--  ______________________
+      Search order for each plant type
+      ================================
+      -->
+        <crop>CropType base_class</crop>
+        <broccoli>CropType base_class</broccoli>
+        <tree>TreeType base_class</tree>
+        <grandis>TreeType base_class</grandis>
+        <oilpalm>TreeType base_class</oilpalm>
+        <oilmallee>TreeType base_class</oilmallee>
+        <globulus>TreeType base_class</globulus>
+        <camaldulensis>TreeType base_class</camaldulensis>
+        <grass>GrassType base_class</grass>
+        <wheat>CropType base_class</wheat>
+        <barley>CropType base_class</barley>
+        <canola>CropType base_class</canola>
+        <raphanus_raphanistrum>CropType base_class</raphanus_raphanistrum>
+        <lolium_rigidum>CropType base_class</lolium_rigidum>
+        <chickpea>CropType base_class</chickpea>
+        <weed>CropType base_class</weed>
+        <oats>CropType base_class</oats>
+        <chickpea>CropType base_class</chickpea>
+        <fieldpea>CropType base_class</fieldpea>
+        <sugar>CropType base_class</sugar>
+        <potato>PotatoType base_class</potato>
+        <frenchbean>CropType base_class</frenchbean>
+        <bambatsi>C4grassType base_class</bambatsi>
+        <lucerne>CropType base_class</lucerne>
+        <maize>CropType base_class</maize>
+        <banksia>TreeType base_class</banksia>
+        <understorey>CropType base_class</understorey>
+        <ryegrass>GrassType base_class</ryegrass>
+        <vine>CropType base_class</vine>
+        <saltbush>TreeType base_class</saltbush>
+        <sorghum>CropType base_class</sorghum>
+        <danthonia>GrassType base_class</danthonia>
+        <nativepasture>C4GrassType base_class</nativepasture>
+        <raphanus_raphanistrum>CropType base_class</raphanus_raphanistrum>
+        <canola>CropType base_class</canola>
+        <kale2>CropType base_class</kale2>
+        <Carrots4>CropType base_class</Carrots4>
+        <base_class>
+          <albedo>0.15</albedo>
+          <gsmax>0.010</gsmax>
+          <r50>200</r50>
+          <emissivity>0.96</emissivity>
+        </base_class>
+        <CropType>
+          <albedo>0.26</albedo>
+          <gsmax>0.011</gsmax>
+        </CropType>
+        <PotatoType>
+          <albedo>0.26</albedo>
+          <gsmax>0.03</gsmax>
+          <!-- gsmax for potatotype set to 0.03 based on Amer KH, Hatfield JL (2004) Canopy resistance as affected by 
+			          soil and meteorological factors in potato. Agronomy Journal 96(4), 978-985. and supported by results from NZ and Scottland -->
+        </PotatoType>
+        <GrassType>
+          <albedo>0.23</albedo>
+          <!-- gsmax = 0.08 ! From Kelliher et al Fig 3
+         -->
+          <gsmax>0.010</gsmax>
+        </GrassType>
+        <C4grassType>
+          <albedo>0.23</albedo>
+          <!-- gsmax = 0.08 ! From Kelliher et al Fig 3
+         -->
+          <gsmax>0.015</gsmax>
+          <r50 description="lower value partly reflects the higher k value of grasses">150 </r50>
+        </C4grassType>
+        <!--  might be best to make the input Ra50 rather than R50
+      -->
+        <TreeType>
+          <albedo>0.15</albedo>
+          <gsmax>0.005</gsmax>
+        </TreeType>
+        <TreeType2>
+          <albedo>0.15</albedo>
+          <gsmax>0.010</gsmax>
+          <r50>100</r50>
+        </TreeType2>
+        <soil_albedo>0.23</soil_albedo>
+        <a_interception>0.0</a_interception>
+        <b_interception>0.0</b_interception>
+        <c_interception>0.0</c_interception>
+        <d_interception>0.0</d_interception>
+      </initdata>
+    </component>
+    <component name="SWIM" executable="%apsim%/Model/SWIM3.dll" class="Swim3.Swim">
+      <executable name="%apsim%/Model/SWIM3.dll" version="1.0" />
+      <initdata>
+        <!--    ****************
+      Convergence
+      ****************
+      -->
+        <max_iterations description="number of iterations before timestep is halved">50 </max_iterations>
+        <ersoil>0.000001</ersoil>
+        <ernode>0.000001</ernode>
+        <errex>0.01</errex>
+        <dppl>1</dppl>
+        <dpnl>1</dpnl>
+        <slcerr>0.000001</slcerr>
+        <!--    ****************
+      solute balance
+      ****************
+      Numerical Error can result in negative solute concentration
+      We allert the user according to the level of loss of solute
+      balance due to trucation of negative values.
+      -->
+        <negative_conc_fatal units="kg/ha">0.1</negative_conc_fatal>
+        <negative_conc_warn units="kg/ha">0.001</negative_conc_warn>
+        <!--    ****************
+      soilwat_eeq_fac
+      ****************
+      -->
+        <min_crit_temp units="oC" description="temperature below which eeq decreases (oC)">5.0</min_crit_temp>
+        <max_crit_temp units="oC" description="temperature above which eeq increases (oC)">35.0</max_crit_temp>
+        <!--    ******************************
+      soilwat_pot_evapotranspiration
+      ******************************
+      -->
+        <max_albedo description="albedo at 100% green crop cover (0-1).">0.23</max_albedo>
+        <!--  Bare soil albedo must not exceed this value.
+      -->
+        <residue_albedo description="albedo at 100% residue cover (0-1).">0.23</residue_albedo>
+        <!-- max_bitesize = .02
+      -->
+        <min_total_root_length>0.01</min_total_root_length>
+        <crop_name>wheat   sugar   default </crop_name>
+        <min_xylem_potential> -15000. -15000. -15000.</min_xylem_potential>
+        <root_radius>  0.25 0.25 0.25    </root_radius>
+        <root_conductance> 1.4e-7 1.4e-7 1.4e-7 </root_conductance>
+   ! ------------------------------------------
+      <!--    ******************************
+      Residue and Crop Cover Effects
+      ******************************
+      The effect of residue and canopy cover is implemented as in the soilwat model.
+      These can be turn off for compatibility with SWIM standalone.
+      --><cover_effects>on          </cover_effects><A_to_evap_fact description="converts residue specfic area 'A' to">0.44      </A_to_evap_fact><!--    a coef. in exp effect on reducing
+      pot. soil evap for wt. of mixed residues.
+      0.44 = 0.00022/0.0005 DMS 1st approx. 6/95
+      --><canopy_eos_coef description="coef. in exp effect of canopy on">1.7       </canopy_eos_coef><!--    reducing pot. soil evap.
+      = 1.7 Adams, Arkin & Ritchie 1976
+      Set the default rainfall and evaporation daily time courses
+      these are used if the user does not specify them in the met file
+      --><canopy_fact>1.0  1.0  0.0  0.0</canopy_fact><canopy_fact_height units="mm">0  600  1800 30000</canopy_fact_height><canopy_fact_default description="canopy factor to use if height is missing">0.5</canopy_fact_default><hydrol_effective_depth units="mm">450</hydrol_effective_depth><no3slos>0.000</no3slos><nh4slos>0.000</nh4slos><ureaslos>0.000</ureaslos><clslos>0.61</clslos><tracerslos>0.61</tracerslos><nitrificationinhibitorslos>0.61</nitrificationinhibitorslos><denitrificationinhibitorslos>0.61</denitrificationinhibitorslos><mineralisationinhibitorslos>0.61</mineralisationinhibitorslos><ureaseinhibitorslos>0.61</ureaseinhibitorslos><no3d0>0.05</no3d0><nh4d0>0.05</nh4d0><uread0>0.05</uread0><cld0>0.05</cld0><tracerd0>0.05</tracerd0><nitrificationinhibitord0>0.05</nitrificationinhibitord0><denitrificationinhibitord0>0.05</denitrificationinhibitord0><mineralisationinhibitord0>0.05</mineralisationinhibitord0><ureaseinhibitord0>0.05</ureaseinhibitord0><default_rain_time>0:00</default_rain_time><default_rain_duration>1440.</default_rain_duration><default_evap_time>6:00</default_evap_time><default_evap_duration>720.</default_evap_duration><!--    ******
+      Bounds
+      ******
+      --><lb_exco>0</lb_exco><ub_exco>15000</ub_exco><lb_fip>0</lb_fip><ub_fip>100</ub_fip><lb_dis>0</lb_dis><ub_dis>20</ub_dis><lb_slupf>0</lb_slupf><ub_slupf>1</ub_slupf><lb_slos>0</lb_slos><ub_slos>10</ub_slos><lb_d0>0</lb_d0><ub_d0>1</ub_d0><lb_a>0</lb_a><ub_a>100</ub_a><lb_dthc>0</lb_dthc><ub_dthc>1</ub_dthc><lb_dthp>0</lb_dthp><ub_dthp>10</ub_dthp><lb_disp>0</lb_disp><ub_disp>5</ub_disp><lb_solute>0</lb_solute><ub_solute>50000</ub_solute><cn2_bare>65</cn2_bare><cn_red>20</cn_red><cn_cov>0.8</cn_cov><salb>0.13</salb><dlayer>37.000 38.000 50.000 90.000 85.000 100.000 200.000 300.000 300.000 320.000 300.000 180.000 400.000 400.000 </dlayer><air_dry>0.120 0.140 0.110 0.110 0.120 0.125 0.132 0.100 0.110 0.138 0.165 0.146 0.144 0.144 </air_dry><sat>0.435 0.462 0.443 0.446 0.478 0.455 0.410 0.394 0.360 0.340 0.320 0.310 0.300 0.300 </sat><dul>0.263 0.296 0.256 0.254 0.293 0.262 0.262 0.296 0.296 0.296 0.296 0.274 0.272 0.272 </dul><ll15>0.140 0.161 0.110 0.110 0.120 0.125 0.132 0.100 0.110 0.138 0.165 0.146 0.144 0.144 </ll15><bd>1.210 1.210 1.390 1.478 1.500 1.500 1.500 1.551 1.551 1.551 1.551 1.840 1.830 1.830 </bd><theta>0.252 0.284 0.246 0.244 0.281 0.252 0.252 0.284 0.284 0.284 0.284 0.227 0.169 0.144 </theta><ks>500.000 500.000 500.000 500.000 500.000 500.000 500.000 250.000 20.000 6.000 1.500 0.200 0.010 0.010 </ks><Kdul>0.100</Kdul><psidul>-33.000</psidul><vapour_conductivity>True</vapour_conductivity><rainfall_source>apsim</rainfall_source><evap_source>calc</evap_source><dtmin>0.000</dtmin><dtmax>1440.000</dtmax><max_water_increment>10.000</max_water_increment><swt>0.000</swt><slswt>0.000</slswt><diagnostics>True</diagnostics><DrainDepth>1070.000</DrainDepth><DrainSpacing>13500.000</DrainSpacing><DrainRadius>52.000</DrainRadius><Klat>2800.000</Klat><ImpermDepth>3900.000</ImpermDepth><WaterTableDepth>1070.000</WaterTableDepth><solute><a>1.000</a><dthc>0.000</dthc><dthp>1.000</dthp><dis> 15.000</dis><disp>1.000</disp><WaterTableNO3>0.000</WaterTableNO3><WaterTableNH4>0.000</WaterTableNH4><WaterTableUrea>0.000</WaterTableUrea><WaterTableCl>0.000</WaterTableCl><WaterTableTracer>0.000</WaterTableTracer><WaterTableMineralisationInhibitor>0.000</WaterTableMineralisationInhibitor><WaterTableUreaseInhibitor>0.000</WaterTableUreaseInhibitor><WaterTableNitrificationInhibitor>0.000</WaterTableNitrificationInhibitor><WaterTableDenitrificationInhibitor>0.000</WaterTableDenitrificationInhibitor><NO3Exco>0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 </NO3Exco><NO3FIP>1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 </NO3FIP><NH4Exco>100.000 100.000 100.000 100.000 100.000 100.000 100.000 100.000 100.000 100.000 100.000 100.000 100.000 100.000 </NH4Exco><NH4FIP>1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 </NH4FIP><UreaExco>0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 </UreaExco><UreaFIP>1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 </UreaFIP><ClExco>0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 </ClExco><ClFIP>1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 </ClFIP><TracerExco>[soil.TracerExco]</TracerExco><TracerFIP>[soil.TracerFIP]</TracerFIP><MineralisationInhibitorExco>[soil.MineralisationInhibitorExco]</MineralisationInhibitorExco><MineralisationInhibitorFIP>[soil.MineralisationInhibitorFIP]</MineralisationInhibitorFIP><UreaseInhibitorExco>[soil.UreaseInhibitorExco]</UreaseInhibitorExco><UreaseInhibitorFIP>[soil.UreaseInhibitorFIP]</UreaseInhibitorFIP><NitrificationInhibitorExco>[soil.NitrificationInhibitorExco]</NitrificationInhibitorExco><NitrificationInhibitorFIP>[soil.NitrificationInhibitorFIP]</NitrificationInhibitorFIP><DenitrificationInhibitorExco>[soil.DenitrificationInhibitorExco]</DenitrificationInhibitorExco><DenitrificationInhibitorFIP>[soil.DenitrificationInhibitorFIP]</DenitrificationInhibitorFIP></solute></initdata>
+    </component>
+    <component name="SoilTemperature2" executable="%apsim%/Model/SoilTemp2.dll" class="SoilTemperature2">
+      <executable name="%apsim%/Model/SoilTemp2.dll" version="1.0" />
+      <initdata>
+        <SoilTemperature2>
+          <nu description="(-) control forward/backward differencing">0.6 </nu>
+          <vol_spec_heat_om description="(Joules*m-3*K-1)">5.00e6 </vol_spec_heat_om>
+          <vol_spec_heat_water description="(Joules*m-3*K-1)">4.18e6 </vol_spec_heat_water>
+          <vol_spec_heat_clay description="(Joules*m-3*K-1)">2.39e6 </vol_spec_heat_clay>
+          <MaxTTimeDefault description="hours">14.0 </MaxTTimeDefault>
+          <BoundaryLayerConductanceSource description="boundary layer conductance source (calc/constant)">constant</BoundaryLayerConductanceSource>
+          <BoundaryLayerConductance description="boundary layer conductance (W/m2/K)">20.0</BoundaryLayerConductance>
+          <BoundaryLayerConductanceIterations description="Number of iterations to calc boundary layer conductance (0-10)">1</BoundaryLayerConductanceIterations>
+          <NetRadiationSource description="net radiation source (calc/eos)">eos</NetRadiationSource>
+          <clay description="proportion of clay">1.0</clay>
+          <DefaultWindSpeed description="m/s">3.0</DefaultWindSpeed>
+          <DefaultAltitude description="default altitude (m) 275m (700 ft) is approx 980 hPa">275.0</DefaultAltitude>
+          <DefaultInstrumentHeight description="default instrument height for wind and temperature (m)">1.2</DefaultInstrumentHeight>
+          <BareSoilHeight description="height of bare soil (mm)">57.0</BareSoilHeight>
+        </SoilTemperature2>
+        <clay>25.670 25.670 26.430 28.090 28.500 29.000 29.000 27.000 27.000 27.000 27.000 27.000 27.000 27.000 </clay>
+        <MaxTTimeDefault>14.000</MaxTTimeDefault>
+        <BoundaryLayerConductanceSource>calc</BoundaryLayerConductanceSource>
+        <BoundaryLayerConductance>20.000</BoundaryLayerConductance>
+        <BoundaryLayerConductanceIterations>1</BoundaryLayerConductanceIterations>
+        <NetRadiationSource>calc</NetRadiationSource>
+        <DefaultWindSpeed>1.500</DefaultWindSpeed>
+        <DefaultAltitude>270.000</DefaultAltitude>
+        <DefaultInstrumentHeight>1.200</DefaultInstrumentHeight>
+        <BareSoilHeight>2.000</BareSoilHeight>
+      </initdata>
+    </component>
+    <component name="SurfaceOrganicMatter" executable="%apsim%\Model\SurfaceOM.dll" class="SurfaceOM">
+      <executable name="%apsim%\Model\SurfaceOM.dll" version="1.0" />
+      <initdata>
+        <crit_residue_wt>2000</crit_residue_wt>
+        <opt_temp description="temperature at which decomp reaches optimum rate (oC)">20       </opt_temp>
+        <cum_eos_max description="cumeos at which decomp rate becomes zero. (mm H2O)">20    </cum_eos_max>
+        <cnrf_coeff description="coeff. to determine the magnitude">0.277  </cnrf_coeff>
+        <!--  of C:N effects on decomposition of residue ()
+      -->
+        <cnrf_optcn description="C:N above which decomposition rate">25.0   </cnrf_optcn>
+        <!--  of residue declines ()
+      -->
+        <c_fract description="Fraction of Carbon in plant material (0-1)">0.4</c_fract>
+        <leach_rain_tot description="total amount of 'leaching' rain to remove">25.0 </leach_rain_tot>
+        <!--  all soluble N from Manure
+      -->
+        <min_rain_to_leach description="threshold rainfall amount for leaching to occur">10.0 </min_rain_to_leach>
+        <crit_min_surfom_orgC units="kg/ha" description="critical minimum org C below">0.004</crit_min_surfom_orgC>
+        <!--  which potential decomposition rate
+      is 100% (to avoid numerical imprecision)
+      -->
+        <default_cpr description="default C:P ratio to use when insufficient information">0.0</default_cpr>
+        <!--  is supplied to residue2
+      -->
+        <default_standing_fraction description="fraction of the residues 'standing' ie isolated from the soil">0.0              </default_standing_fraction>
+        <standing_extinct_coeff description="assume all standing stuff is flat (!!??)">0.5</standing_extinct_coeff>
+        <!--  ______________________________________________________________-
+      Residue type information
+      ______________________________________________________________-
+      -->
+        <base_type>
+          <fom_type>inert</fom_type>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.4     </fraction_C>
+          <po4ppm description="labile P concentration(ppm)">0.0     </po4ppm>
+          <nh4ppm description="ammonium N concentration (ppm)">0.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">0.0     </no3ppm>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+          <cf_contrib>1</cf_contrib>
+          <pot_decomp_rate>0.1</pot_decomp_rate>
+          <fr_c>0.2 0.7 0.1</fr_c>
+          <fr_n>0.2 0.7 0.1</fr_n>
+          <fr_p>0.2 0.7 0.1</fr_p>
+        </base_type>
+        <inert>
+          <!--  This is a special residue type for testing purposes.  It is completly inert and so
+         will not decompose at all.  This can be used for quickly testing mass balance because
+         complex decomposition processes are effectively turned off.
+         -->
+          <derived_from>base_type</derived_from>
+          <fom_type>inert</fom_type>
+          <pot_decomp_rate>0.0</pot_decomp_rate>
+        </inert>
+        <manure>
+          <fom_type>manure</fom_type>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.08    </fraction_C>
+          <pot_decomp_rate>0.1</pot_decomp_rate>
+          <fr_c>0.3 0.3 0.4</fr_c>
+          <fr_n>0.3 0.3 0.4</fr_n>
+          <fr_p>0.3 0.3 0.4</fr_p>
+          <po4ppm description="labile P concentration(ppm)">10.0     </po4ppm>
+          <nh4ppm description="ammonium N concentration (ppm)">10.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">10.0     </no3ppm>
+          <specific_area description="specific area of residue (ha/kg)">0.0001  </specific_area>
+          <cf_contrib>1</cf_contrib>
+        </manure>
+        <RuminantDung_PastureFed>
+          <fom_type>RuminantDung_PastureFed</fom_type>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.4     </fraction_C>
+          <po4ppm description="labile P concentration(ppm)">5.0     </po4ppm>
+          <nh4ppm description="ammonium N concentration (ppm)">1250.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">0.0     </no3ppm>
+          <specific_area description="specific area of residue (ha/kg">0.0001  </specific_area>
+          <cf_contrib>1</cf_contrib>
+          <pot_decomp_rate>0.1</pot_decomp_rate>
+          <fr_c>0.3 0.5 0.2</fr_c>
+          <fr_n>0.3 0.5 0.2</fr_n>
+          <fr_p>0.3 0.5 0.2</fr_p>
+        </RuminantDung_PastureFed>
+        <algae>
+          <derived_from>base_type</derived_from>
+          <fom_type>algae</fom_type>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.4    </fraction_C>
+          <pot_decomp_rate>0.1</pot_decomp_rate>
+          <specific_area description="specific area of residue (ha/kg)">0.0005  </specific_area>
+          <cf_contrib>1</cf_contrib>
+        </algae>
+        <fym>
+          <fom_type>fym</fom_type>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.08    </fraction_C>
+          <pot_decomp_rate>0.1</pot_decomp_rate>
+          <fr_c>0.3 0.3 0.4</fr_c>
+          <fr_n>0.3 0.3 0.4</fr_n>
+          <fr_p>0.3 0.3 0.4</fr_p>
+          <po4ppm description="labile P concentration(ppm)">40.0     </po4ppm>
+          <nh4ppm description="ammonium N concentration (ppm)">10.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">10.0     </no3ppm>
+          <specific_area description="specific area of residue (ha/kg)">0.0001  </specific_area>
+          <cf_contrib>1</cf_contrib>
+        </fym>
+        <goatmanure>
+          <fom_type>goatmanure</fom_type>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.08    </fraction_C>
+          <pot_decomp_rate>0.1</pot_decomp_rate>
+          <fr_c>0.3 0.6 0.3</fr_c>
+          <fr_n>0.3 0.6 0.3</fr_n>
+          <fr_p>0.3 0.6 0.34</fr_p>
+          <po4ppm description="labile P concentration(ppm)">5.0     </po4ppm>
+          <nh4ppm description="ammonium N concentration (ppm)">1307.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">481.0     </no3ppm>
+          <specific_area description="specific area of residue (ha/kg)">0.0001  </specific_area>
+          <cf_contrib>1</cf_contrib>
+        </goatmanure>
+        <chikenmanure_base>
+          <fom_type>cm</fom_type>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.374    </fraction_C>
+          <pot_decomp_rate>0.1</pot_decomp_rate>
+          <fr_c>0.0 0.50 0.50</fr_c>
+          <fr_n>0.0 0.50 0.50</fr_n>
+          <fr_p>0.0 0.50 0.50</fr_p>
+          <po4ppm description="labile P concentration(ppm)">5.0     </po4ppm>
+          <nh4ppm description="ammonium N concentration (ppm)">1307.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">481.0     </no3ppm>
+          <specific_area description="specific area of residue (ha/kg)">0.0001  </specific_area>
+          <cf_contrib>1</cf_contrib>
+        </chikenmanure_base>
+        <cm>
+          <derived_from>chikenmanure_base</derived_from>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.277    </fraction_C>
+          <nh4ppm description="ammonium N concentration (ppm)">2558.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">873.0     </no3ppm>
+        </cm>
+        <cmA>
+          <derived_from>chikenmanure_base</derived_from>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.374    </fraction_C>
+          <nh4ppm description="ammonium N concentration (ppm)">1307.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">481.0     </no3ppm>
+        </cmA>
+        <cmB>
+          <derived_from>chikenmanure_base</derived_from>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.240    </fraction_C>
+          <nh4ppm description="ammonium N concentration (ppm)">3009.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">36.0     </no3ppm>
+        </cmB>
+        <manB>
+          <fom_type>manB</fom_type>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.08    </fraction_C>
+          <pot_decomp_rate>0.1</pot_decomp_rate>
+          <fr_c>0.1 0.01 0.89</fr_c>
+          <fr_n>0.1 0.01 0.89</fr_n>
+          <fr_p>0.1 0.01 0.89</fr_p>
+          <po4ppm description="labile P concentration(ppm)">5.0     </po4ppm>
+          <nh4ppm description="ammonium N concentration (ppm)">1307.0     </nh4ppm>
+          <no3ppm description="nitrate N concentration (ppm)">481.0     </no3ppm>
+          <specific_area description="specific area of residue (ha/kg)">0.0001  </specific_area>
+          <cf_contrib>1</cf_contrib>
+        </manB>
+        <tithonia>
+          <derived_from>base_type</derived_from>
+          <fom_type>tithonia</fom_type>
+          <specific_area description="specific area of residue (ha/kg)">0.0005  </specific_area>
+        </tithonia>
+        <bambatsi>
+          <derived_from>base_type</derived_from>
+          <fom_type>bambatsi</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </bambatsi>
+        <barley>
+          <derived_from>base_type</derived_from>
+          <fom_type>barley</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </barley>
+        <broccoli>
+          <derived_from>base_type</derived_from>
+          <fom_type>broccoli</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </broccoli>
+        <butterflypea>
+          <derived_from>base_type</derived_from>
+          <fom_type>butterflypea</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </butterflypea>
+        <camaldulensis>
+          <derived_from>base_type</derived_from>
+          <fom_type>camaldulensis</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </camaldulensis>
+        <canola>
+          <derived_from>base_type</derived_from>
+          <fom_type>canola</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </canola>
+        <centro>
+          <derived_from>base_type</derived_from>
+          <fom_type>centro</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </centro>
+        <chickpea>
+          <derived_from>base_type</derived_from>
+          <fom_type>chickpea</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </chickpea>
+        <cowpea>
+          <derived_from>base_type</derived_from>
+          <fom_type>cowpea</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </cowpea>
+        <danthonia>
+          <derived_from>base_type</derived_from>
+          <fom_type>danthonia</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </danthonia>
+        <nativepasture>
+          <derived_from>base_type</derived_from>
+          <fom_type>nativepasture</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </nativepasture>
+        <pasture>
+          <derived_from>base_type</derived_from>
+          <fom_type>pasture</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </pasture>
+        <globulus>
+          <derived_from>base_type</derived_from>
+          <fom_type>globulus</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </globulus>
+        <grandis>
+          <derived_from>base_type</derived_from>
+          <fom_type>grandis</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </grandis>
+        <oilmallee>
+          <derived_from>base_type</derived_from>
+          <fom_type>oilmallee</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </oilmallee>
+        <fababean>
+          <derived_from>base_type</derived_from>
+          <fom_type>fababean</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </fababean>
+        <fieldpea>
+          <derived_from>base_type</derived_from>
+          <fom_type>fieldpea</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </fieldpea>
+        <grass>
+          <derived_from>base_type</derived_from>
+          <fom_type>grass</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </grass>
+        <lablab>
+          <derived_from>base_type</derived_from>
+          <fom_type>lablab</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </lablab>
+        <lentil>
+          <derived_from>chickpea</derived_from>
+        </lentil>
+        <lolium_rigidum>
+          <derived_from>base_type</derived_from>
+          <fom_type>lolium_rigidum</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </lolium_rigidum>
+        <lucerne>
+          <derived_from>base_type</derived_from>
+          <fom_type>lucerne</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </lucerne>
+        <lupin>
+          <derived_from>base_type</derived_from>
+          <fom_type>lupin</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </lupin>
+        <maize>
+          <derived_from>base_type</derived_from>
+          <fom_type>maize</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </maize>
+        <medic>
+          <derived_from>lucerne</derived_from>
+        </medic>
+        <millet>
+          <derived_from>base_type</derived_from>
+          <fom_type>millet</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </millet>
+        <mucuna>
+          <derived_from>base_type</derived_from>
+          <fom_type>mucuna</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </mucuna>
+        <mungbean>
+          <derived_from>base_type</derived_from>
+          <fom_type>mungbean</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </mungbean>
+        <horsegram>
+          <derived_from>base_type</derived_from>
+          <fom_type>horsegram</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </horsegram>
+        <navybean>
+          <derived_from>base_type</derived_from>
+          <fom_type>navybean</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </navybean>
+        <frenchbean>
+          <derived_from>base_type</derived_from>
+          <fom_type>frenchbean</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </frenchbean>
+        <cotton>
+          <derived_from>base_type</derived_from>
+          <fom_type>cotton</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </cotton>
+        <oats>
+          <derived_from>base_type</derived_from>
+          <fom_type>oats</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </oats>
+        <oilpalm>
+          <derived_from>base_type</derived_from>
+          <fom_type>oilpalm</fom_type>
+          <pot_decomp_rate>0.05</pot_decomp_rate>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.44     </fraction_C>
+        </oilpalm>
+        <oilpalmstem>
+          <derived_from>base_type</derived_from>
+          <fom_type>oilpalmstem</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.000005  </specific_area>
+          <fraction_C description="fraction of Carbon in FOM (0-1)">0.44     </fraction_C>
+          <fr_c>0.2 0.7 0.1</fr_c>
+          <fr_n>0.2 0.7 0.1</fr_n>
+          <fr_p>0.2 0.7 0.1</fr_p>
+        </oilpalmstem>
+        <oilpalmunderstory>
+          <derived_from>base_type</derived_from>
+          <fom_type>oilpalmunderstory</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </oilpalmunderstory>
+        <orobanche>
+          <derived_from>base_type</derived_from>
+          <fom_type>orobanche</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </orobanche>
+        <peanut>
+          <derived_from>base_type</derived_from>
+          <fom_type>peanut</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </peanut>
+        <pigeonpea>
+          <derived_from>base_type</derived_from>
+          <fom_type>pigeonpea</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </pigeonpea>
+        <poppies>
+          <derived_from>base_type</derived_from>
+          <fom_type>poppies</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </poppies>
+        <potato>
+          <derived_from>base_type</derived_from>
+          <fom_type>potato</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </potato>
+        <raphanus_raphanistrum>
+          <derived_from>base_type</derived_from>
+          <fom_type>raphanus_raphanistrum</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </raphanus_raphanistrum>
+        <rice>
+          <derived_from>base_type</derived_from>
+          <fom_type>rice</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </rice>
+        <soybean>
+          <derived_from>base_type</derived_from>
+          <fom_type>soybean</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </soybean>
+        <sorghum>
+          <derived_from>base_type</derived_from>
+          <fom_type>sorghum</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </sorghum>
+        <stylo>
+          <derived_from>base_type</derived_from>
+          <fom_type>stylo</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </stylo>
+        <sugar>
+          <derived_from>base_type</derived_from>
+          <fom_type>sugar</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0007  </specific_area>
+        </sugar>
+        <sunflower>
+          <derived_from>base_type</derived_from>
+          <fom_type>sunflower</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0002  </specific_area>
+        </sunflower>
+        <sweetcorn>
+          <derived_from>base_type</derived_from>
+          <fom_type>sweetcorn</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </sweetcorn>
+        <sweetsorghum>
+          <derived_from>base_type</derived_from>
+          <fom_type>sweetsorghum</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </sweetsorghum>
+        <vetch>
+          <derived_from>fieldpea</derived_from>
+        </vetch>
+        <weed>
+          <derived_from>base_type</derived_from>
+          <fom_type>weed</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </weed>
+        <WF_Millet>
+          <derived_from>base_type</derived_from>
+          <fom_type>WF_Millet</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0004  </specific_area>
+        </WF_Millet>
+        <wheat>
+          <derived_from>base_type</derived_from>
+          <fom_type>wheat</fom_type>
+          <specific_area description="specific area of residue (ha/kg">0.0005  </specific_area>
+        </wheat>
+        <tillage>
+          <!--  ________________________________
+         plough     fraction      tillage
+         type    incorporated     depth
+         (0-1)          (mm)
+         ________________________________
+         -->
+          <chisel>0.5           100.</chisel>
+          <disc>0.5           200.</disc>
+          <planter>0.1            50.</planter>
+          <burn>1.0             0.</burn>
+          <bw_chisel>1.0           100.</bw_chisel>
+          <herbinc>0.1            50.</herbinc>
+          <burn_95>.95            0.</burn_95>
+          <graze>0.75            0.</graze>
+          <scarifier>0.30          100.</scarifier>
+          <pits>0.5           100.</pits>
+          <rip>0.3           300.</rip>
+          <blade>0.30          100.</blade>
+          <sweep description="Pdev">0.30          100.   </sweep>
+          <Cool_burn>0.7             0.</Cool_burn>
+          <burn_90>  0.9             0.</burn_90>
+          <tine>     1.0           100.</tine>
+          <default>  1.0             1.</default>
+          <decomp>  0.75           100.</decomp>
+          <mix>      1.0           100.</mix>
+          <hoe>      1.0           100.</hoe>
+          <MTT_Plough>1.0          200.</MTT_Plough>
+          <!--Cultivation type specified for intensive tillage treatments in MTT  HEB Oct 2009-->
+          <MTT_Disc>  0.8          100.</MTT_Disc>
+          <!--Cultivation type specified for minimum tillage treatments in MTT  HEB Oct 2009-->
+          <MTT_Drill> 0.05          50. </MTT_Drill>
+          <!--Cultivation type specified for non tillage treatments in MTT  HEB Oct 2009-->
+          <MTT_Bale>  0.8           0. </MTT_Bale>
+          <!--Cultivation type specified for non tillage treatments in MTT  HEB Oct 2009-->
+          <Tread>     0.5          100  </Tread>
+          <!-- cultivation type specified to produce the effect that treading and worms would move residues from the surface into the top 70 mm-->
+          <bale_cereal_straw>     0.5          0  </bale_cereal_straw>
+          <!-- bale to remove straw left in harvester wind rows-->
+          <bale_grass_straw>      0.7          0  </bale_grass_straw>
+          <!-- bale to remove straw left in harvester wind rows, greater proportion because grass is harvested lower than cereal-->
+          <bale_legume_straw>     0.9          0  </bale_legume_straw>
+          <!-- bale to remove straw left in harvester wind rows, greather proportion because legumes are harvested lower than cereal-->
+          <graze_cereal_forage>   0.9         0  </graze_cereal_forage>
+          <!-- bale to remove straw left in harvester wind rows, greather proportion because legumes are harvested lower than cereal-->
+          <graze_kale_forage>     0.85         0  </graze_kale_forage>
+          <!-- bale to remove straw left in harvester wind rows, greather proportion because legumes are harvested lower than cereal-->
+          <carry_cereal_forage>   0.95          0  </carry_cereal_forage>
+          <!-- bale to remove straw left in harvester wind rows, greather proportion because legumes are harvested lower than cereal-->
+        </tillage>
+        <name>soybean</name>
+        <type>soybean</type>
+        <mass>250</mass>
+        <cnr>20</cnr>
+        <standing_fraction>0</standing_fraction>
+      </initdata>
+    </component>
+    <component name="NicolletRanae_Initialized Nitrogen" executable="%apsim%/Model/SoilN.dll" class="SoilN">
+      <executable name="%apsim%/Model/SoilN.dll" version="1.0" />
+      <initdata>
+        <standard>
+          <cnrf_coeff description="coeff. to determine the magnitude">0.693  </cnrf_coeff>
+          <!--  of C:N effects on decomposition of FOM ()
+         -->
+          <cnrf_optcn description="C:N above which decomposition rate">25.0   </cnrf_optcn>
+          <!--  of FOM declines ()
+         -->
+          <ef_biom description="fraction of biomass C mineralized">0.4       </ef_biom>
+          <!--  retained in system (0-1)
+         -->
+          <ef_fom description="fraction of FOM C mineralized">0.4        </ef_fom>
+          <!--  retained in system (0-1)
+         -->
+          <ef_hum description="fraction of humic C mineralized">0.4        </ef_hum>
+          <!--  retained in system (0-1)
+         -->
+          <ef_res description="fraction of residue C mineralized">0.4        </ef_res>
+          <!--  retained in system (0-1)
+         -->
+          <fom_min description="minimum allowable FOM (kg/ha)">0.5       </fom_min>
+          <fr_biom_biom description="fraction of retained biomass C">0.6  </fr_biom_biom>
+          <!--  returned to biomass (0-1)
+         -->
+          <fr_fom_biom description="fraction of retained FOM C">0.9   </fr_fom_biom>
+          <!--  transferred to biomass (0-1)
+         -->
+          <fr_res_biom description="fraction of retained residue C">0.9   </fr_res_biom>
+          <!--  transferred to biomass (0-1)
+         -->
+          <fom_type>default manure  mucuna lablab shemp  stable </fom_type>
+          <fr_carb description="carbohydrate fraction of FOM (0-1)">0.2      0.3     0.54        0.57    0.45   0.0 </fr_carb>
+          <fr_cell description="cellulose fraction of FOM (0-1)">   0.7      0.3     0.37        0.37    0.47   0.1  </fr_cell>
+          <fr_lign description="lignin fraction of FOM (0-1)">      0.1      0.4     0.09        0.06    0.08   0.9 </fr_lign>
+          <oc2om_factor description="factor to convert organic carbon to">1.7  </oc2om_factor>
+          <!--  organic matter ()
+         -->
+          <mcn description="C:N ratio of microbes ()">8.0           </mcn>
+          <!-- dsg 200509 ****** the following constants are for (a) aerobic AND (b)anaerobic conditions ***** -->
+          <opt_temp description="Soil temperature above which there">28.0  28.0   </opt_temp>
+          <!--  is no further effect on mineralisation
+         and nitrification (oC)
+         -->
+          <rd_biom description="potential rate of soil biomass">0.0081  0.004  </rd_biom>
+          <!--  mineralization (per day)
+         -->
+          <rd_carb description="maximum rate constant for">0.2   0.1    </rd_carb>
+          <!--  decomposition of FPool1 (0-1)
+         -->
+          <rd_cell description="maximum rate constant for">0.05  0.025    </rd_cell>
+          <!--  decomposition of FPool2 (0-1)
+         -->
+          <rd_lign description="maximum rate constant for">0.0095   0.003  </rd_lign>
+          <!--  decomposition of FPool3 (0-1)
+         -->
+          <rd_hum description="potential rate of humus">0.00015  0.00007  </rd_hum>
+          <!--  mineralization (per day)
+         -->
+          <nh4ppm_min description="minimum allowable NH4 (ppm)">0.0    </nh4ppm_min>
+          <no3ppm_min description="minimum allowable NO3 (ppm)">0.0    </no3ppm_min>
+          <min_depth description="depth of soil from which N can be">100.    </min_depth>
+          <!--  immobilised by decomposing surface
+         residues (mm)
+         ______________________________________________________________________-
+         Specifying the water factor for Nitrogen Transformations is
+         by referring to water content via an indexing system and linear interpolation
+         between specified coordinates.
+         (see example)
+
+         1 |    ______
+         |   /.     \                In this example
+         .5 |  / .      -               wf_index = 0.0 0.5 1.0 2.0
+         | /  .        \             wf_values= 0.0 1.0 1.0 0.25
+         |/   .
+         0 ______________________-
+         LL       DUL   SAT
+         =0       =1    =2
+         -->
+          <wfmin_index description="index specifying water content">0.0 0.5 1.0 2.0  </wfmin_index>
+          <!--  for water factor for mineralization
+         -->
+          <wfmin_values description="value of water factor function">0.0 1.0 1.0 0.5  </wfmin_values>
+          <!--  at given index values(mineralization)
+         -->
+          <wfnit_index description="index specifying water content">0.0 0.25 1.0 2.0  </wfnit_index>
+          <!--  for water factor for nitrification
+         -->
+          <wfnit_values description="value of water factor function">0.0 1.0 1.0 0.0  </wfnit_values>
+          <!--  at given index values(nitrification)
+         ______________________________________________________________________-
+         -->
+          <nitrification_pot units="ppm" description="Soil Nitrification potential (ug NH4/g soil)">40.0</nitrification_pot>
+          <nh4_at_half_pot units="ppm" description="NH4 concentration at half potential">90</nh4_at_half_pot>
+          <!--  nitrification (Michaelis-Menton kinetics)
+         -->
+          <pHf_nit_pH description="pH for specifying factor for nitrification">4.5 6.0 8.0 9.0 </pHf_nit_pH>
+          <pHf_nit_values description="value of pH factor for nitrification">0.0 1.0 1.0 0.0 </pHf_nit_values>
+          <!-- ______________________________________________________________________-
+         -->
+          <dnit_rate_coeff description="denitrification rate coefficient (kg soil/mg C per day)">0.0006 </dnit_rate_coeff>
+          <dnit_wf_power description="power term for calculation of water factor for denitrification">1        </dnit_wf_power>
+          <dnit_k1 description="K1 parameter from Thorburn et al(2010) for N2O model">25.1        </dnit_k1>
+          <dnit_wfps description="WFPS for calculating n2o fraction of denitrification">21.33333 100.0 </dnit_wfps>
+          <dnit_n2o_factor description="WFPS factor for n2o fraction of denitrification">0.0   1.18 </dnit_n2o_factor>
+          <nit_n2o_frac description="Fraction of nitrified nitrogen lost as n2o">0.0 </nit_n2o_frac>
+        </standard>
+        <!--  where wf = ((SW-DUL)/(SAT-DUL))^P
+      -->
+        <sand>
+          <derived_from>standard</derived_from>
+          <rd_biom description="potential rate of soil biomass">0.0324  0.015   </rd_biom>
+          <wfmin_index description="index specifying water content">0.0 0.5 1.0 2.0  </wfmin_index>
+          <!--  for water factor for mineralization
+         -->
+          <wfmin_values description="value of water factor function">0.05 1.0 1.0 0.5  </wfmin_values>
+        </sand>
+        <rothc>
+          <cnrf_coeff description="coeff. to determine the magnitude of C:N effects on decomposition of FOM">0.693  </cnrf_coeff>
+          <cnrf_optcn description="C:N above which decomposition rate of FOM declines">500.0   </cnrf_optcn>
+          <ef_biom description="fraction of biomass C mineralized retained in system (0-1)">0.24       </ef_biom>
+          <ef_fom description="fraction of FOM C mineralized retained in system (0-1)">0.24        </ef_fom>
+          <ef_hum description="fraction of humic C mineralized retained in system (0-1)">0.407        </ef_hum>
+          <ef_res description="fraction of residue C mineralized retained in system (0-1)">0.24        </ef_res>
+          <fom_min description="minimum allowable FOM (kg/ha)">0.5       </fom_min>
+          <fr_biom_biom description="fraction of retained biomass C returned to biomass (0-1)">0.46  </fr_biom_biom>
+          <fr_fom_biom description="fraction of retained FOM C transferred to biomass (0-1)">0.46   </fr_fom_biom>
+          <fr_res_biom description="fraction of retained residue C transferred to biomass (0-1)">0.46   </fr_res_biom>
+          <fom_type>                                                default  stable </fom_type>
+          <fr_carb description="carbohydrate fraction of FOM (0-1)">0.59     0.2  </fr_carb>
+          <fr_cell description="cellulose fraction of FOM (0-1)">   0.41     0.8  </fr_cell>
+          <fr_lign description="lignin fraction of FOM (0-1)">      0.0      0.0  </fr_lign>
+          <oc2om_factor description="factor to convert organic carbon to organic matter">1.7  </oc2om_factor>
+          <mcn description="C:N ratio of microbes ()">8.0           </mcn>
+          <opt_temp description="Soil temperature above which there is no further effect on mineralisation and nitrification (oC)">32.0   32.0  </opt_temp>
+          <rd_biom description="potential rate of soil biomass mineralization (per day)">0.0010848  0.0005424  </rd_biom>
+          <rd_carb description="maximum rate constant for decomposition of FPool1 (0-1)">0.0274    0.0137   </rd_carb>
+          <rd_cell description="maximum rate constant for decomposition of FPool2 (0-1)">0.0001    0.00005  </rd_cell>
+          <rd_lign description="maximum rate constant for  decomposition of FPool3 (0-1)">0.0    0.0   </rd_lign>
+          <rd_hum description="potential rate of humus mineralization (per day)">0.0000323    0.00001615 </rd_hum>
+          <!-- .0000548 decreased to account for hum feeback into hum and plant retainment factor-->
+          <nh4ppm_min description="minimum allowable NH4 (ppm)">0.0    </nh4ppm_min>
+          <no3ppm_min description="minimum allowable NO3 (ppm)">0.0    </no3ppm_min>
+          <min_depth description="depth of soil from which N can be immobilised by decomposing surface residues (mm)">100.    </min_depth>
+          <!--   ______________________________________________________________________-
+         Specifying the water factor for Nitrogen Transformations is
+         by referring to water content via an indexing system and linear interpolation
+         between specified coordinates.
+         (see example)
+
+         1 |    ______
+         |   /.     \                In this example
+         .5 |  / .      -               wf_index = 0.0 0.5 1.0 2.0
+         | /  .        \             wf_values= 0.0 1.0 1.0 0.25
+         |/   .
+         0 ______________________-
+         LL       DUL   SAT
+         =0       =1    =2
+         -->
+          <wfmin_index description="index specifying water content for water factor for mineralization">0.0 0.5 1.0 2.0  </wfmin_index>
+          <wfmin_values description="value of water factor function at given index values(mineralization)">0.0 1.0 1.0 0.5  </wfmin_values>
+          <wfnit_index description="index specifying water content for water factor for nitrification">0.0 .25 1.0 2.0  </wfnit_index>
+          <wfnit_values description="value of water factor function at given index values(nitrification)">0.0 1.0 1.0 0.0  </wfnit_values>
+          <!--  ______________________________________________________________________-->
+          <nitrification_pot units="ppm" description="Soil Nitrification potential (ug NH4/g soil)">40.0</nitrification_pot>
+          <nh4_at_half_pot units="ppm" description="NH4 concentration at half potential nitrification (Michaelis-Menton kinetics)">90</nh4_at_half_pot>
+          <pHf_nit_pH description="pH for specifying factor for nitrification">4.5 6.0 8.0 9.0 </pHf_nit_pH>
+          <pHf_nit_values description="value of pH factor for nitrification">0.0 1.0 1.0 0.0 </pHf_nit_values>
+          <!-- ______________________________________________________________________ -->
+          <dnit_rate_coeff description="denitrification rate coefficient (kg soil/mg C per day)">0.0006 </dnit_rate_coeff>
+          <dnit_wf_power description="power term for calculation of water factor for denitrification where wf = ((SW-DUL)/(SAT-DUL))^P">1        </dnit_wf_power>
+        </rothc>
+        <rothc6>
+          <cnrf_coeff description="coeff. to determine the magnitude of C:N effects on decomposition of FOM">0.693  </cnrf_coeff>
+          <cnrf_optcn description="C:N above which decomposition rate of FOM declines">500.0   </cnrf_optcn>
+          <ef_biom description="fraction of biomass C mineralized retained in system (0-1)">0.24       </ef_biom>
+          <ef_fom description="fraction of FOM C mineralized retained in system (0-1)">0.24        </ef_fom>
+          <ef_hum description="fraction of humic C mineralized retained in system (0-1)">0.407        </ef_hum>
+          <ef_res description="fraction of residue C mineralized retained in system (0-1)">0.24        </ef_res>
+          <fom_min description="minimum allowable FOM (kg/ha)">0.5       </fom_min>
+          <fr_biom_biom description="fraction of retained biomass C returned to biomass (0-1)">0.46  </fr_biom_biom>
+          <fr_fom_biom description="fraction of retained FOM C transferred to biomass (0-1)">0.46   </fr_fom_biom>
+          <fr_res_biom description="fraction of retained residue C transferred to biomass (0-1)">0.46   </fr_res_biom>
+          <fom_type>                                                default  stable </fom_type>
+          <fr_carb description="carbohydrate fraction of FOM (0-1)">0.59     0.2  </fr_carb>
+          <fr_cell description="cellulose fraction of FOM (0-1)">   0.41     0.8  </fr_cell>
+          <fr_lign description="lignin fraction of FOM (0-1)">      0.0      0.0  </fr_lign>
+          <oc2om_factor description="factor to convert organic carbon to organic matter">1.7  </oc2om_factor>
+          <mcn description="C:N ratio of microbes ()">8.0           </mcn>
+          <opt_temp description="Soil temperature above which there is no further effect on mineralisation and nitrification (oC)">32.0   32.0  </opt_temp>
+          <rd_biom description="potential rate of soil biomass mineralization (per day)">0.0010848  0.0005424  </rd_biom>
+          <rd_carb description="maximum rate constant for decomposition of FPool1 (0-1)">0.0274    0.0137   </rd_carb>
+          <rd_cell description="maximum rate constant for decomposition of FPool2 (0-1)">0.0001    0.00005  </rd_cell>
+          <rd_lign description="maximum rate constant for  decomposition of FPool3 (0-1)">0.0    0.0   </rd_lign>
+          <rd_hum description="potential rate of humus mineralization (per day)">0.0000323    0.00001615 </rd_hum>
+          <!-- .0000548 decreased to account for hum feeback into hum and plant retainment factor-->
+          <nh4ppm_min description="minimum allowable NH4 (ppm)">0.0    </nh4ppm_min>
+          <no3ppm_min description="minimum allowable NO3 (ppm)">0.0    </no3ppm_min>
+          <min_depth description="depth of soil from which N can be immobilised by decomposing surface residues (mm)">100.    </min_depth>
+          <!--   ______________________________________________________________________-
+         Specifying the water factor for Nitrogen Transformations is
+         by referring to water content via an indexing system and linear interpolation
+         between specified coordinates.
+         (see example)
+
+         1 |    ______
+         |   /.     \                In this example
+         .5 |  / .      -               wf_index = 0.0 0.5 1.0 2.0
+         | /  .        \             wf_values= 0.0 1.0 1.0 0.25
+         |/   .
+         0 ______________________-
+         LL       DUL   SAT
+         =0       =1    =2
+         -->
+          <wfmin_index description="index specifying water content for water factor for mineralization">0.0 0.5 1.0 2.0  </wfmin_index>
+          <wfmin_values description="value of water factor function at given index values(mineralization)">0.0 1.0 1.0 0.5  </wfmin_values>
+          <wfnit_index description="index specifying water content for water factor for nitrification">0.0 .25 1.0 2.0  </wfnit_index>
+          <wfnit_values description="value of water factor function at given index values(nitrification)">0.0 1.0 1.0 0.0  </wfnit_values>
+          <!--  ______________________________________________________________________-->
+          <nitrification_pot units="ppm" description="Soil Nitrification potential (ug NH4/g soil)">40.0</nitrification_pot>
+          <nh4_at_half_pot units="ppm" description="NH4 concentration at half potential nitrification (Michaelis-Menton kinetics)">90</nh4_at_half_pot>
+          <pHf_nit_pH description="pH for specifying factor for nitrification">4.5 6.0 8.0 9.0 </pHf_nit_pH>
+          <pHf_nit_values description="value of pH factor for nitrification">0.0 1.0 1.0 0.0 </pHf_nit_values>
+          <!-- ______________________________________________________________________ -->
+          <dnit_rate_coeff description="denitrification rate coefficient (kg soil/mg C per day)">0.0006 </dnit_rate_coeff>
+          <dnit_wf_power description="power term for calculation of water factor for denitrification where wf = ((SW-DUL)/(SAT-DUL))^P">1        </dnit_wf_power>
+        </rothc6>
+        <soiln3>
+          <cnrf_coeff description="coeff. to determine the magnitude of C:N effects on decomposition of FOM">0.693  </cnrf_coeff>
+          <cnrf_optcn description="C:N above which decomposition rate of FOM declines">25.0   </cnrf_optcn>
+          <ef_biom description="fraction of biomass C mineralized retained in system (0-1)">0.4       </ef_biom>
+          <ef_fom description="fraction of FOM C mineralized retained in system (0-1)">0.4        </ef_fom>
+          <ef_hum description="fraction of humic C mineralized retained in system (0-1)">0.4        </ef_hum>
+          <ef_res description="fraction of residue C mineralized retained in system (0-1)">0.4        </ef_res>
+          <fom_min description="minimum allowable FOM (kg/ha)">0.5       </fom_min>
+          <fr_biom_biom description="fraction of retained biomass C returned to biomass (0-1)">0.6  </fr_biom_biom>
+          <fr_fom_biom description="fraction of retained FOM C transferred to biomass (0-1)">0.9   </fr_fom_biom>
+          <fr_res_biom description="fraction of retained residue C transferred to biomass (0-1)">0.9   </fr_res_biom>
+          <fom_type>default manure  mucuna lablab shemp  stable </fom_type>
+          <fr_carb description="carbohydrate fraction of FOM (0-1)">0.2      0.3     0.54        0.57    0.45   0.05 </fr_carb>
+          <fr_cell description="cellulose fraction of FOM (0-1)">   0.7      0.3     0.37        0.37    0.47   0.05  </fr_cell>
+          <fr_lign description="lignin fraction of FOM (0-1)">      0.1      0.4     0.09        0.06    0.08   0.9 </fr_lign>
+          <oc2om_factor description="factor to convert organic carbon to organic matter">1.7  </oc2om_factor>
+          <mcn description="C:N ratio of microbes ()">8.0           </mcn>
+          <opt_temp description="Soil temperature above which there is no further effect on mineralisation and nitrification (oC)">32.0   32.0  </opt_temp>
+          <rd_biom description="potential rate of soil biomass mineralization (per day)">0.0081    0.004 </rd_biom>
+          <rd_carb description="maximum rate constant for decomposition of FPool1 (0-1)">0.2       0.1 </rd_carb>
+          <rd_cell description="maximum rate constant for decomposition of FPool2 (0-1)">0.05      0.025 </rd_cell>
+          <rd_lign description="maximum rate constant for  decomposition of FPool3 (0-1)">0.0005    0.00025 </rd_lign>
+          <rd_hum description="potential rate of humus mineralization (per day)">0.00015    0.00007 </rd_hum>
+          <nh4ppm_min description="minimum allowable NH4 (ppm)">0.0    </nh4ppm_min>
+          <no3ppm_min description="minimum allowable NO3 (ppm)">0.0    </no3ppm_min>
+          <min_depth description="depth of soil from which N can be immobilised by decomposing surface residues (mm)">100.    </min_depth>
+          <!--   ______________________________________________________________________-
+         Specifying the water factor for Nitrogen Transformations is
+         by referring to water content via an indexing system and linear interpolation
+         between specified coordinates.
+         (see example)
+
+         1 |    ______
+         |   /.     \                In this example
+         .5 |  / .      -               wf_index = 0.0 0.5 1.0 2.0
+         | /  .        \             wf_values= 0.0 1.0 1.0 0.25
+         |/   .
+         0 ______________________-
+         LL       DUL   SAT
+         =0       =1    =2
+         -->
+          <wfmin_index description="index specifying water content for water factor for mineralization">0.0 0.5 1.0 2.0  </wfmin_index>
+          <wfmin_values description="value of water factor function at given index values(mineralization)">0.0 1.0 1.0 0.5  </wfmin_values>
+          <wfnit_index description="index specifying water content for water factor for nitrification">0.0 .25 1.0 2.0  </wfnit_index>
+          <wfnit_values description="value of water factor function at given index values(nitrification)">0.0 1.0 1.0 0.0  </wfnit_values>
+          <!--  ______________________________________________________________________-->
+          <nitrification_pot units="ppm" description="Soil Nitrification potential (ug NH4/g soil)">40.0</nitrification_pot>
+          <nh4_at_half_pot units="ppm" description="NH4 concentration at half potential nitrification (Michaelis-Menton kinetics)">90</nh4_at_half_pot>
+          <pHf_nit_pH description="pH for specifying factor for nitrification">4.5 6.0 8.0 9.0 </pHf_nit_pH>
+          <pHf_nit_values description="value of pH factor for nitrification">0.0 1.0 1.0 0.0 </pHf_nit_values>
+          <!-- ______________________________________________________________________ -->
+          <dnit_rate_coeff description="denitrification rate coefficient (kg soil/mg C per day)">0.0006 </dnit_rate_coeff>
+          <dnit_wf_power description="power term for calculation of water factor for denitrification where wf = ((SW-DUL)/(SAT-DUL))^P">1        </dnit_wf_power>
+        </soiln3>
+        <root_cn>22.000</root_cn>
+        <root_wt>776.000</root_wt>
+        <soil_cn>11.000</soil_cn>
+        <enr_a_coeff>7.400</enr_a_coeff>
+        <enr_b_coeff>0.200</enr_b_coeff>
+        <profile_reduction>off</profile_reduction>
+        <oc>3.020 2.940 2.600 2.330 2.100 1.310 1.330 1.150 0.490 0.160 0.100 0.100 0.100 0.100 </oc>
+        <ph>6.318 6.318 5.902 5.948 5.959 6.700 6.700 7.900 7.900 7.900 7.900 7.900 7.900 7.900 </ph>
+        <fbiom>0.110 0.092 0.057 0.013 0.013 0.014 0.015 0.016 0.021 0.024 0.024 0.024 0.024 0.024 </fbiom>
+        <finert>0.319 0.328 0.386 0.452 0.493 0.533 0.656 0.694 0.719 0.729 0.747 0.747 0.747 0.747 </finert>
+        <no3ppm>2.234 2.175 4.317 3.759 7.843 6.667 3.333 0.000 0.000 0.000 0.000 0.010 0.010 0.010 </no3ppm>
+        <nh4ppm>2.234 1.957 1.727 0.376 0.314 0.200 0.133 0.107 0.043 0.141 0.107 0.010 0.010 0.010 </nh4ppm>
+      </initdata>
+    </component>
+    <component name="ryegrass_clover_paspalum" executable="%apsim%\Model\AgPasture.dll" class="AgPasture">
+      <executable name="%apsim%\Model\AgPasture.dll" version="1.0" />
+      <initdata>
+        <AgPasture>
+          <Nspecies>3</Nspecies>
+          <thisCropName>ryegrass_clover_paspalum</thisCropName>
+          <speciesName>ryegrass whiteclover paspalum</speciesName>
+          <micrometType>grass grass grass</micrometType>
+          <isAnnual>0 0 0</isAnnual>
+          <isLegume>0 1 0</isLegume>
+          <photoPath>3 3 4</photoPath>
+          <dayEmerg>0 1 1</dayEmerg>
+          <monEmerg>0 3 3</monEmerg>
+          <dayAnth>0 1 1</dayAnth>
+          <monAnth>0 11 1</monAnth>
+          <daysToMature>0 0 0</daysToMature>
+          <cropFactor>0.3 0.3 0.3</cropFactor>
+          <maxResidCover>0 0 0</maxResidCover>
+          <dRootDepth>50 50 50</dRootDepth>
+          <maxRootDepth>900 300 900</maxRootDepth>
+          <rootDepth>900 300 900</rootDepth>
+          <rootFnType>0 0 0</rootFnType>
+          <growthTmin>2 4 10</growthTmin>
+          <growthTmax>32 32 40</growthTmax>
+          <growthTopt>20 20 20</growthTopt>
+          <growthTq>2 2 1.2</growthTq>
+          <massFluxTmin>2 2 5</massFluxTmin>
+          <massFluxTopt>20 20 20</massFluxTopt>
+          <massFluxW0>2 2 2</massFluxW0>
+          <massFluxWopt>0.5 0.5 0.5</massFluxWopt>
+          <!--OldValues heatOnsetT>28 28 35</heatOnsetT><heatFullT>35 35 40</heatFullT-->
+          <heatOnsetT>60 60 60</heatOnsetT>
+          <heatFullT>70 70 70</heatFullT>
+          <heatSumT>50 50 50</heatSumT>
+          <!--OldValues coldOnsetT>0 0 8</coldOnsetT><coldFullT>-3 -3 3</coldFullT-->
+          <coldOnsetT>-20 -20 -20</coldOnsetT>
+          <coldFullT>-30 -30 -30</coldFullT>
+          <coldSumT>20 20 50</coldSumT>
+          <Pm>1 1 1.2</Pm>
+          <maintRespiration>3 3 3</maintRespiration>
+          <growthEfficiency>0.75 0.75 0.75</growthEfficiency>
+          <satRadn>200 200 200</satRadn>
+          <SLA>20 20 20</SLA>
+          <lightExtCoeff>0.5 0.8 0.6</lightExtCoeff>
+          <rue>1.65 1.65 1.65</rue>
+          <maxAssimiRate>330 330 330</maxAssimiRate>
+          <rateLive2Dead>0.05 0.05 0.05</rateLive2Dead>
+          <rateDead2Litter>0.11 0.11 0.11</rateDead2Litter>
+          <rateRootSen>0.02 0.02 0.02</rateRootSen>
+          <stockParameter>0.05 0.05 0.05</stockParameter>
+          <maxRootFraction>0.25 0.25 0.25</maxRootFraction>
+          <allocationSeasonF>0.8 0.8 0.8</allocationSeasonF>
+          <leafRate>3 3 3.5</leafRate>
+          <fLeaf>0.7 0.7 0.7</fLeaf>
+          <fStolon>0.0 0.2 0.0</fStolon>
+          <digestLive>0.6 0.6 0.6</digestLive>
+          <digestDead>0.2 0.2 0.2</digestDead>
+          <dmtotal>1500 350 100</dmtotal>
+          <dmroot>450 120 30</dmroot>
+          <dmlitter>200 50 10</dmlitter>
+          <dmgreenmin>500 50 20</dmgreenmin>
+          <CO2ambient>380</CO2ambient>
+          <CO2PmaxScale>700 700 150</CO2PmaxScale>
+          <CO2NScale>600 600 600</CO2NScale>
+          <CO2NMin>0.7 0.7 0.7</CO2NMin>
+          <CO2NCurvature>2 2 2</CO2NCurvature>
+          <NcleafOpt>4 4.5 3</NcleafOpt>
+          <NcleafMax>5 5.5 3.5</NcleafMax>
+          <NcleafMin>1.2 1.2 0.8</NcleafMin>
+          <NcstemFr>0.5 0.5 0.5</NcstemFr>
+          <NcstolFr>0.5 0.5 0</NcstolFr>
+          <NcrootFr>0.5 0.5 0.5</NcrootFr>
+          <NMinFix>0 0.2 0</NMinFix>
+          <NMaxFix>0 0.6 0</NMaxFix>
+          <NdilutCoeff>0.5 1.0 0.5</NdilutCoeff>
+          <Frgr>1 1 1</Frgr>
+          <rlvp>0.05 0.05 0.03 0.02 0.01 0.00 0.00</rlvp>
+          <ll>0.20 0.23 0.23 0.23 0.23 0.23 0.23</ll>
+          <kl>0.10 0.06 0.06 0.06 0.06 0.06 0.06</kl>
+          <xf>1.00 1.00 1.00 1.00 1.00 1.00 0.80</xf>
+          <waterStressFactor>1 1 1</waterStressFactor>
+          <soilSatFactor>0.1 0.1 0.1</soilSatFactor>
+          <WaterUptakeSource>calc</WaterUptakeSource>
+          <NUptakeSource>calc</NUptakeSource>
+          <LinearInterpolation name="HeightMassFN">
+            <XY>0,0</XY>
+            <XY>1000,25</XY>
+            <XY>2000,75</XY>
+            <XY>3000,150</XY>
+            <XY>4000,250</XY>
+          </LinearInterpolation>
+          <LinearInterpolation name="FVPDFunction">
+            <XY> 0,1.0</XY>
+            <XY>10,1.0</XY>
+            <XY>50,1.0</XY>
+          </LinearInterpolation>
+          <alt_N_uptake>no</alt_N_uptake>
+        </AgPasture>
+        <Nspecies type="text" description="Number of species">3</Nspecies>
+        <thisCropName type="text" description="Crop name shown as on the simulation tree">ryegrass_clover_paspalum</thisCropName>
+        <cropName type="text" description="Species names">ryegrass whiteclover paspalum</cropName>
+        <micrometType type="text" description="crop type for MicroMet">grass     grass    grass</micrometType>
+        <isAnnual type="text" description="Annual species? no=0, yes=1">0           0          0</isAnnual>
+        <isLegume type="text" description="Legume species? no=0, yes=1">0           0          0</isLegume>
+        <photoPath type="text" description="C3 or C4 species? C3=3, C4=4">3           4          3</photoPath>
+        <rootDepth type="text" description="Root depth">1200 1200 1100</rootDepth>
+        <rlvp type="text" description="Root distribution parameter ([0-1] relative to Root depth)">1  1  1</rlvp>
+        <growthTmin type="text" description="Minimum temperature for growth">3.6455928E+00     3.1664609E+00     4.0000000E-01</growthTmin>
+        <growthTmax type="text" description="Maximum temperature for growth">3.6000000E+01     4.5000000E+01     4.1000000E+01</growthTmax>
+        <growthTopt type="text" description="Optimum temperature for growth">2.2500000E+01     2.2802369E+01     2.8543513E+01</growthTopt>
+        <growthTq type="text" description="Curvture of growth response to temperature">1.5       1.5        1.5</growthTq>
+        <massFluxTmin type="text" description="Minimum temperature for mass flux">5           5          5  </massFluxTmin>
+        <massFluxTopt type="text" description="Optimum temperature for mass flux">20        20         20</massFluxTopt>
+        <massFluxW0 type="text" description="Scale factor for response of mass flux to soil moisture">2          2           2</massFluxW0>
+        <massFluxWopt type="text" description="Optimum soil moisture for mass flux">0.5       0.5        0.5</massFluxWopt>
+        <heatOnsetT type="text" description="Heat effects- Onset temperature">38.390269406        38.000000000         35.481849730</heatOnsetT>
+        <heatFullT type="text" description="Heat effects- Full temperature">40.983371573        46.000000000         41.272191134</heatFullT>
+        <heatSumT type="text" description="Heat effects- Temperature sum for recovery">36.939310938          33.000000000         35.948772898</heatSumT>
+        <coldOnsetT type="text" description="Cold effects- Onset temperature">2.6150056756         3.1606047652         4.0000000000</coldOnsetT>
+        <coldFullT type="text" description="Cold effects- Full temperature">-.9914351598          -1.007263686         -.9997215961</coldFullT>
+        <coldSumT type="text" description="Cold effects- Temperature sum for recovery">20         20        20</coldSumT>
+        <Pm type="text" description="Reference CO2 assimilation rate (mg CO2/m2.s)">1.5138558E+00     1.6493120E+00    1.5039454E+00</Pm>
+        <maintRespiration type="text" description="Maintenance respiration coefficient (%)">1.9500000E+00  2.1298923E+00    2.6073932E+00</maintRespiration>
+        <growthEfficiency type="text" description="Growth efficiency">8.7758981E-01    7.0000000E-01     7.0000000E-01</growthEfficiency>
+        <SLA type="text" description="Specific leaf area">20       20         20</SLA>
+        <lightExtCoeff type="text" description="Light extinction coefficient">.53674137831   .37972078054    .48276262769</lightExtCoeff>
+        <stockParameter type="text" description="Stock influence parameter">0.05     0.05      0.05</stockParameter>
+        <maxRootFraction type="text" description="Maximum biomass fraction allocated to root">.34335154384   .42005615228     .41239561524</maxRootFraction>
+        <leafRate type="text" description="Reference leaf appearance rate without stress">3.5         3.5           3.5</leafRate>
+        <fLeaf type="text" description="Reference growth partition to leaves">.53808649546    .61061766662    .70000000000</fLeaf>
+        <fStolon type="text" description="Reference growth partition to stolon">0.2          0           0</fStolon>
+        <digestLive type="text" description="Digestibility of live plant material">0.9       0.9        0.9</digestLive>
+        <digestDead type="text" description="Digestibility of dead plant material">0.9       0.9       0.9</digestDead>
+        <dmtotal type="text" description="Initial shoot dry matter (kg/ha)">50    50       50</dmtotal>
+        <dmlitter type="text" description="Initial litter dry matter (kg/ha)">50      50          50</dmlitter>
+        <dmgreenmin type="text" description="Minimum green dry matter (kg/ha)">50      50         50</dmgreenmin>
+        <NcleafOpt type="text" description="N concentration - leaf optimum">2.8539131718    2.4000000000    3.0000000000</NcleafOpt>
+        <NcleafMax type="text" description="N concentration - leaf luxary">2.7089815314    3.3297088084    3.7366629996</NcleafMax>
+        <NcleafMin type="text" description="N concentration - leaf scenescent">.76723199764    .65000000000    .65000000000</NcleafMin>
+        <NcstemFr type="text" description="Stem N concentration as fraction of leaf N concentration">5.0860278E-01   4.8365882E-01     .50234340956</NcstemFr>
+        <NcstolFr type="text" description="Stolon N concentration as fraction of leaf N concentration">0.4         0         0 </NcstolFr>
+        <NcrootFr type="text" description="Root N concentration as fraction of leaf N concentration">.44308765510      .49056422305     .44988344081</NcrootFr>
+        <NMinFix type="text" description="Minimum N fixation (when soil N is sufficient)">.1       0       0</NMinFix>
+        <NMaxFix type="text" description="Maximum N fixation (when soil N is unavailable)">.6       0       0</NMaxFix>
+        <CO2PmaxScale type="text" description="CO2 - Scale factor for CO2 effect on photosynthesis">700     700       700</CO2PmaxScale>
+        <CO2NScale type="text" description="CO2 - Scale factor for CO2 effects on plant N concentration">600     600       600</CO2NScale>
+        <CO2NMin type="text" description="CO2 - Minimum fraction that plant N concentration may reduce to uder elevated CO2">0.7      0.7        0.7</CO2NMin>
+        <CO2NCurvature type="text" description="CO2 - Curvature factor of CO2 effect on plant N concentration">2         2           2</CO2NCurvature>
+        <Frgr type="text" description="Relative growth factor">1         1           1</Frgr>
+        <WaterUptakeSource type="text" description="Water uptake done by AgPasture (calc) or by apsim?">apsim</WaterUptakeSource>
+        <waterStressFactor type="text" description="Scale factor of water stress on plant growth [0-1]">0.5 0.5 0.5</waterStressFactor>
+        <rateLive2Dead type="text" description="rate live 2 dead">.02370481602  .02103293450 .02864225675</rateLive2Dead>
+        <rateDead2Litter type="text" description="rate dead 2 litter">.08698084441 .07980521432 .08639544340</rateDead2Litter>
+        <rateRootSen type="text" description="rate root sen">.00625115072 .00951677664 .00694292939</rateRootSen>
+        <waterStressFactor type="text" description="water stress">0.1 0.1 0.1</waterStressFactor>
+      </initdata>
+    </component>
+    <component name="tracker" executable="%apsim%\Model\Tracker.dll" class="Tracker">
+      <executable name="%apsim%\Model\Tracker.dll" version="1.0" />
+      <initdata>
+        <variable>sum of toRootDM on end_of_day from SpecialReport to SpecialReport2 as SumNewRoot</variable>
+        <variable>sum of N_deposition on end_of_day from SpecialReport to SpecialReport as MaySeptNDep</variable>
+        <variable>sum of subsurface_drain on end_of_day from SpecialReport to SpecialReport as MaySeptTiles</variable>
+        <variable>sum of rain on end_of_day from SpecialReport to SpecialReport as MaySeptRain</variable>
+        <variable>sum of runoff on end_of_day from SpecialReport to SpecialReport as MaySeptrunoff</variable>
+        <variable>sum of es on end_of_day from SpecialReport to SpecialReport as MaySepEvap</variable>
+        <variable>sum of WaterUptake on end_of_day from SpecialReport to SpecialReport as MaySepTrans</variable>
+        <variable>sum of dlt_n_min_tot() on end_of_day from SpecialReport to SpecialReport as MaySepNnetMin</variable>
+        <variable>sum of dnit() on end_of_day from SpecialReport to SpecialReport as MaySepDenit</variable>
+        <variable>sum of subsurface_drain_no3 on end_of_day from SpecialReport to SpecialReport as MaySeptTilesNO3</variable>
+        <variable>sum of dlt_n_min_res() on end_of_day from SpecialReport to SpecialReport as MaySepResImmob</variable>
+        <variable>sum of NitrogenUptake on end_of_day from SpecialReport to SpecialReport as MaySepNuptake</variable>
+        <variable>sum of subsurface_drain on end_of_day from start_year to end_year as drainageIH</variable>
+        <variable>sum of subsurface_drain_no3 on end_of_day from start_year to end_year as leaching</variable>
+      </initdata>
+    </component>
+    <component name="SpecialReporter" executable="%apsim%\Model\Manager2.dll" class="Manager2">
+      <executable name="%apsim%/Model/Manager2.dll" version="1.0" />
+      <initdata>
+        <ui>
+          <date type="text" description="Date for the special report">01-may</date>
+          <date2 type="text" description="date for second one">30-sep</date2>
+        </ui>
+        <text>
+using System;
+using ModelFramework;
+using CSGeneral;
+ 
+public class Script
+{
+   [Link] Paddock MyPaddock; // Can be used to dynamically get access to simulation structure and variables
+   [Input] DateTime Today;   // Equates to the value of the current simulation date - value comes from CLOCK
+   [Param] string date;         // The value for this will come from the Properties page.
+   [Param] string date2;
+ 
+   [Event] public event NullTypeDelegate SpecialReport;
+   [Event] public event NullTypeDelegate SpecialReport2;
+ 
+ 
+   // The following event handler will be called once at the beginning of the simulation
+   [EventHandler] public void OnInitialised()
+   {
+ 
+   }
+ 
+   // The following event handler will be called each day at the beginning of the day
+   [EventHandler] public void OnPrepare()
+   {
+      if (DateUtility.DatesEqual(date, Today))
+         SpecialReport.Invoke();
+ 
+      if (DateUtility.DatesEqual(date2, Today))
+         SpecialReport2.Invoke();
+   }
+ 
+}
+       </text>
+      </initdata>
+    </component>
+    <initdata>
+      <paddock_area>[area.paddock_area]</paddock_area>
+    </initdata>
+  </system>
+</simulation>

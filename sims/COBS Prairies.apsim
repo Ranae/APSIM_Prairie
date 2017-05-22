@@ -1199,7 +1199,7 @@
               </ClFIP>
             </SwimSoluteParameters>
             <SwimWaterTable>
-              <WaterTableDepth>1076</WaterTableDepth>
+              <WaterTableDepth>1070</WaterTableDepth>
             </SwimWaterTable>
             <SwimSubsurfaceDrain>
               <DrainDepth>1070</DrainDepth>

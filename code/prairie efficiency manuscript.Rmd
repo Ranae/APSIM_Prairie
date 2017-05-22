@@ -5,4 +5,58 @@ date: "April 20, 2017"
 output: pdf_document
 ---
 
-Prairies are potential biofuel crops. Fertilizing prairie results in more aboveground biomass, less belowground biomass, and greater species diversity, but the effects of these treatment differences on ecosystem processes like water use and nitrogen cycling are unknown. We modified and used a mechanistic cropping systems model to determine how nitrogen fertilization affects system water use efficiency and system nitrogen use efficiency in fertilized and unfertilized prairie.  
+Prairies are potential biofuel crops. Fertilizing prairie results in more aboveground biomass, less belowground biomass, and greater species diversity, but the effects of these treatment differences on ecosystem processes like water use and nitrogen cycling are unknown. We modified and used a mechanistic cropping systems model to determine how nitrogen fertilization affects system water use efficiency and system nitrogen use efficiency in fertilized and unfertilized prairie. 
+
+###Figures
+Water budget   precip, drainage, transpiration     
+sWUE           
+Nitrogen budget   fertilizer, fixation, leaching, denitrification   mineralization?  
+sNUE  
+
+All calibration figures in supplementary materials  
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, fig.width = 12, fig.height = 5)
+library(tidyverse)
+library(lubridate)
+library(ggrepel)
+```
+
+```{r theme}
+this_theme<-theme_bw()+
+  theme(#panel.grid.major = element_blank(),
+    #panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    axis.line = element_line(),
+    legend.position='bottom', legend.title=element_blank(),
+    legend.text = element_text(size=14),
+    plot.title = element_text(size=14, face="bold"),
+    axis.title.x = element_text(size=14,vjust=-0.5),
+    axis.title.y = element_text(size=12,angle=90, vjust=1.2),
+    axis.text.x = element_text(colour="black", size=12),
+    axis.text.y = element_text(colour="black", size=12), 
+    strip.text = element_text(colour="black", size=12))
+
+theme_set(this_theme)
+dodge <- position_dodge(width=0.5)
+```  
+
+```{r read in data from APSIM}  
+  header.pf <- scan("../sims/PFnew.out", skip = 2, nlines = 1, what = character(), sep="")
+  apsim.pf<-read.csv("../sims/PFnew.out", skip = 4, header=FALSE, sep="", na.strings = "?")
+  names(apsim.pf) <- header.pf
+  apsim.pf$Date<-as.Date(apsim.pf$Date, "%d/%m/%Y")
+  apsim.pf$year<-year(apsim.pf$Date)
+```
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
