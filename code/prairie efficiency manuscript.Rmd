@@ -8,10 +8,20 @@ output: pdf_document
 Prairies are potential biofuel crops. Fertilizing prairie results in more aboveground biomass, less belowground biomass, and greater species diversity, but the effects of these treatment differences on ecosystem processes like water use and nitrogen cycling are unknown. We modified and used a mechanistic cropping systems model to determine how nitrogen fertilization affects system water use efficiency and system nitrogen use efficiency in fertilized and unfertilized prairie. 
 
 ###Figures
-Water budget   precip, drainage, transpiration     
-sWUE           
+Water budget   precip, drainage, ET     
+sWUE  = mass/ET + runoff + drainage
+es = soil evaporation
+physiological WUE too?
+
+NEED - set up leaching to correct denitrification
+        add transpiration to output file
+        add drainage to output file
+        
+
 Nitrogen budget   fertilizer, fixation, leaching, denitrification   mineralization?  
-sNUE  
+sNUE = harvest N/N exports 
+
+NEED - add leached N and denitirified N to output file
 
 All calibration figures in supplementary materials  
 
