@@ -15,13 +15,12 @@ physiological WUE too?
 
 NEED - set up leaching to correct denitrification
         add transpiration to output file
-        add drainage to output file
+        
         
 
 Nitrogen budget   fertilizer, fixation, leaching, denitrification   mineralization?  
 sNUE = harvest N/N exports 
 
-NEED - add leached N and denitirified N to output file
 
 All calibration figures in supplementary materials  
 
@@ -61,10 +60,16 @@ dodge <- position_dodge(width=0.5)
     header.met <- scan("../sims/Rafa-cobs-met-until-Nov2015.met", skip = 4, nlines = 1, what = character(), sep="")
   met<-read.csv("../sims/Rafa-cobs-met-until-Nov2015.met", skip = 6, header=FALSE, sep="", na.strings = "?")
   names(met) <- header.met
+```  
+```{r join and format data by year}
+apsim.pf%>%
+  select(es, WaterUptake, HarvestN, year, subsurface_drain_no3, subsurface_drain, HarvestWt)%>%
+  filter(year %in% c(2008:2013))%>%
+  group_by(year)%>%
+  summarise_all(sum)
   
 
-```
-  
+```  
   
   
   

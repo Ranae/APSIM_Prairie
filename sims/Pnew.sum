@@ -169,6 +169,7 @@ Paddock:
         year
         subsurface_drain_no3
         N_conc_mgLN
+        WaterUptake
 
      Output file = Pnew.out
      Format = normal
